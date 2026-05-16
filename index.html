@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pedro Davies | Full Stack</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      html {
+        scroll-padding-top: 100px;
+      }
+
+      section {
+        scroll-margin-top: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="bg"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="container nav">
+        <h2 class="logo">daviespedro.dev</h2>
+
+        <div class="nav-links">
+          <a href="#sobre">Sobre</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#certificados">Certificados</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero container">
+      <div class="hero-text reveal">
+        <h1 class="title">
+          <span id="nome"></span><span class="cursor">|</span>
+        </h1>
+
+        <h2 class="subtitle">Full Stack Developer</h2>
+
+        <p class="desc">
+          Desenvolvimento Web • Backend • APIs REST • Análise de Dados
+        </p>
+
+        <div class="buttons">
+          <a
+            href="https://br.linkedin.com/in/pedro-augusto-davies-gonçalves-4554293b0"
+            target="_blank"
+            class="btn"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href=".//assets/Curriculo_Pedro_Augusto_Uma_Pagina.pdf"
+            download
+            class="btn"
+          >
+            Baixar Currículo
+          </a>
+
+          <a href="https://github.com/daviespedro" target="_blank" class="btn">
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-img reveal">
+        <div class="frame">
+          <img
+            src="./assets/imagens/1B320573-F170-4A49-84FA-D46A5D9AF710.PNG"
+            alt="Pedro Davies"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="container section reveal">
+      <h2 class="section-title">Sobre</h2>
+
+      <div class="card">
+        <p><strong>Nome:</strong> Pedro Augusto Davies Gonçalves</p>
+
+        <p>
+          <strong>Formação:</strong>
+          Desenvolvimento de Software Multiplataforma – FATEC (2025 - atual)
+        </p>
+
+        <p>
+          <strong>Objetivo Profissional:</strong><br />
+          Atuar como desenvolvedor Full Stack, com foco na criação de aplicações
+          web modernas, APIs REST escaláveis e soluções orientadas a dados.
+        </p>
+
+        <p>
+          <strong>Objetivos Acadêmicos:</strong><br />
+          Consolidar conhecimentos em desenvolvimento web, estruturas de dados,
+          banco de dados e engenharia de software.
+        </p>
+
+        <p>
+          <strong>Áreas de Interesse:</strong><br />
+          Desenvolvimento Web • Backend • APIs REST • Análise de Dados
+        </p>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="container section reveal">
+      <h2 class="section-title">Habilidades</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Hard Skills</h3>
+
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>JavaScript</p>
+          <p>Python</p>
+          <p>MySQL</p>
+          <p>Git e GitHub</p>
+          <p>Docker</p>
+          <p>APIs REST</p>
+        </div>
+
+        <div class="card">
+          <h3>Soft Skills</h3>
+
+          <p>Comunicação clara</p>
+          <p>Trabalho em equipe</p>
+          <p>Resolução de problemas</p>
+          <p>Pensamento analítico</p>
+          <p>Proatividade</p>
+          <p>Organização e gestão de tempo</p>
+          <p>Aprendizado contínuo</p>
+          <p>Adaptabilidade</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="container section reveal">
+      <h2 class="section-title">Projetos</h2>
+
+      <div class="grid">
+        <!-- RADAR CIDADAO -->
+        <div class="card project-card">
+          <img
+            src="./assets/imagens/radar.png"
+            class="project-img"
+            alt="Radar Cidadão"
+          />
+
+          <h3>Radar Cidadão</h3>
+
+          <p class="project-desc">
+            <strong>Problema:</strong>
+            Dificuldade de acesso e interpretação de dados públicos sobre
+            atuação de deputados.
+          </p>
+
+          <p class="project-desc">
+            <strong>Solução:</strong>
+            Desenvolvimento de uma aplicação web para centralizar, processar e
+            exibir essas informações de forma clara e acessível.
+          </p>
+
+          <p class="project-desc">
+            <strong>Atuação:</strong>
+            Atuei em Frontend e Backend.
+          </p>
+
+          <p class="tech">Python • API REST • MySQL • JavaScript • Docker</p>
+
+          <a
+            href="https://github.com/eugeniojonatas/Radar-Cidadao-Froggrammers"
+            target="_blank"
+            class="project-btn"
+          >
+            Ver Projeto
+          </a>
+
+          <a
+            href="https://radar-cidadao-froggrammers.onrender.com"
+            target="_blank"
+            class="project-btn"
+          >
+            Acessar Site
+          </a>
+        </div>
+
+        <!-- API -->
+        <div class="card project-card">
+          <img
+            src="./assets/imagens/projeto2.png"
+            class="project-img"
+            alt="API REST"
+          />
+
+          <h3>API REST</h3>
+
+          <p class="project-desc">
+            <strong>Problema:</strong>
+            Visualização dos itens do estoque e falta de atividade de
+            E-commerce.
+          </p>
+
+          <p class="project-desc">
+            <strong>Solução:</strong>
+            Desenvolvimento de uma aplicação web para melhorar a visualização e
+            implementar a atividade de E-commerce.
+          </p>
+
+          <p class="project-desc">
+            <strong>Atuação:</strong>
+            Atuei em Frontend, Backend e Banco de Dados.
+          </p>
+
+          <p class="tech">HTML • MySQL • CSS • JavaScript</p>
+
+          <a
+            href="https://github.com/daviespedro"
+            target="_blank"
+            class="project-btn"
+          >
+            Ver Projeto
+          </a>
+
+          <a
+            href="https://github.com/daviespedro"
+            target="_blank"
+            class="project-btn"
+          >
+            Em Desenvolvimento
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICADOS -->
+    <section id="certificados" class="container section reveal">
+      <h2 class="section-title">Certificados</h2>
+
+      <div class="cert-wrapper">
+        <div class="card cert-card">
+          <img
+            src="./assets/certificados/importfe.png"
+            alt="Certificado"
+            class="cert-img"
+          />
+
+          <div class="cert-content">
+            <h3>XXV Maratona Interna de Programação</h3>
+
+            <p class="cert-desc">
+              Certificado de participação na XXV Maratona Interna de Programação
+              da FATEC São José dos Campos.
+            </p>
+            <a
+              href="./assets/certificados/importfe.png"
+              target="_blank"
+              class="project-btn"
+            >
+              Ver Certificado
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CONTATO -->
+    <section id="contato" class="container section reveal">
+      <h2 class="section-title">Contato</h2>
+
+      <div class="card">
+        <p>
+          <span class="label">Email:</span>
+          daviespedro@icloud.com
+        </p>
+
+        <p>
+          <span class="label">GitHub:</span>
+          github.com/daviespedro
+        </p>
+
+        <p>
+          <span class="label">LinkedIn:</span>
+          pedro-augusto-davies
+        </p>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
