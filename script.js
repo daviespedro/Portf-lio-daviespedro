@@ -1,238 +1,167 @@
-/* =========================
-   EFEITO DIGITANDO
-========================= */
+// ==========================================
+//  MENU HAMBÚRGUER (RESPONSIVO COM EFEITO DE VIDRO)
+// ==========================================
+const menuBtn = document.getElementById("menu-btn");
+const navMenu = document.getElementById("nav-menu");
+const links Internos = document.querySelectorAll(".nav-links a");
 
-const nome = "Pedro Davies";
-let i = 0;
+if (menuBtn && navMenu) {
+  // Abre e fecha o menu ao clicar no botão hambúrguer
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("open");
+    navMenu.classList.toggle("open");
+  });
+
+  // Fecha o menu lateral automaticamente ao clicar em qualquer link
+  linksInternos.forEach((link) => {
+    link.addEventListener("click", () => {
+      menuBtn.classList.remove("open");
+      navMenu.classList.remove("open");
+    });
+  });
+}
+
+// ==========================================
+//  EFEITO DIGITANDO (HERO TITLE)
+// ==========================================
+const nomeCompleto = "Pedro Davies";
+let caractereIndex = 0;
 
 function digitar() {
+  const elementoNome = document.getElementById("nome");
+  if (!elementoNome) return;
 
-  const elemento =
-    document.getElementById("nome");
-
-  if (!elemento) return;
-
-  if (i < nome.length) {
-
-    elemento.innerHTML += nome.charAt(i);
-
-    i++;
-
-    setTimeout(digitar, 70);
+  if (caractereIndex < nomeCompleto.length) {
+    elementoNome.innerHTML += nomeCompleto.charAt(caractereIndex);
+    caractereIndex++;
+    setTimeout(digitar, 90);
   }
 }
 
-
+// ==========================================
+//  RASTREAMENTO DO MOUSE (VARIÁVEIS CSS)
+// ==========================================
 document.addEventListener("mousemove", (e) => {
-  document.documentElement.style.setProperty(
-    "--x",
-    `${e.clientX}px`
-  );
-
-  document.documentElement.style.setProperty(
-    "--y",
-    `${e.clientY}px`
-  );
+  document.documentElement.style.setProperty("--x", `${e.clientX}px`);
+  document.documentElement.style.setProperty("--y", `${e.clientY}px`);
 });
-/* =========================
-   REVEAL SCROLL
-========================= */
 
-function reveal() {
+// ==========================================
+//  REVEAL SCROLL & NAVBAR LINKS ATIVOS
+// ==========================================
+const elementosReveal = document.querySelectorAll(".reveal");
+const secoesPagora = document.querySelectorAll("section, header");
+const linksNavbar = document.querySelectorAll(".nav-links a");
 
-  const reveals =
-    document.querySelectorAll(".reveal");
+function gerenciarScroll() {
+  const windowHeight = window.innerHeight;
+  let secaoAtualId = "";
 
-  reveals.forEach((elemento) => {
+  // 1. Efeito Reveal dos Elementos
+  elementosReveal.forEach((elemento) => {
+    const elementTop = elemento.getBoundingClientRect().top;
+    const pontoDeCorte = 80;
 
-    const windowHeight =
-      window.innerHeight;
-
-    const elementTop =
-      elemento.getBoundingClientRect().top;
-
-    const visible = 80;
-
-    if (elementTop < windowHeight - visible) {
+    if (elementTop < windowHeight - pontoDeCorte) {
       elemento.classList.add("active");
     }
-
   });
 
-}
+  // 2. Mapeamento da Seção Ativa na Navbar
+  let topicoScrollY = window.pageYOffset;
 
-window.addEventListener("scroll", reveal);
+  secoesPagora.forEach((secao) => {
+    const sectionTop = secao.offsetTop - 160;
+    const sectionHeight = secao.offsetHeight;
+    const id = secao.getAttribute("id");
 
-/* =========================
-   NAVBAR ACTIVE
-========================= */
-
-const links =
-  document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-
-  let scrollY =
-    window.pageYOffset;
-
-  links.forEach((link) => {
-
-    const id =
-      link.getAttribute("href");
-
-    const secao =
-      document.querySelector(id);
-
-    if (!secao) return;
-
-    const sectionTop =
-      secao.offsetTop - 150;
-
-    const sectionHeight =
-      secao.offsetHeight;
-
-    if (
-      scrollY >= sectionTop &&
-      scrollY < sectionTop + sectionHeight
-    ) {
-
-      links.forEach((item) => {
-        item.classList.remove("active");
-      });
-
-      link.classList.add("active");
-
+    if (topicoScrollY >= sectionTop && topicoScrollY < sectionTop + sectionHeight) {
+      secaoAtualId = id || "";
     }
-
   });
 
-});
+  if (secaoAtualId) {
+    linksNavbar.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${secaoAtualId}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+}
 
-/* =========================
-   BACKGROUND DINÂMICO
-========================= */
+window.addEventListener("scroll", gerenciarScroll);
 
-const bg =
-  document.getElementById("bg");
+// ==========================================
+//  BACKGROUND DINÂMICO GRADIENTE
+// ==========================================
+const bgGradiente = document.getElementById("bg");
 
-document.addEventListener("mousemove", (e) => {
+if (bgGradiente) {
+  document.addEventListener("mousemove", (e) => {
+    const percentX = (e.clientX / window.innerWidth) * 100;
+    const percentY = (e.clientY / window.innerHeight) * 100;
 
-  const x =
-    (e.clientX / window.innerWidth) * 100;
+    bgGradiente.style.background = `
+      radial-gradient(circle at ${percentX}% ${percentY}%, rgba(96,165,250,0.15), transparent 25%),
+      radial-gradient(circle at top left, rgba(37,99,235,0.15), transparent 40%),
+      radial-gradient(circle at bottom right, rgba(96,165,250,0.1), transparent 35%),
+      #050814
+    `;
+  });
+}
 
-  const y =
-    (e.clientY / window.innerHeight) * 100;
+// ==========================================
+//  CARROSSEL DE EVENTOS (MULTI-CARDS INDEPENDENTES)
+// ==========================================
+document.querySelectorAll(".carousel").forEach((carousel) => {
+  const imagens = carousel.querySelectorAll(".carousel-img");
+  const btnPrev = carousel.querySelector(".prev");
+  const btnNext = carousel.querySelector(".next");
+  let slideIndex = 0;
 
-  bg.style.background = `
+  if (imagens.length === 0) return;
 
-    radial-gradient(
-      circle at ${x}% ${y}%,
-      rgba(96,165,250,0.18),
-      transparent 22%
-    ),
+  function alternarImagem(novoIndex) {
+    imagens.forEach((img) => img.classList.remove("active"));
+    imagens[novoIndex].classList.add("active");
+  }
 
-    radial-gradient(
-      circle at top left,
-      rgba(37,99,235,0.18),
-      transparent 35%
-    ),
-
-    radial-gradient(
-      circle at bottom right,
-      rgba(96,165,250,0.12),
-      transparent 30%
-    ),
-
-    #010409
-  `;
-
-});
-
-/* =========================
-   CARROSSEL EVENTOS
-========================= */
-
-let slideAtual = 0;
-
-const slides =
-  document.querySelectorAll(".carousel-img");
-
-function mostrarSlide(index) {
-
-  slides.forEach((slide) => {
-    slide.classList.remove("active");
+  btnNext.addEventListener("click", () => {
+    slideIndex = (slideIndex + 1) % imagens.length;
+    alternarImagem(slideIndex);
   });
 
-  slides[index].classList.add("active");
+  btnPrev.addEventListener("click", () => {
+    slideIndex = (slideIndex - 1 + imagens.length) % imagens.length;
+    alternarImagem(slideIndex);
+  });
 
-}
+  // Autoplay independente para cada carrossel (5 segundos)
+  setInterval(() => {
+    slideIndex = (slideIndex + 1) % imagens.length;
+    alternarImagem(slideIndex);
+  }, 5000);
+});
 
-function mudarSlide(direcao) {
+// ==========================================
+//  COMPORTAMENTO LER MAIS (MULTI-CARDS)
+// ==========================================
+document.querySelectorAll(".read-more-btn").forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const textoContainer = botao.parentElement.querySelector(".event-description");
+    
+    if (textoContainer) {
+      textoContainer.classList.toggle("collapsed");
+      botao.innerText = textoContainer.classList.contains("collapsed") ? "Ler mais" : "Ler menos";
+    }
+  });
+});
 
-  slideAtual += direcao;
-
-  if (slideAtual >= slides.length) {
-    slideAtual = 0;
-  }
-
-  if (slideAtual < 0) {
-    slideAtual = slides.length - 1;
-  }
-
-  mostrarSlide(slideAtual);
-
-}
-
-/* AUTO PLAY */
-
-setInterval(() => {
-
-  if (slides.length > 0) {
-    mudarSlide(1);
-  }
-
-}, 5000);
-
-/* =========================
-   LER MAIS EVENTO
-========================= */
-
-function toggleTexto() {
-
-  const texto =
-    document.getElementById("eventText");
-
-  const botao =
-    document.querySelector(".read-more-btn");
-
-  if (!texto || !botao) return;
-
-  texto.classList.toggle("collapsed");
-
-  if (texto.classList.contains("collapsed")) {
-
-    botao.innerText = "Ler mais";
-
-  } else {
-
-    botao.innerText = "Ler menos";
-
-  }
-
-}
-
-/* =========================
-   LOAD
-========================= */
-
+// ==========================================
+//  DISPAROS NO CARREGAMENTO DA PÁGINA
+// ==========================================
 window.onload = () => {
-
   digitar();
-
-  reveal();
-
-  if (slides.length > 0) {
-    mostrarSlide(slideAtual);
-  }
-
+  gerenciarScroll();
 };
