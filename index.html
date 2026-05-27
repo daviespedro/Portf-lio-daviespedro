@@ -35,6 +35,20 @@
         flex-wrap: wrap;
       }
 
+      /* ANIMAÇÃO DO CURSOR PISCANDO ESTILO TERMINAL */
+      .cursor {
+        display: inline-block;
+        margin-left: 4px;
+        color: #ffffff;
+        animation: blink-animation 1s step-end infinite;
+        font-weight: 400;
+      }
+
+      @keyframes blink-animation {
+        from, to { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
     </style>
   </head>
 
@@ -86,10 +100,7 @@
 
       <div class="hero-text reveal">
 
-        <h1 class="title">
-          <span id="nome"></span>
-          <span class="cursor">|</span>
-        </h1>
+        <h1 class="title"><span id="nome"></span><span class="cursor">|</span></h1>
 
         <h2 class="subtitle">
           Full Stack Developer
@@ -288,7 +299,7 @@
           <p class="project-desc">
             Aplicação web voltada para visualização
             de estoque e implementação
-            de funcionalidades E-commerce.
+            de functionalities E-commerce.
           </p>
 
           <p class="tech">
