@@ -523,7 +523,7 @@ html::before {
 }
 
 /* =========================
-   CERTIFICADOS
+   CERTIFICADOS (CORRIGIDO)
 ========================= */
 
 .cert-grid {
@@ -549,10 +549,13 @@ html::before {
   height: 200px;
   background: #0b1329; 
   display: flex;
+  flex-direction: column; /* Organiza o ícone quebrado e o texto um abaixo do outro */
   align-items: center;
   justify-content: center;
   position: relative;
   border-bottom: 1px solid rgba(96, 165, 250, 0.08);
+  text-align: center;
+  padding: 15px;
 }
 
 .cert-img {
@@ -560,6 +563,14 @@ html::before {
   height: 100%;
   object-fit: contain;
   padding: 12px;
+}
+
+/* Estilo elegante para o texto de preview indisponível */
+.cert-img-container span {
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
 }
 
 .cert-content {
@@ -584,18 +595,37 @@ html::before {
 #contato .card p { color: #ffffff; }
 
 /* ==================================================
-   LINKS DE CONTATO INTERATIVOS
+   BOTÃO DO WHATSAPP PREMIUM CYBERPUNK/GLOW
 ================================================== */
-.contact-link {
-  color: inherit;
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 12px 24px;
+  background: rgba(37, 211, 102, 0.04); /* Fundo verde translúcido */
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  color: #25d366;
   text-decoration: none;
+  border-radius: 12px;
   font-weight: 600;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
 }
 
-.whatsapp-link:hover {
-  color: #25d366;
-  text-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
+.btn-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.12);
+  border-color: #25d366;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.35); /* Efeito neon verde */
+}
+
+.btn-whatsapp svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 /* ==================================================
