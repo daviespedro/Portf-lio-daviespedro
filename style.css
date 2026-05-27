@@ -70,7 +70,7 @@ html::before {
       600px circle at var(--x) var(--y),
       rgba(96, 165, 250, 0.07) 0%,
       rgba(96, 165, 250, 0.02) 50%,
-      transparent 100-percent
+      transparent 100%
     );
   mix-blend-mode: normal;
   will-change: background;
@@ -525,22 +525,6 @@ html::before {
   height: 100%;
   object-fit: contain;
   padding: 12px;
-  z-index: 2;
-}
-
-/* ADICIONADO: Elemento de Fallback Oculto por Padrão */
-.cert-placeholder {
-  display: none; 
-  position: absolute;
-  inset: 0;
-  align-items: center;
-  justify-content: center;
-  color: #94a3b8;
-  font-size: 14px;
-  background: #0b1329;
-  text-align: center;
-  padding: 20px;
-  z-index: 1;
 }
 
 .cert-content {
@@ -565,7 +549,7 @@ html::before {
 #contato .card p { color: #ffffff; }
 
 /* ==================================================
-   MÍDIA QUERIES (RESPONSIVIDADE IMPECÁVEL)
+   MÍDIA QUERIES (RESPONSIVIDADE AJUSTADA)
 ================================================== */
 
 @media (max-width: 1024px) {
@@ -575,101 +559,91 @@ html::before {
 }
 
 @media (max-width: 768px) {
+  /* Novo scroll-padding para compensar o header maior */
   html {
-    scroll-padding-top: 70px; /* Alinhado cirurgicamente com a altura mobile */
+    scroll-padding-top: 130px; /* Ajuste conforme a nova altura da navbar */
   }
 
   .container { padding: 0 20px; }
   
+  /* Navbar maior para comportar logo e links em duas linhas */
   .navbar {
-    height: 70px;
+    height: auto; /* Deixa fluir a altura */
+    min-height: 120px; /* Altura mínima de segurança */
+    padding: 15px 0; /* Espaçamento interno */
   }
 
   .nav {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    gap: 15px;
+    flex-direction: column; /* Empilha logo e links */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    height: auto;
+    gap: 15px; /* Espaço entre logo e links */
   }
   
   .logo {
-    font-size: 19px; /* Proporção ideal para telas menores */
+    font-size: 22px; /* Logo um pouco maior no celular */
+    margin: 0;
   }
   
-  /* CONTAINER DOS LINKS: Ajustado para deslizar perfeitamente sem amassar os textos */
+  /* Container de links: empilhado e centralizado */
   .nav-links {
-    max-width: 65%;
+    max-width: 100%;
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 16px; 
-    padding: 6px 0;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Oculta barra no Firefox */
-    justify-content: flex-start;
+    flex-direction: column; /* Links em coluna */
+    align-items: center;
+    gap: 10px; /* Espaço entre cada link */
+    overflow-x: visible; /* Remove scroll horizontal */
+    white-space: normal; /* Permite quebras de linha se necessário, mas gap deve resolver */
+    padding: 0;
+    justify-content: center;
   }
   
-  .nav-links::-webkit-scrollbar {
-    display: none; /* Oculta barra no Chrome/Safari */
-  }
-  
+  /* Reset de margens e gap */
   .nav-links a {
-    margin-left: 0 !important; /* Limpa a margem do desktop */
-    flex-shrink: 0; /* IMPEDE TOTALMENTE O TEXTO DE QUEBRAR */
-    font-size: 14px;
+    margin: 0 !important;
+    font-size: 15px;
   }
 
-  /* Ajustes gerais de layout no Mobile */
+  /* Ajustes do Hero para o novo header maior */
   .hero {
     flex-direction: column-reverse;
     text-align: center;
-    padding-top: 120px;
+    padding-top: 140px; /* Espaço para o header maior */
     padding-bottom: 40px;
-    min-height: auto;
-    gap: 35px;
+    min-height: auto; /* Deixa a altura fluida */
+    gap: 30px;
   }
 
   .buttons {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 12px;
   }
 
   .btn {
     width: 100%;
-    max-width: 320px;
-    padding: 12px 24px;
+    max-width: 340px;
   }
 
-  /* Cards mais fluidos e confortáveis no Mobile */
-  .card {
-    padding: 20px; /* Reduzido de 30px para dar mais espaço útil ao conteúdo */
-    border-radius: 16px;
-  }
-
+  /* Garante o empilhamento limpo dos grids */
   .grid, .cert-grid {
     grid-template-columns: 1fr !important;
-    gap: 20px;
   }
 
   .section {
-    padding: 50px 0;
+    padding: 60px 0; /* Diminui o espaçamento excessivo */
   }
 
   .carousel-track {
-    height: 230px;
+    height: 240px;
   }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .logo { font-size: 17px; }
-  .nav-links { max-width: 58%; gap: 12px; }
-  .nav-links a { font-size: 13px; }
-  .hero { padding-top: 100px; }
+  .logo { font-size: 20px; }
+  .hero { padding-top: 130px; } /* Ajuste hero para header maior */
   .carousel-track { height: 190px; }
-  .btn { max-width: 100%; }
 }
