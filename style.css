@@ -9,6 +9,11 @@ html {
   scroll-padding-top: 100px;
 }
 
+:root {
+  --x: 50%;
+  --y: 50%;
+}
+
 body {
   font-family: "Josefin Sans", sans-serif;
   background: #010409;
@@ -24,7 +29,7 @@ body {
 #bg {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -3;
 
   background:
     radial-gradient(circle at top left,
@@ -44,7 +49,9 @@ body {
   filter: blur(120px);
 }
 
-/* EFEITO DO MOUSE */
+/* =========================
+   EFEITO DO MOUSE
+========================= */
 
 body::before {
   content: "";
@@ -52,18 +59,18 @@ body::before {
   position: fixed;
   inset: 0;
 
-  z-index: -1;
-
   pointer-events: none;
+
+  z-index: -2;
 
   background:
     radial-gradient(
-      300px circle at var(--x, 50%) var(--y, 50%),
-      rgba(96, 165, 250, 0.18),
+      280px circle at var(--x) var(--y),
+      rgba(96, 165, 250, 0.22),
       transparent 70%
     );
 
-  transition: background-position 0.08s linear;
+  transition: none;
 }
 
 /* =========================
@@ -163,6 +170,9 @@ body::before {
   justify-content: space-between;
 
   gap: 60px;
+
+  position: relative;
+  z-index: 2;
 }
 
 .hero-text {
@@ -268,7 +278,7 @@ body::before {
 .section {
   padding: 100px 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .section-title {
@@ -420,8 +430,9 @@ body::before {
 
 #eventos .events-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
+  align-items: start;
 }
 
 .event-card {
@@ -436,6 +447,7 @@ body::before {
   border: 1px solid rgba(96, 165, 250, 0.15);
 
   width: 100%;
+  height: 100%;
 
   transition:
     transform 0.25s ease,
