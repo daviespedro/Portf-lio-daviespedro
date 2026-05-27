@@ -65,7 +65,7 @@ html::before {
 
   background:
     radial-gradient(
-      280px circle at var(--x) var(--y),
+      circle 280px at var(--x) var(--y),
       rgba(96, 165, 250, 0.22),
       transparent 70%
     );
