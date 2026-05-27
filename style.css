@@ -30,7 +30,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: -3;
-  background: #0a0f1d; /* Azul profundo equilibrado */
+  background: #0a0f1d;
 }
 
 /* Linhas cibernéticas visíveis na medida certa */
@@ -58,7 +58,7 @@ body {
 }
 
 /* =========================
-   EFEITO DO MOUSE (APARENTE E ELEGANTE)
+   EFEITO DO MOUSE (ULTRA-SUAVE E HARMÔNICO)
 ========================= */
 
 html::before {
@@ -68,15 +68,16 @@ html::before {
   pointer-events: none;
   z-index: 9999;
 
-  /* Opacidade em 0.12 para o efeito aparecer de forma nítida e fluida */
+  /* Raio expandido e opacidade baixíssima para eliminar o foco de luz forte */
   background:
     radial-gradient(
-      400px circle at var(--x) var(--y),
-      rgba(96, 165, 250, 0.12),
-      transparent 80%
+      700px circle at var(--x) var(--y),
+      rgba(96, 165, 250, 0.04) 0%,
+      rgba(96, 165, 250, 0.01) 50%,
+      transparent 100%
     );
 
-  mix-blend-mode: screen;
+  mix-blend-mode: normal; /* Mudado para normal para sumir com o estourado branco */
   will-change: background;
 }
 
@@ -130,7 +131,7 @@ html::before {
 
 .nav-links a {
   margin-left: 30px;
-  color: #94a3b8; /* Cor melhorada para leitura */
+  color: #94a3b8;
   text-decoration: none;
   position: relative;
   transition: 0.3s;
@@ -223,7 +224,7 @@ html::before {
 }
 
 /* =========================
-   FOTO PERFIL (MOLDURA AZUL RESTAURADA)
+   FOTO PERFIL
 ========================= */
 
 .hero-img {
@@ -239,7 +240,7 @@ html::before {
   object-position: center top;
   border-radius: 50%;
   
-  /* Moldura azul brilhante de volta */
+  /* Moldura mantida perfeita */
   box-shadow:
     0 0 0 2px rgba(96, 165, 250, 0.4),
     0 0 40px rgba(96, 165, 250, 0.2);
@@ -281,20 +282,16 @@ html::before {
 }
 
 /* =========================
-   CARDS (HARMONIA E CONTRASTE)
+   CARDS
 ========================= */
 
 .card {
-  /* Fundo ligeiramente mais claro que o body para separação visual */
   background: rgba(15, 23, 42, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 30px;
   border-radius: 20px;
-  
-  /* Borda sutilmente azulada para harmonizar com o tema */
   border: 1px solid rgba(96, 165, 250, 0.12);
-  
   display: flex;
   flex-direction: column;
   gap: 10px;
