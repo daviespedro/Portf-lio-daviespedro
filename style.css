@@ -44,8 +44,6 @@ body {
   transition: 0.3s;
 }
 
-/* EFEITO DE BRILHO COM MOUSE */
-
 body::before {
   content: "";
 
