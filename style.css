@@ -27,32 +27,24 @@ body {
   z-index: -2;
 
   background:
-    radial-gradient(
-      circle at top left,
+    radial-gradient(circle at top left,
       rgba(37, 99, 235, 0.22),
-      transparent 35%
-    ),
+      transparent 35%),
 
-    radial-gradient(
-      circle at bottom right,
+    radial-gradient(circle at bottom right,
       rgba(96, 165, 250, 0.16),
-      transparent 30%
-    ),
+      transparent 30%),
 
-    radial-gradient(
-      circle at center,
+    radial-gradient(circle at center,
       rgba(59, 130, 246, 0.10),
-      transparent 40%
-    ),
+      transparent 40%),
 
     #010409;
 
   filter: blur(120px);
 }
 
-/* =========================
-   BRILHO MOUSE
-========================= */
+/* EFEITO DO MOUSE */
 
 body::before {
   content: "";
@@ -60,18 +52,18 @@ body::before {
   position: fixed;
   inset: 0;
 
-  background:
-    radial-gradient(
-      250px circle at var(--x, 50%) var(--y, 50%),
-      rgba(96, 165, 250, 0.14),
-      transparent 100%
-    );
+  z-index: -1;
 
   pointer-events: none;
 
-  z-index: -1;
+  background:
+    radial-gradient(
+      300px circle at var(--x, 50%) var(--y, 50%),
+      rgba(96, 165, 250, 0.18),
+      transparent 70%
+    );
 
-  transition: background 0.05s linear;
+  transition: background-position 0.08s linear;
 }
 
 /* =========================
@@ -171,9 +163,6 @@ body::before {
   justify-content: space-between;
 
   gap: 60px;
-
-  position: relative;
-  z-index: 2;
 }
 
 .hero-text {
@@ -279,7 +268,7 @@ body::before {
 .section {
   padding: 100px 0;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .section-title {
@@ -324,9 +313,6 @@ body::before {
     transform 0.25s ease,
     box-shadow 0.25s ease,
     border 0.25s;
-
-  position: relative;
-  z-index: 2;
 }
 
 .card:hover {
@@ -432,6 +418,12 @@ body::before {
    EVENTOS
 ========================= */
 
+#eventos .events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
 .event-card {
   background: rgba(15, 23, 42, 0.85);
 
@@ -443,16 +435,11 @@ body::before {
 
   border: 1px solid rgba(96, 165, 250, 0.15);
 
-  max-width: 980px;
-
-  margin: 0 auto 30px;
+  width: 100%;
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
-
-  position: relative;
-  z-index: 2;
 }
 
 .event-card:hover {
@@ -486,7 +473,7 @@ body::before {
 
   width: 100%;
 
-  height: 420px;
+  height: 320px;
 
   border-radius: 18px;
 
@@ -575,7 +562,7 @@ body::before {
 ========================= */
 
 .event-content h3 {
-  font-size: 30px;
+  font-size: 28px;
 
   margin-bottom: 14px;
 
@@ -587,7 +574,7 @@ body::before {
 
   line-height: 1.9;
 
-  font-size: 17px;
+  font-size: 16px;
 
   position: relative;
 }
@@ -715,6 +702,11 @@ body::before {
   transition: 0.7s;
 }
 
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* =========================
    CURSOR
 ========================= */
@@ -748,12 +740,12 @@ body::before {
     height: 280px;
   }
 
-  .carousel-track {
-    height: 340px;
+  #eventos .events-grid {
+    grid-template-columns: 1fr;
   }
 
-  .event-card {
-    max-width: 900px;
+  .carousel-track {
+    height: 300px;
   }
 }
 
@@ -812,12 +804,11 @@ body::before {
   }
 
   .carousel-track {
-    height: 260px;
+    height: 240px;
   }
 
   .event-card {
     padding: 15px;
-    max-width: 100%;
   }
 
   .event-content h3 {
