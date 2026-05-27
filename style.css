@@ -70,7 +70,9 @@ body {
   height: 80px;
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .logo {
   color: white;
@@ -79,7 +81,9 @@ body {
   letter-spacing: 1px;
 }
 
-/* LINKS */
+/* =========================
+   LINKS
+========================= */
 
 .nav-links {
   display: flex;
@@ -157,7 +161,9 @@ body {
   line-height: 1.8;
 }
 
-/* BOTÕES */
+/* =========================
+   BOTÕES
+========================= */
 
 .buttons {
   display: flex;
@@ -193,7 +199,9 @@ body {
     0 10px 25px rgba(96, 165, 250, 0.3);
 }
 
-/* FOTO PERFIL */
+/* =========================
+   FOTO PERFIL
+========================= */
 
 .hero-img {
   display: flex;
@@ -206,8 +214,6 @@ body {
   height: 340px;
 
   object-fit: cover;
-
-  /* CENTRALIZA MELHOR O ROSTO */
   object-position: center top;
 
   border-radius: 50%;
@@ -341,7 +347,9 @@ body {
   color: #60a5fa;
 }
 
-/* BOTÃO PROJETO */
+/* =========================
+   BOTÃO PROJETO
+========================= */
 
 .project-btn {
   margin: 22px;
@@ -384,13 +392,13 @@ body {
 
   backdrop-filter: blur(10px);
 
-  padding: 22px;
+  padding: 18px;
 
   border-radius: 20px;
 
   border: 1px solid rgba(96, 165, 250, 0.15);
 
-  max-width: 920px;
+  max-width: 760px;
 
   margin: auto;
 
@@ -421,9 +429,9 @@ body {
 
   overflow: hidden;
 
-  border-radius: 18px;
+  border-radius: 16px;
 
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .carousel-track {
@@ -431,40 +439,41 @@ body {
 
   width: 100%;
 
-  height: 420px;
+  height: 320px;
 
-  border-radius: 18px;
+  border-radius: 16px;
 
   overflow: hidden;
+
+  background: #0f172a;
 }
 
 .carousel-img {
   position: absolute;
-
   inset: 0;
 
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
+  /* MUITO IMPORTANTE */
+  object-fit: contain;
 
-  /* CENTRALIZA MELHOR */
-  object-position: center center;
+  object-position: center;
 
-  border-radius: 18px;
+  background: #0f172a;
 
   opacity: 0;
 
-  transition:
-    opacity 0.5s ease,
-    transform 0.4s ease;
+  transition: opacity 0.5s ease;
 }
 
 .carousel-img.active {
   opacity: 1;
 }
 
-/* BOTÕES */
+/* =========================
+   BOTÕES
+========================= */
 
 .carousel-btn {
   position: absolute;
@@ -472,19 +481,19 @@ body {
 
   transform: translateY(-50%);
 
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 
   border: none;
   border-radius: 50%;
 
   cursor: pointer;
 
-  font-size: 22px;
+  font-size: 20px;
 
   color: white;
 
-  background: rgba(2, 6, 23, 0.7);
+  background: rgba(2, 6, 23, 0.75);
 
   z-index: 10;
 
@@ -503,11 +512,11 @@ body {
 }
 
 .prev {
-  left: 18px;
+  left: 14px;
 }
 
 .next {
-  right: 18px;
+  right: 14px;
 }
 
 /* =========================
@@ -515,9 +524,9 @@ body {
 ========================= */
 
 .event-content h3 {
-  font-size: 30px;
+  font-size: 28px;
 
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 
   color: #60a5fa;
 }
@@ -525,15 +534,15 @@ body {
 .event-description {
   color: #dbe4f3;
 
-  line-height: 1.9;
+  line-height: 1.8;
 
-  font-size: 17px;
+  font-size: 16px;
 
   position: relative;
 }
 
 .collapsed {
-  max-height: 120px;
+  max-height: 110px;
   overflow: hidden;
 }
 
@@ -546,7 +555,7 @@ body {
   bottom: 0;
 
   width: 100%;
-  height: 55px;
+  height: 50px;
 
   background:
     linear-gradient(
@@ -555,12 +564,14 @@ body {
     );
 }
 
-/* LER MAIS */
+/* =========================
+   LER MAIS
+========================= */
 
 .read-more-btn {
-  margin-top: 22px;
+  margin-top: 18px;
 
-  padding: 12px 22px;
+  padding: 11px 20px;
 
   border-radius: 10px;
 
@@ -574,7 +585,7 @@ body {
 
   transition: 0.3s;
 
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .read-more-btn:hover {
@@ -649,7 +660,9 @@ body {
   transform: translateY(0);
 }
 
-/* CURSOR */
+/* =========================
+   CURSOR
+========================= */
 
 .cursor {
   animation: blink 1s infinite;
@@ -681,7 +694,7 @@ body {
   }
 
   .carousel-track {
-    height: 360px;
+    height: 280px;
   }
 }
 
@@ -698,6 +711,7 @@ body {
 
   .nav {
     flex-direction: column;
+
     justify-content: center;
 
     gap: 15px;
@@ -780,7 +794,7 @@ body {
   }
 
   .carousel-track {
-    height: 260px;
+    height: 220px;
   }
 
   .event-content h3 {
@@ -793,7 +807,7 @@ body {
   }
 
   .event-card {
-    padding: 18px;
+    padding: 15px;
   }
 }
 
@@ -837,17 +851,17 @@ body {
   }
 
   .carousel-track {
-    height: 210px;
+    height: 190px;
   }
 
   .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
   }
 
   .event-content h3 {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   .event-description {
