@@ -19,6 +19,131 @@
       section {
         scroll-margin-top: 100px;
       }
+
+      /* =========================
+         EVENTOS
+      ========================= */
+
+      .event-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 30px;
+        backdrop-filter: blur(10px);
+      }
+
+      .carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        margin-bottom: 25px;
+      }
+
+      .carousel-track {
+        position: relative;
+        width: 100%;
+        height: 450px;
+      }
+
+      .carousel-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .carousel-img.active {
+        opacity: 1;
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+
+        border: none;
+        width: 45px;
+        height: 45px;
+
+        border-radius: 50%;
+        cursor: pointer;
+
+        z-index: 10;
+
+        font-size: 20px;
+        transition: 0.3s;
+      }
+
+      .carousel-btn:hover {
+        background: #00bfff;
+      }
+
+      .prev {
+        left: 15px;
+      }
+
+      .next {
+        right: 15px;
+      }
+
+      .event-content h3 {
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+
+      .event-description {
+        line-height: 1.8;
+        color: #d9d9d9;
+        transition: 0.3s;
+      }
+
+      .collapsed {
+        max-height: 90px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .collapsed::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 40px;
+
+        background: linear-gradient(
+          transparent,
+          rgba(15, 15, 15, 1)
+        );
+      }
+
+      .read-more-btn {
+        margin-top: 15px;
+        background: transparent;
+        border: 1px solid #00bfff;
+
+        color: #00bfff;
+        padding: 10px 18px;
+
+        border-radius: 10px;
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      .read-more-btn:hover {
+        background: #00bfff;
+        color: #000;
+      }
     </style>
   </head>
 
@@ -34,6 +159,7 @@
           <a href="#sobre">Sobre</a>
           <a href="#habilidades">Habilidades</a>
           <a href="#projetos">Projetos</a>
+          <a href="#eventos">Eventos</a>
           <a href="#certificados">Certificados</a>
           <a href="#contato">Contato</a>
         </div>
@@ -63,7 +189,7 @@
           </a>
 
           <a
-            href=".//assets/Curriculo original Pedro.pdf"
+            href="./assets/Curriculo original Pedro.pdf"
             download
             class="btn"
           >
@@ -155,6 +281,7 @@
       <h2 class="section-title">Projetos</h2>
 
       <div class="grid">
+
         <!-- RADAR CIDADAO -->
         <div class="card project-card">
           <img
@@ -182,7 +309,9 @@
             Atuei em Frontend e Backend.
           </p>
 
-          <p class="tech">Python • API REST • MySQL • JavaScript • Docker</p>
+          <p class="tech">
+            Python • API REST • MySQL • JavaScript • Docker
+          </p>
 
           <a
             href="https://github.com/eugeniojonatas/Radar-Cidadao-Froggrammers"
@@ -201,15 +330,15 @@
           </a>
         </div>
 
-        <!-- API -->
+        <!-- LUMINELLI -->
         <div class="card project-card">
           <img
             src="./assets/imagens/projeto2.png"
             class="project-img"
-            alt="Luminelli pratas"
+            alt="Luminelli Pratas"
           />
 
-          <h3>Luminelli pratas</h3>
+          <h3>Luminelli Pratas</h3>
 
           <p class="project-desc">
             <strong>Problema:</strong>
@@ -228,7 +357,9 @@
             Atuei em Frontend, Backend e Banco de Dados.
           </p>
 
-          <p class="tech">HTML • MySQL • CSS • JavaScript</p>
+          <p class="tech">
+            HTML • MySQL • CSS • JavaScript
+          </p>
 
           <a
             href="https://github.com/daviespedro"
@@ -245,6 +376,68 @@
           >
             Em Desenvolvimento
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTOS -->
+    <section id="eventos" class="container section reveal">
+      <h2 class="section-title">Eventos</h2>
+
+      <div class="event-card">
+
+        <!-- CARROSSEL -->
+        <div class="carousel">
+
+          <button class="carousel-btn prev" onclick="mudarSlide(-1)">
+            ❮
+          </button>
+
+          <div class="carousel-track">
+            <img
+              src="./assets/eventos/evento1.jpg"
+              class="carousel-img active"
+            />
+
+            <img
+              src="./assets/eventos/evento2.jpg"
+              class="carousel-img"
+            />
+
+            <img
+              src="./assets/eventos/evento3.jpg"
+              class="carousel-img"
+            />
+          </div>
+
+          <button class="carousel-btn next" onclick="mudarSlide(1)">
+            ❯
+          </button>
+
+        </div>
+
+        <!-- TEXTO -->
+        <div class="event-content">
+
+          <h3>Science Business Meeting</h3>
+
+          <p class="event-description collapsed" id="eventText">
+            Participei do Science Business Meeting atuando como voluntário
+            representando o PIT. Durante o evento tive contato com empresas,
+            startups, profissionais da área de tecnologia e inovação,
+            auxiliando na organização e suporte das atividades.
+
+            A experiência proporcionou networking, desenvolvimento profissional,
+            aprendizado sobre inovação e aproximação com o ecossistema
+            tecnológico e empresarial. Além disso, pude fortalecer habilidades
+            como comunicação, trabalho em equipe e resolução de problemas
+            em ambientes dinâmicos.
+          </p>
+
+          <button class="read-more-btn" onclick="toggleTexto()">
+            Ler mais
+          </button>
+
         </div>
       </div>
     </section>
@@ -268,6 +461,7 @@
               Certificado de participação na XXV Maratona Interna de Programação
               da FATEC São José dos Campos.
             </p>
+
             <a
               href="./assets/certificados/importfe.png"
               target="_blank"
@@ -279,6 +473,7 @@
         </div>
       </div>
     </section>
+
     <!-- CONTATO -->
     <section id="contato" class="container section reveal">
       <h2 class="section-title">Contato</h2>
@@ -300,6 +495,59 @@
         </p>
       </div>
     </section>
+
+    <script>
+      /* =========================
+         CARROSSEL EVENTOS
+      ========================= */
+
+      let slideAtual = 0;
+
+      const slides = document.querySelectorAll(".carousel-img");
+
+      function mostrarSlide(index) {
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        slides[index].classList.add("active");
+      }
+
+      function mudarSlide(direcao) {
+
+        slideAtual += direcao;
+
+        if (slideAtual >= slides.length) {
+          slideAtual = 0;
+        }
+
+        if (slideAtual < 0) {
+          slideAtual = slides.length - 1;
+        }
+
+        mostrarSlide(slideAtual);
+      }
+
+      /* =========================
+         LER MAIS
+      ========================= */
+
+      function toggleTexto() {
+
+        const texto = document.getElementById("eventText");
+
+        const botao = document.querySelector(".read-more-btn");
+
+        texto.classList.toggle("collapsed");
+
+        if (texto.classList.contains("collapsed")) {
+          botao.innerText = "Ler mais";
+        } else {
+          botao.innerText = "Ler menos";
+        }
+      }
+    </script>
 
     <script src="script.js"></script>
   </body>
