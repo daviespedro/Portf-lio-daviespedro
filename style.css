@@ -14,6 +14,7 @@ body {
   background: #010409;
   color: white;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* =========================
@@ -23,26 +24,35 @@ body {
 #bg {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
 
   background:
-    radial-gradient(circle at top left,
+    radial-gradient(
+      circle at top left,
       rgba(37, 99, 235, 0.22),
-      transparent 35%),
+      transparent 35%
+    ),
 
-    radial-gradient(circle at bottom right,
+    radial-gradient(
+      circle at bottom right,
       rgba(96, 165, 250, 0.16),
-      transparent 30%),
+      transparent 30%
+    ),
 
-    radial-gradient(circle at center,
+    radial-gradient(
+      circle at center,
       rgba(59, 130, 246, 0.10),
-      transparent 40%),
+      transparent 40%
+    ),
 
     #010409;
 
   filter: blur(120px);
-  transition: 0.3s;
 }
+
+/* =========================
+   BRILHO MOUSE
+========================= */
 
 body::before {
   content: "";
@@ -52,16 +62,16 @@ body::before {
 
   background:
     radial-gradient(
-      circle at var(--x, 50%) var(--y, 50%),
-      rgba(96, 165, 250, 0.16),
-      transparent 220px
+      250px circle at var(--x, 50%) var(--y, 50%),
+      rgba(96, 165, 250, 0.14),
+      transparent 100%
     );
 
   pointer-events: none;
 
-  z-index: 0;
+  z-index: -1;
 
-  transition: 0.08s;
+  transition: background 0.05s linear;
 }
 
 /* =========================
@@ -161,6 +171,9 @@ body::before {
   justify-content: space-between;
 
   gap: 60px;
+
+  position: relative;
+  z-index: 2;
 }
 
 .hero-text {
@@ -266,7 +279,7 @@ body::before {
 .section {
   padding: 100px 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .section-title {
@@ -311,6 +324,9 @@ body::before {
     transform 0.25s ease,
     box-shadow 0.25s ease,
     border 0.25s;
+
+  position: relative;
+  z-index: 2;
 }
 
 .card:hover {
@@ -434,6 +450,9 @@ body::before {
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
+
+  position: relative;
+  z-index: 2;
 }
 
 .event-card:hover {
@@ -691,14 +710,9 @@ body::before {
 ========================= */
 
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.7s;
-}
-
-.reveal.active {
   opacity: 1;
   transform: translateY(0);
+  transition: 0.7s;
 }
 
 /* =========================
