@@ -1,167 +1,238 @@
-// ==========================================
-//  MENU HAMBÚRGUER (RESPONSIVO COM EFEITO DE VIDRO)
-// ==========================================
-const menuBtn = document.getElementById("menu-btn");
-const navMenu = document.getElementById("nav-menu");
-const links Internos = document.querySelectorAll(".nav-links a");
+/* =========================
+   EFEITO DIGITANDO
+========================= */
 
-if (menuBtn && navMenu) {
-  // Abre e fecha o menu ao clicar no botão hambúrguer
-  menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("open");
-    navMenu.classList.toggle("open");
-  });
-
-  // Fecha o menu lateral automaticamente ao clicar em qualquer link
-  linksInternos.forEach((link) => {
-    link.addEventListener("click", () => {
-      menuBtn.classList.remove("open");
-      navMenu.classList.remove("open");
-    });
-  });
-}
-
-// ==========================================
-//  EFEITO DIGITANDO (HERO TITLE)
-// ==========================================
-const nomeCompleto = "Pedro Davies";
-let caractereIndex = 0;
+const nome = "Pedro Davies";
+let i = 0;
 
 function digitar() {
-  const elementoNome = document.getElementById("nome");
-  if (!elementoNome) return;
 
-  if (caractereIndex < nomeCompleto.length) {
-    elementoNome.innerHTML += nomeCompleto.charAt(caractereIndex);
-    caractereIndex++;
-    setTimeout(digitar, 90);
+  const elemento =
+    document.getElementById("nome");
+
+  if (!elemento) return;
+
+  if (i < nome.length) {
+
+    elemento.innerHTML += nome.charAt(i);
+
+    i++;
+
+    setTimeout(digitar, 70);
   }
 }
 
-// ==========================================
-//  RASTREAMENTO DO MOUSE (VARIÁVEIS CSS)
-// ==========================================
+
 document.addEventListener("mousemove", (e) => {
-  document.documentElement.style.setProperty("--x", `${e.clientX}px`);
-  document.documentElement.style.setProperty("--y", `${e.clientY}px`);
+  document.documentElement.style.setProperty(
+    "--x",
+    `${e.clientX}px`
+  );
+
+  document.documentElement.style.setProperty(
+    "--y",
+    `${e.clientY}px`
+  );
 });
+/* =========================
+   REVEAL SCROLL
+========================= */
 
-// ==========================================
-//  REVEAL SCROLL & NAVBAR LINKS ATIVOS
-// ==========================================
-const elementosReveal = document.querySelectorAll(".reveal");
-const secoesPagora = document.querySelectorAll("section, header");
-const linksNavbar = document.querySelectorAll(".nav-links a");
+function reveal() {
 
-function gerenciarScroll() {
-  const windowHeight = window.innerHeight;
-  let secaoAtualId = "";
+  const reveals =
+    document.querySelectorAll(".reveal");
 
-  // 1. Efeito Reveal dos Elementos
-  elementosReveal.forEach((elemento) => {
-    const elementTop = elemento.getBoundingClientRect().top;
-    const pontoDeCorte = 80;
+  reveals.forEach((elemento) => {
 
-    if (elementTop < windowHeight - pontoDeCorte) {
+    const windowHeight =
+      window.innerHeight;
+
+    const elementTop =
+      elemento.getBoundingClientRect().top;
+
+    const visible = 80;
+
+    if (elementTop < windowHeight - visible) {
       elemento.classList.add("active");
     }
+
   });
 
-  // 2. Mapeamento da Seção Ativa na Navbar
-  let topicoScrollY = window.pageYOffset;
-
-  secoesPagora.forEach((secao) => {
-    const sectionTop = secao.offsetTop - 160;
-    const sectionHeight = secao.offsetHeight;
-    const id = secao.getAttribute("id");
-
-    if (topicoScrollY >= sectionTop && topicoScrollY < sectionTop + sectionHeight) {
-      secaoAtualId = id || "";
-    }
-  });
-
-  if (secaoAtualId) {
-    linksNavbar.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${secaoAtualId}`) {
-        link.classList.add("active");
-      }
-    });
-  }
 }
 
-window.addEventListener("scroll", gerenciarScroll);
+window.addEventListener("scroll", reveal);
 
-// ==========================================
-//  BACKGROUND DINÂMICO GRADIENTE
-// ==========================================
-const bgGradiente = document.getElementById("bg");
+/* =========================
+   NAVBAR ACTIVE
+========================= */
 
-if (bgGradiente) {
-  document.addEventListener("mousemove", (e) => {
-    const percentX = (e.clientX / window.innerWidth) * 100;
-    const percentY = (e.clientY / window.innerHeight) * 100;
+const links =
+  document.querySelectorAll(".nav-links a");
 
-    bgGradiente.style.background = `
-      radial-gradient(circle at ${percentX}% ${percentY}%, rgba(96,165,250,0.15), transparent 25%),
-      radial-gradient(circle at top left, rgba(37,99,235,0.15), transparent 40%),
-      radial-gradient(circle at bottom right, rgba(96,165,250,0.1), transparent 35%),
-      #050814
-    `;
+window.addEventListener("scroll", () => {
+
+  let scrollY =
+    window.pageYOffset;
+
+  links.forEach((link) => {
+
+    const id =
+      link.getAttribute("href");
+
+    const secao =
+      document.querySelector(id);
+
+    if (!secao) return;
+
+    const sectionTop =
+      secao.offsetTop - 150;
+
+    const sectionHeight =
+      secao.offsetHeight;
+
+    if (
+      scrollY >= sectionTop &&
+      scrollY < sectionTop + sectionHeight
+    ) {
+
+      links.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      link.classList.add("active");
+
+    }
+
   });
+
+});
+
+/* =========================
+   BACKGROUND DINÂMICO
+========================= */
+
+const bg =
+  document.getElementById("bg");
+
+document.addEventListener("mousemove", (e) => {
+
+  const x =
+    (e.clientX / window.innerWidth) * 100;
+
+  const y =
+    (e.clientY / window.innerHeight) * 100;
+
+  bg.style.background = `
+
+    radial-gradient(
+      circle at ${x}% ${y}%,
+      rgba(96,165,250,0.18),
+      transparent 22%
+    ),
+
+    radial-gradient(
+      circle at top left,
+      rgba(37,99,235,0.18),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      rgba(96,165,250,0.12),
+      transparent 30%
+    ),
+
+    #010409
+  `;
+
+});
+
+/* =========================
+   CARROSSEL EVENTOS
+========================= */
+
+let slideAtual = 0;
+
+const slides =
+  document.querySelectorAll(".carousel-img");
+
+function mostrarSlide(index) {
+
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+
+  slides[index].classList.add("active");
+
 }
 
-// ==========================================
-//  CARROSSEL DE EVENTOS (MULTI-CARDS INDEPENDENTES)
-// ==========================================
-document.querySelectorAll(".carousel").forEach((carousel) => {
-  const imagens = carousel.querySelectorAll(".carousel-img");
-  const btnPrev = carousel.querySelector(".prev");
-  const btnNext = carousel.querySelector(".next");
-  let slideIndex = 0;
+function mudarSlide(direcao) {
 
-  if (imagens.length === 0) return;
+  slideAtual += direcao;
 
-  function alternarImagem(novoIndex) {
-    imagens.forEach((img) => img.classList.remove("active"));
-    imagens[novoIndex].classList.add("active");
+  if (slideAtual >= slides.length) {
+    slideAtual = 0;
   }
 
-  btnNext.addEventListener("click", () => {
-    slideIndex = (slideIndex + 1) % imagens.length;
-    alternarImagem(slideIndex);
-  });
+  if (slideAtual < 0) {
+    slideAtual = slides.length - 1;
+  }
 
-  btnPrev.addEventListener("click", () => {
-    slideIndex = (slideIndex - 1 + imagens.length) % imagens.length;
-    alternarImagem(slideIndex);
-  });
+  mostrarSlide(slideAtual);
 
-  // Autoplay independente para cada carrossel (5 segundos)
-  setInterval(() => {
-    slideIndex = (slideIndex + 1) % imagens.length;
-    alternarImagem(slideIndex);
-  }, 5000);
-});
+}
 
-// ==========================================
-//  COMPORTAMENTO LER MAIS (MULTI-CARDS)
-// ==========================================
-document.querySelectorAll(".read-more-btn").forEach((botao) => {
-  botao.addEventListener("click", () => {
-    const textoContainer = botao.parentElement.querySelector(".event-description");
-    
-    if (textoContainer) {
-      textoContainer.classList.toggle("collapsed");
-      botao.innerText = textoContainer.classList.contains("collapsed") ? "Ler mais" : "Ler menos";
-    }
-  });
-});
+/* AUTO PLAY */
 
-// ==========================================
-//  DISPAROS NO CARREGAMENTO DA PÁGINA
-// ==========================================
+setInterval(() => {
+
+  if (slides.length > 0) {
+    mudarSlide(1);
+  }
+
+}, 5000);
+
+/* =========================
+   LER MAIS EVENTO
+========================= */
+
+function toggleTexto() {
+
+  const texto =
+    document.getElementById("eventText");
+
+  const botao =
+    document.querySelector(".read-more-btn");
+
+  if (!texto || !botao) return;
+
+  texto.classList.toggle("collapsed");
+
+  if (texto.classList.contains("collapsed")) {
+
+    botao.innerText = "Ler mais";
+
+  } else {
+
+    botao.innerText = "Ler menos";
+
+  }
+
+}
+
+/* =========================
+   LOAD
+========================= */
+
 window.onload = () => {
+
   digitar();
-  gerenciarScroll();
+
+  reveal();
+
+  if (slides.length > 0) {
+    mostrarSlide(slideAtual);
+  }
+
 };
