@@ -6,7 +6,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 80px;
 }
 
 :root {
@@ -16,14 +16,14 @@ html {
 
 body {
   font-family: "Josefin Sans", sans-serif;
-  background: #050814; /* Um toque sutil mais escuro */
+  background: #050814;
   color: white;
   overflow-x: hidden;
   position: relative;
 }
 
 /* =========================
-   BACKGROUND PERFEITO (AJUSTADO)
+   BACKGROUND PERFEITO
 ========================= */
 
 #bg {
@@ -33,7 +33,6 @@ body {
   background: #050814;
 }
 
-/* Linhas cibernéticas */
 #bg::before {
   content: "";
   position: absolute;
@@ -46,7 +45,6 @@ body {
   -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
 }
 
-/* Névoas de luz ambiente */
 #bg::after {
   content: "";
   position: absolute;
@@ -58,7 +56,7 @@ body {
 }
 
 /* =========================
-   EFEITO DO MOUSE (UM POUCO MAIS FORTE / COMPACTO)
+   EFEITO DO MOUSE (OTIMIZADO)
 ========================= */
 
 html::before {
@@ -67,8 +65,6 @@ html::before {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-
-  /* Opacidade ajustada para 0.07 e raio para 600px: ganha nitidez sem estourar */
   background:
     radial-gradient(
       600px circle at var(--x) var(--y),
@@ -76,20 +72,26 @@ html::before {
       rgba(96, 165, 250, 0.02) 50%,
       transparent 100%
     );
-
   mix-blend-mode: normal;
   will-change: background;
 }
 
+/* Desativa o efeito do mouse em telas touch para não gerar manchas estáticas */
+@media (hover: none) {
+  html::before {
+    display: none;
+  }
+}
+
 /* =========================
-   NAVBAR
+   NAVBAR & CONTAINERS
 ========================= */
 
 .navbar {
   position: fixed;
   width: 100%;
   height: 80px;
-  background: rgba(5, 8, 20, 0.85); /* Atualizado para casar com o novo fundo */
+  background: rgba(5, 8, 20, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(96, 165, 250, 0.06);
@@ -109,20 +111,13 @@ html::before {
   height: 80px;
 }
 
-/* =========================
-   LOGO
-========================= */
-
 .logo {
   color: white;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: 1px;
+  flex-shrink: 0;
 }
-
-/* =========================
-   LINKS
-========================= */
 
 .nav-links {
   display: flex;
@@ -135,6 +130,7 @@ html::before {
   text-decoration: none;
   position: relative;
   transition: 0.3s;
+  font-size: 15px;
 }
 
 .nav-links a:hover,
@@ -159,16 +155,17 @@ html::before {
 }
 
 /* =========================
-   HERO
+   HERO (COM TIPOGRAFIA FLUIDA)
 ========================= */
 
 .hero {
-  padding-top: 120px;
+  padding-top: 100px;
+  padding-bottom: 60px;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 40px;
   position: relative;
   z-index: 2;
 }
@@ -177,21 +174,23 @@ html::before {
   max-width: 650px;
 }
 
+/* O clamp ajusta o tamanho da fonte dinamicamente de acordo com a tela */
 .title {
-  font-size: 72px;
+  font-size: clamp(38px, 6vw, 72px);
   margin-bottom: 15px;
-  line-height: 1.05;
+  line-height: 1.1;
+  font-weight: 700;
 }
 
 .subtitle {
   color: #60a5fa;
-  font-size: 32px;
+  font-size: clamp(20px, 3vw, 32px);
   margin-bottom: 20px;
 }
 
 .desc {
   color: #cbd5e1;
-  font-size: 18px;
+  font-size: clamp(15px, 1.8vw, 18px);
   line-height: 1.8;
 }
 
@@ -201,7 +200,7 @@ html::before {
 
 .buttons {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   margin-top: 35px;
   flex-wrap: wrap;
 }
@@ -214,6 +213,7 @@ html::before {
   color: #e2e8f0;
   text-decoration: none;
   transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .btn:hover {
@@ -231,19 +231,18 @@ html::before {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .hero-img img {
-  width: 340px;
-  height: 340px;
+  width: clamp(220px, 25vw, 340px);
+  height: clamp(220px, 25vw, 340px);
   object-fit: cover;
   object-position: center top;
   border-radius: 50%;
-  
   box-shadow:
     0 0 0 2px rgba(96, 165, 250, 0.4),
     0 0 40px rgba(96, 165, 250, 0.2);
-    
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -255,29 +254,25 @@ html::before {
 }
 
 /* =========================
-   SEÇÕES
+   SEÇÕES & GRIDS
 ========================= */
 
 .section {
-  padding: 100px 0;
+  padding: 80px 0;
   position: relative;
   z-index: 2;
 }
 
 .section-title {
-  margin-bottom: 50px;
-  font-size: 42px;
+  margin-bottom: 40px;
+  font-size: clamp(28px, 4vw, 42px);
   color: #60a5fa;
 }
-
-/* =========================
-   GRID
-========================= */
 
 .grid {
   display: grid;
   gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 /* =========================
@@ -294,6 +289,7 @@ html::before {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  height: 100%;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
 }
 
@@ -308,16 +304,12 @@ html::before {
 .card h3 {
   margin-bottom: 15px;
   color: #60a5fa;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .card p {
-  line-height: 1.8;
+  line-height: 1.7;
   color: #cbd5e1;
-}
-
-.card strong {
-  color: #ffffff;
 }
 
 /* =========================
@@ -331,15 +323,10 @@ html::before {
 
 .project-img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
   object-position: center;
   transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.project-card:hover .project-img {
-  transform: scale(1.03);
-  filter: brightness(1.05);
 }
 
 .project-card h3 {
@@ -348,8 +335,6 @@ html::before {
 
 .project-desc {
   padding: 10px 22px;
-  color: #cbd5e1;
-  line-height: 1.8;
 }
 
 .tech {
@@ -357,10 +342,6 @@ html::before {
   font-size: 13px;
   color: #60a5fa;
 }
-
-/* =========================
-   BOTÃO PROJETO
-========================= */
 
 .project-btn {
   margin: 22px;
@@ -373,6 +354,7 @@ html::before {
   display: block;
   text-align: center;
   transition: 0.3s;
+  font-weight: 600;
 }
 
 .project-btn:hover {
@@ -386,7 +368,7 @@ html::before {
 
 #eventos .events-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   align-items: start;
 }
@@ -399,16 +381,7 @@ html::before {
   border-radius: 22px;
   border: 1px solid rgba(96, 165, 250, 0.12);
   width: 100%;
-  height: 100%;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
-}
-
-.event-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(96, 165, 250, 0.35);
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    0 0 35px rgba(96, 165, 250, 0.15);
 }
 
 /* =========================
@@ -427,7 +400,7 @@ html::before {
 .carousel-track {
   position: relative;
   width: 100%;
-  height: 320px;
+  height: 300px;
   border-radius: 18px;
   overflow: hidden;
   background: #0f172a;
@@ -442,8 +415,6 @@ html::before {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
-  background: #0f172a;
   padding: 10px;
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -454,54 +425,42 @@ html::before {
   transform: scale(1.01);
 }
 
-/* =========================
-   BOTÕES CARROSSEL
-========================= */
-
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
-  background: rgba(5, 8, 20, 0.75);
+  background: rgba(5, 8, 20, 0.8);
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.3s;
 }
 
 .carousel-btn:hover {
   background: #2563eb;
-  box-shadow: 0 0 18px rgba(96, 165, 250, 0.4);
 }
 
-.prev {
-  left: 14px;
-}
-
-.next {
-  right: 14px;
-}
-
-/* =========================
-   TEXTO EVENTO
-========================= */
+.prev { left: 14px; }
+.next { right: 14px; }
 
 .event-content h3 {
-  font-size: 28px;
+  font-size: 24px;
   margin-bottom: 14px;
   color: #60a5fa;
 }
 
 .event-description {
   color: #cbd5e1;
-  line-height: 1.9;
-  font-size: 16px;
-  position: relative;
+  line-height: 1.8;
+  font-size: 15px;
 }
 
 .collapsed {
@@ -519,10 +478,6 @@ html::before {
   background: linear-gradient(transparent, rgba(15, 23, 42, 1));
 }
 
-/* =========================
-   LER MAIS
-========================= */
-
 .read-more-btn {
   margin-top: 18px;
   padding: 11px 20px;
@@ -531,24 +486,18 @@ html::before {
   background: transparent;
   color: #60a5fa;
   cursor: pointer;
-  transition: 0.3s;
   font-size: 14px;
-}
-
-.read-more-btn:hover {
-  background: #2563eb;
-  color: white;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+  transition: 0.3s;
 }
 
 /* =========================
-   CERTIFICADOS (PREMIUM & SIMÉTRICO)
+   CERTIFICADOS
 ========================= */
 
 .cert-grid {
   display: grid;
   gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .cert-card {
@@ -560,22 +509,12 @@ html::before {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: 100%; /* Força todos os cards da linha a terem o mesmo tamanho */
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+  height: 100%;
 }
 
-.cert-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(96, 165, 250, 0.35);
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(96, 165, 250, 0.1);
-}
-
-/* Container da imagem: protege contra cortes e serve de berço para o placeholder */
 .cert-img-container {
   width: 100%;
-  height: 220px;
+  height: 200px;
   background: #0b1329; 
   display: flex;
   align-items: center;
@@ -588,17 +527,10 @@ html::before {
 .cert-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Mostra o certificado INTEIRO sem amputar assinaturas */
+  object-fit: contain;
   padding: 12px;
-  transition: transform 0.4s ease;
-  z-index: 2;
 }
 
-.cert-card:hover .cert-img {
-  transform: scale(1.03);
-}
-
-/* Placeholder tecnológico caso você não tenha o print da imagem ainda */
 .cert-placeholder {
   position: absolute;
   inset: 0;
@@ -609,43 +541,20 @@ html::before {
   justify-content: center;
   gap: 12px;
   color: #60a5fa;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  z-index: 1;
-}
-
-.cert-placeholder::before {
-  content: "📄";
-  font-size: 42px;
-  opacity: 0.6;
-  filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.3));
 }
 
 .cert-content {
   padding: 25px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Faz o bloco de texto preencher o espaço restante */
+  flex-grow: 1;
 }
 
-.cert-content h3 {
-  color: #60a5fa;
-  font-size: 20px;
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-
-.cert-desc {
-  color: #cbd5e1;
-  line-height: 1.7;
-  font-size: 15px;
-  margin-bottom: 25px;
-}
-
-/* Botão isolado e calibrado para a base do card */
 .cert-btn {
-  margin-top: auto; /* Alinha o botão cirurgicamente na linha de baixo de todos os cards */
+  margin-top: auto;
   padding: 13px;
   background: linear-gradient(135deg, #2563eb, #3b82f6);
   border-radius: 10px;
@@ -653,78 +562,97 @@ html::before {
   text-decoration: none;
   text-align: center;
   font-weight: 600;
-  transition: all 0.3s;
-}
-
-.cert-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-}
-/* =========================
-   CONTATO
-========================= */
-
-#contato .label {
-  color: #60a5fa;
-  font-weight: 600;
-}
-
-#contato .card p {
-  color: #ffffff;
 }
 
 /* =========================
-   REVEAL
+   CONTATO & REVEAL
 ========================= */
 
-.reveal {
-  opacity: 1;
-  transform: translateY(0);
-  transition: 0.7s;
-}
+#contato .label { color: #60a5fa; font-weight: 600; }
+#contato .card p { color: #ffffff; }
+.reveal { opacity: 1; transform: translateY(0); }
 
-/* =========================
-   RESPONSIVO
-========================= */
+/* ==================================================
+   MÍDIA QUERIES (RESPONSIVIDADE IMPECÁVEL)
+================================================== */
 
 @media (max-width: 1024px) {
-  .hero { gap: 50px; }
-  .title { font-size: 58px; }
-  .hero-img img { width: 280px; height: 280px; }
-  #eventos .events-grid { grid-template-columns: 1fr; }
-  .carousel-track { height: 300px; }
+  .container { padding: 0 24px; }
+  .hero { gap: 40px; }
+  #eventos .events-grid { grid-template-columns: 1fr; } /* Quebra eventos para 1 coluna */
 }
 
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
-  .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding-top: 190px;
-    gap: 50px;
+  
+  /* Sistema de navegação horizontal por toque super clean */
+  .nav {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 0;
+    gap: 12px;
   }
-  .title { font-size: 46px; }
-  .subtitle { font-size: 24px; }
-  .desc { font-size: 16px; }
-  .buttons { flex-direction: column; align-items: center; width: 100%; }
-  .btn { width: 100%; max-width: 320px; text-align: center; }
-  .hero-img img { width: 230px; height: 230px; }
-  .section-title { font-size: 34px; text-align: center; }
-  .grid { grid-template-columns: 1fr; }
-  .carousel-track { height: 240px; }
-  .event-card { padding: 15px; }
-  .event-content h3 { font-size: 24px; }
-  .event-description { font-size: 15px; }
+  
+  .nav-links {
+    width: 100vw;
+    margin-left: -20px; /* Alinha o scroll com a borda da tela */
+    padding: 0 20px 8px 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+  }
+  
+  /* Esconde a barra de rolagem feia do sistema no mobile */
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .nav-links a {
+    margin-left: 0;
+    margin-right: 25px;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  .hero {
+    flex-direction: column-reverse; /* Foto em cima, texto embaixo */
+    text-align: center;
+    padding-top: 150px;
+    gap: 35px;
+    justify-content: center;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+  }
+
+  /* Força todas as grades a adotarem 1 coluna real, eliminando estouros */
+  .grid, .cert-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .carousel-track {
+    height: 250px;
+  }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .hero { padding-top: 210px; }
-  .title { font-size: 36px; }
-  .subtitle { font-size: 20px; }
-  .hero-img img { width: 190px; height: 190px; }
-  .carousel-track { height: 210px; }
-  .carousel-btn { width: 38px; height: 38px; font-size: 16px; }
-  .event-content h3 { font-size: 20px; }
-  .event-description { font-size: 14px; }
+  .hero { padding-top: 140px; }
+  .carousel-track { height: 200px; }
+  .carousel-btn { width: 36px; height: 36px; font-size: 14px; }
+  .cert-img-container { height: 180px; }
 }
