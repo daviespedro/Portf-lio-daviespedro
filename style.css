@@ -14,7 +14,6 @@ body {
   background: #010409;
   color: white;
   overflow-x: hidden;
-  position: relative;
 }
 
 /* =========================
@@ -27,39 +26,44 @@ body {
   z-index: -1;
 
   background:
-    radial-gradient(
-      circle at top left,
-      rgba(37, 99, 235, 0.55),
-      transparent 30%
-    ),
+    radial-gradient(circle at top left,
+      rgba(37, 99, 235, 0.22),
+      transparent 35%),
 
-    radial-gradient(
-      circle at top right,
-      rgba(59, 130, 246, 0.35),
-      transparent 28%
-    ),
+    radial-gradient(circle at bottom right,
+      rgba(96, 165, 250, 0.16),
+      transparent 30%),
 
-    radial-gradient(
-      circle at center,
-      rgba(96, 165, 250, 0.18),
-      transparent 45%
-    ),
-
-    radial-gradient(
-      circle at bottom left,
-      rgba(37, 99, 235, 0.30),
-      transparent 35%
-    ),
-
-    radial-gradient(
-      circle at bottom right,
-      rgba(96, 165, 250, 0.40),
-      transparent 32%
-    ),
+    radial-gradient(circle at center,
+      rgba(59, 130, 246, 0.10),
+      transparent 40%),
 
     #010409;
 
-  filter: blur(85px);
+  filter: blur(120px);
+  transition: 0.3s;
+}
+
+/* EFEITO DE BRILHO COM MOUSE */
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at var(--x, 50%) var(--y, 50%),
+      rgba(96, 165, 250, 0.16),
+      transparent 220px
+    );
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  transition: 0.08s;
 }
 
 /* =========================
@@ -71,17 +75,17 @@ body {
   width: 100%;
   height: 80px;
 
-  background: rgba(2, 6, 23, 0.78);
+  background: rgba(2, 6, 23, 0.88);
 
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(96, 165, 250, 0.12);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.08);
 
   z-index: 1000;
 }
 
 .container {
-  max-width: 1450px;
+  max-width: 1320px;
   margin: auto;
   padding: 0 30px;
 }
@@ -99,7 +103,7 @@ body {
 
 .logo {
   color: white;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -119,7 +123,6 @@ body {
   text-decoration: none;
   position: relative;
   transition: 0.3s;
-  font-size: 16px;
 }
 
 .nav-links a:hover,
@@ -129,7 +132,6 @@ body {
 
 .nav-links a::after {
   content: "";
-
   width: 0;
   height: 2px;
 
@@ -160,28 +162,28 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  gap: 70px;
+  gap: 60px;
 }
 
 .hero-text {
-  max-width: 700px;
+  max-width: 650px;
 }
 
 .title {
-  font-size: 78px;
+  font-size: 72px;
   margin-bottom: 15px;
   line-height: 1.05;
 }
 
 .subtitle {
   color: #60a5fa;
-  font-size: 34px;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 
 .desc {
   color: #cbd5e1;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.8;
 }
 
@@ -199,9 +201,9 @@ body {
 .btn {
   padding: 14px 26px;
 
-  border-radius: 14px;
+  border-radius: 12px;
 
-  border: 1px solid rgba(96, 165, 250, 0.20);
+  border: 1px solid rgba(96, 165, 250, 0.15);
 
   background: rgba(15, 23, 42, 0.9);
 
@@ -217,10 +219,10 @@ body {
 
   border-color: #60a5fa;
 
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 
   box-shadow:
-    0 10px 25px rgba(96, 165, 250, 0.35);
+    0 10px 25px rgba(96, 165, 250, 0.3);
 }
 
 /* =========================
@@ -234,8 +236,8 @@ body {
 }
 
 .hero-img img {
-  width: 360px;
-  height: 360px;
+  width: 340px;
+  height: 340px;
 
   object-fit: cover;
   object-position: center top;
@@ -243,8 +245,8 @@ body {
   border-radius: 50%;
 
   box-shadow:
-    0 0 0 3px rgba(96, 165, 250, 0.55),
-    0 0 70px rgba(96, 165, 250, 0.35);
+    0 0 0 2px rgba(96, 165, 250, 0.5),
+    0 0 50px rgba(96, 165, 250, 0.3);
 
   transition:
     transform 0.3s ease,
@@ -252,7 +254,11 @@ body {
 }
 
 .hero-img img:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-5px) scale(1.02);
+
+  box-shadow:
+    0 0 0 2px rgba(96, 165, 250, 0.7),
+    0 0 80px rgba(96, 165, 250, 0.55);
 }
 
 /* =========================
@@ -260,14 +266,14 @@ body {
 ========================= */
 
 .section {
-  padding: 110px 0;
+  padding: 100px 0;
   position: relative;
   z-index: 1;
 }
 
 .section-title {
-  margin-bottom: 55px;
-  font-size: 46px;
+  margin-bottom: 50px;
+  font-size: 42px;
   color: #60a5fa;
 }
 
@@ -277,10 +283,10 @@ body {
 
 .grid {
   display: grid;
-  gap: 28px;
+  gap: 25px;
 
   grid-template-columns:
-    repeat(auto-fit, minmax(350px, 1fr));
+    repeat(auto-fit, minmax(320px, 1fr));
 }
 
 /* =========================
@@ -288,20 +294,20 @@ body {
 ========================= */
 
 .card {
-  background: rgba(15, 23, 42, 0.82);
+  background: rgba(15, 23, 42, 0.85);
 
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
 
-  padding: 32px;
+  padding: 30px;
 
-  border-radius: 24px;
+  border-radius: 20px;
 
   border: 1px solid rgba(96, 165, 250, 0.15);
 
   display: flex;
   flex-direction: column;
 
-  gap: 12px;
+  gap: 10px;
 
   transition:
     transform 0.25s ease,
@@ -310,23 +316,23 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 
   border: 1px solid rgba(96, 165, 250, 0.45);
 
   box-shadow:
-    0 10px 35px rgba(0, 0, 0, 0.55),
-    0 0 30px rgba(96, 165, 250, 0.22);
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(96, 165, 250, 0.28);
 }
 
 .card h3 {
   margin-bottom: 15px;
   color: #60a5fa;
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .card p {
-  line-height: 1.9;
+  line-height: 1.8;
   color: #dbe4f3;
 }
 
@@ -341,31 +347,34 @@ body {
 
 .project-img {
   width: 100%;
-  height: 250px;
+  height: 220px;
 
   object-fit: cover;
   object-position: center;
 
-  transition: 0.4s;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
 }
 
 .project-card:hover .project-img {
   transform: scale(1.03);
+  filter: brightness(1.08);
 }
 
 .project-card h3 {
-  padding: 24px 24px 0;
+  padding: 22px 22px 0;
 }
 
 .project-desc {
-  padding: 10px 24px;
+  padding: 10px 22px;
   color: #cbd5f5;
-  line-height: 1.9;
+  line-height: 1.8;
 }
 
 .tech {
-  padding: 0 24px;
-  font-size: 14px;
+  padding: 0 22px;
+  font-size: 13px;
   color: #60a5fa;
 }
 
@@ -374,10 +383,10 @@ body {
 ========================= */
 
 .project-btn {
-  margin: 24px;
+  margin: 22px;
   margin-top: auto;
 
-  padding: 14px;
+  padding: 13px;
 
   background: linear-gradient(
     135deg,
@@ -385,7 +394,7 @@ body {
     #3b82f6
   );
 
-  border-radius: 12px;
+  border-radius: 10px;
 
   color: white;
 
@@ -400,31 +409,29 @@ body {
 
 .project-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.5);
 }
 
 /* =========================
    EVENTOS
 ========================= */
 
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 28px;
-}
-
 .event-card {
-  background: rgba(15, 23, 42, 0.82);
+  background: rgba(15, 23, 42, 0.85);
 
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
 
   padding: 22px;
 
-  border-radius: 24px;
+  border-radius: 22px;
 
   border: 1px solid rgba(96, 165, 250, 0.15);
 
-  width: 100%;
+  max-width: 980px;
+
+  margin: 0 auto 30px;
 
   transition:
     transform 0.25s ease,
@@ -432,11 +439,11 @@ body {
 }
 
 .event-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 
   box-shadow:
-    0 10px 35px rgba(0, 0, 0, 0.55),
-    0 0 30px rgba(96, 165, 250, 0.22);
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(96, 165, 250, 0.25);
 }
 
 /* =========================
@@ -450,7 +457,7 @@ body {
 
   overflow: hidden;
 
-  border-radius: 20px;
+  border-radius: 18px;
 
   margin-bottom: 22px;
 
@@ -462,9 +469,9 @@ body {
 
   width: 100%;
 
-  height: 340px;
+  height: 420px;
 
-  border-radius: 20px;
+  border-radius: 18px;
 
   overflow: hidden;
 
@@ -475,8 +482,6 @@ body {
   justify-content: center;
 }
 
-/* IMAGENS */
-
 .carousel-img {
   position: absolute;
   inset: 0;
@@ -485,6 +490,7 @@ body {
   height: 100%;
 
   object-fit: contain;
+
   object-position: center;
 
   background: #0f172a;
@@ -493,11 +499,14 @@ body {
 
   opacity: 0;
 
-  transition: opacity 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 .carousel-img.active {
   opacity: 1;
+  transform: scale(1.01);
 }
 
 /* =========================
@@ -510,8 +519,8 @@ body {
 
   transform: translateY(-50%);
 
-  width: 46px;
-  height: 46px;
+  width: 45px;
+  height: 45px;
 
   border: none;
   border-radius: 50%;
@@ -522,7 +531,7 @@ body {
 
   color: white;
 
-  background: rgba(2, 6, 23, 0.78);
+  background: rgba(2, 6, 23, 0.75);
 
   z-index: 10;
 
@@ -531,6 +540,9 @@ body {
 
 .carousel-btn:hover {
   background: #2563eb;
+
+  box-shadow:
+    0 0 18px rgba(96, 165, 250, 0.5);
 }
 
 .prev {
@@ -548,7 +560,7 @@ body {
 .event-content h3 {
   font-size: 30px;
 
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 
   color: #60a5fa;
 }
@@ -558,13 +570,13 @@ body {
 
   line-height: 1.9;
 
-  font-size: 16px;
+  font-size: 17px;
 
   position: relative;
 }
 
 .collapsed {
-  max-height: 120px;
+  max-height: 110px;
   overflow: hidden;
 }
 
@@ -577,7 +589,7 @@ body {
   bottom: 0;
 
   width: 100%;
-  height: 55px;
+  height: 50px;
 
   background:
     linear-gradient(
@@ -593,9 +605,9 @@ body {
 .read-more-btn {
   margin-top: 18px;
 
-  padding: 12px 20px;
+  padding: 11px 20px;
 
-  border-radius: 12px;
+  border-radius: 10px;
 
   border: 1px solid #2563eb;
 
@@ -613,6 +625,9 @@ body {
 .read-more-btn:hover {
   background: #2563eb;
   color: white;
+
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.45);
 }
 
 /* =========================
@@ -621,13 +636,12 @@ body {
 
 .cert-wrapper {
   display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .cert-card {
   width: 100%;
-  max-width: 450px;
+  max-width: 430px;
 
   overflow: hidden;
   padding: 0;
@@ -635,14 +649,20 @@ body {
 
 .cert-img {
   width: 100%;
-  height: 240px;
+  height: 220px;
 
   object-fit: cover;
   object-position: center;
+
+  transition: 0.4s;
+}
+
+.cert-card:hover .cert-img {
+  transform: scale(1.03);
 }
 
 .cert-content {
-  padding: 24px;
+  padding: 22px;
 }
 
 .cert-content h3 {
@@ -652,7 +672,7 @@ body {
 
 .cert-desc {
   color: #cbd5e1;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 /* =========================
@@ -712,12 +732,16 @@ body {
   }
 
   .hero-img img {
-    width: 290px;
-    height: 290px;
+    width: 280px;
+    height: 280px;
   }
 
   .carousel-track {
-    height: 290px;
+    height: 340px;
+  }
+
+  .event-card {
+    max-width: 900px;
   }
 }
 
@@ -738,11 +762,11 @@ body {
   }
 
   .title {
-    font-size: 48px;
+    font-size: 46px;
   }
 
   .subtitle {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .desc {
@@ -767,21 +791,29 @@ body {
   }
 
   .section-title {
-    font-size: 36px;
+    font-size: 34px;
     text-align: center;
   }
 
-  .grid,
-  .events-grid {
+  .grid {
     grid-template-columns: 1fr;
   }
 
   .carousel-track {
-    height: 240px;
+    height: 260px;
   }
 
   .event-card {
-    padding: 18px;
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .event-content h3 {
+    font-size: 24px;
+  }
+
+  .event-description {
+    font-size: 15px;
   }
 }
 
@@ -796,11 +828,11 @@ body {
   }
 
   .title {
-    font-size: 38px;
+    font-size: 36px;
   }
 
   .subtitle {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   .hero-img img {
@@ -809,7 +841,7 @@ body {
   }
 
   .carousel-track {
-    height: 200px;
+    height: 210px;
   }
 
   .carousel-btn {
@@ -819,7 +851,7 @@ body {
   }
 
   .event-content h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .event-description {
