@@ -10,8 +10,8 @@ html {
 }
 
 :root {
-  --x: 50%;
-  --y: 50%;
+  --x: 0px;
+  --y: 0px;
 }
 
 body {
@@ -53,12 +53,7 @@ body {
    EFEITO DO MOUSE
 ========================= */
 
-:root {
-  --x: 50vw;
-  --y: 50vh;
-}
-
-body::before {
+html::before {
   content: "";
 
   position: fixed;
