@@ -1,12 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
     <title>Pedro Davies | Full Stack</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
+
+      section {
+        scroll-margin-top: 100px;
+      }
+
+      /* Garante que os múltiplos certificados fiquem organizados e responsivos */
+      .cert-wrapper {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+
+    </style>
   </head>
 
   <body>
@@ -14,207 +43,747 @@
     <div id="bg"></div>
 
     <nav class="navbar">
-      <div class="container nav">
-        <h2 class="logo">daviespedro.dev</h2>
-        
-        <button class="menu-toggle" id="menu-btn" aria-label="Abrir Menu">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </button>
 
-        <div class="nav-links" id="nav-menu">
-          <a href="#sobre" class="active">Sobre</a>
-          <a href="#habilidades">Habilidades</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#eventos">Eventos</a>
-          <a href="#certificados">Certificados</a>
-          <a href="#contato">Contato</a>
+      <div class="container nav">
+
+        <h2 class="logo">
+          daviespedro.dev
+        </h2>
+
+        <div class="nav-links">
+
+          <a href="#sobre">
+            Sobre
+          </a>
+
+          <a href="#habilidades">
+            Habilidades
+          </a>
+
+          <a href="#projetos">
+            Projetos
+          </a>
+
+          <a href="#eventos">
+            Eventos
+          </a>
+
+          <a href="#certificados">
+            Certificados
+          </a>
+
+          <a href="#contato">
+            Contato
+          </a>
+
         </div>
+
       </div>
+
     </nav>
 
-    <header id="home" class="hero container">
+    <header class="hero container">
+
       <div class="hero-text reveal">
-        <h1 class="title"><span id="nome"></span><span class="cursor">|</span></h1>
-        <h2 class="subtitle">Full Stack Developer</h2>
+
+        <h1 class="title">
+          <span id="nome"></span>
+          <span class="cursor">|</span>
+        </h1>
+
+        <h2 class="subtitle">
+          Full Stack Developer
+        </h2>
+
         <p class="desc">
-          Desenvolvimento Web • Backend • APIs REST • Análise de Dados
+          Desenvolvimento Web • Backend • APIs REST •
+          Análise de Dados
         </p>
+
         <div class="buttons">
-          <a href="https://br.linkedin.com/in/pedro-augusto-davies-gonçalves-4554293b0" target="_blank" class="btn">LinkedIn</a>
-          <a href="./assets/Curriculo original Pedro.pdf" download class="btn">Baixar Currículo</a>
-          <a href="https://github.com/daviespedro" target="_blank" class="btn">GitHub</a>
+
+          <a
+            href="https://br.linkedin.com/in/pedro-augusto-davies-gonçalves-4554293b0"
+            target="_blank"
+            class="btn"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="./assets/Curriculo original Pedro.pdf"
+            download
+            class="btn"
+          >
+            Baixar Currículo
+          </a>
+
+          <a
+            href="https://github.com/daviespedro"
+            target="_blank"
+            class="btn"
+          >
+            GitHub
+          </a>
+
         </div>
+
       </div>
+
       <div class="hero-img reveal">
-        <img src="./assets/imagens/1B320573-F170-4A49-84FA-D46A5D9AF710.PNG" alt="Pedro Davies" />
+
+        <img
+          src="./assets/imagens/1B320573-F170-4A49-84FA-D46A5D9AF710.PNG"
+          alt="Pedro Davies"
+        />
+
       </div>
+
     </header>
 
     <section id="sobre" class="container section reveal">
-      <h2 class="section-title">Sobre</h2>
+
+      <h2 class="section-title">
+        Sobre
+      </h2>
+
       <div class="card">
-        <p><strong>Nome:</strong> Pedro Augusto Davies Gonçalves</p>
-        <p><strong>Formação:</strong> Desenvolvimento de Software Multiplataforma – FATEC (2025 - atual)</p>
-        <p><strong>Objetivo Profissional:</strong><br />Atuar como desenvolvedor Full Stack, com foco na criação de aplicações web modernas, APIs REST escaláveis e soluções orientadas a dados.</p>
-        <p><strong>Objetivos Acadêmicos:</strong><br />Consolidar conhecimentos em desenvolvimento web, estruturas de dados, banco de dados e engenharia de software.</p>
-        <p><strong>Áreas de Interesse:</strong><br />Desenvolvimento Web • Backend • APIs REST • Análise de Dados</p>
+
+        <p>
+          <strong>Nome:</strong>
+          Pedro Augusto Davies Gonçalves
+        </p>
+
+        <p>
+          <strong>Formação:</strong>
+          Desenvolvimento de Software Multiplataforma –
+          FATEC (2025 - atual)
+        </p>
+
+        <p>
+          <strong>Objetivo Profissional:</strong><br />
+
+          Atuar como desenvolvedor Full Stack,
+          com foco na criação de aplicações web modernas,
+          APIs REST escaláveis e soluções orientadas a dados.
+        </p>
+
+        <p>
+          <strong>Objetivos Acadêmicos:</strong><br />
+
+          Consolidar conhecimentos em desenvolvimento web,
+          estruturas de dados, banco de dados
+          e engenharia de software.
+        </p>
+
+        <p>
+          <strong>Áreas de Interesse:</strong><br />
+
+          Desenvolvimento Web • Backend • APIs REST •
+          Análise de Dados
+        </p>
+
       </div>
+
     </section>
 
     <section id="habilidades" class="container section reveal">
-      <h2 class="section-title">Habilidades</h2>
+
+      <h2 class="section-title">
+        Habilidades
+      </h2>
+
       <div class="grid">
+
         <div class="card">
+
           <h3>Hard Skills</h3>
-          <p>HTML</p><p>CSS</p><p>JavaScript</p><p>Python</p><p>MySQL</p><p>Git e GitHub</p><p>Docker</p><p>APIs REST</p>
+
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>JavaScript</p>
+          <p>Python</p>
+          <p>MySQL</p>
+          <p>Git e GitHub</p>
+          <p>Docker</p>
+          <p>APIs REST</p>
+
         </div>
+
         <div class="card">
+
           <h3>Soft Skills</h3>
-          <p>Comunicação clara</p><p>Trabalho em equipe</p><p>Resolução de problemas</p><p>Pensamento analítico</p><p>Proatividade</p><p>Organização e gestão de tempo</p><p>Aprendizado contínuo</p><p>Adaptabilidade</p>
+
+          <p>Comunicação clara</p>
+          <p>Trabalho em equipe</p>
+          <p>Resolução de problemas</p>
+          <p>Pensamento analítico</p>
+          <p>Proatividade</p>
+          <p>Organização e gestão de tempo</p>
+          <p>Aprendizado contínuo</p>
+          <p>Adaptabilidade</p>
+
         </div>
+
       </div>
+
     </section>
 
     <section id="projetos" class="container section reveal">
-      <h2 class="section-title">Projetos</h2>
+
+      <h2 class="section-title">
+        Projetos
+      </h2>
+
       <div class="grid">
+
         <div class="card project-card">
-          <img src="./assets/imagens/radar.png" class="project-img" alt="Radar Cidadão" />
+
+          <img
+            src="./assets/imagens/radar.png"
+            class="project-img"
+            alt="Radar Cidadão"
+          />
+
           <h3>Radar Cidadão</h3>
-          <p class="project-desc">Plataforma web criada para centralizar, processar e exibir dados públicos de deputados de forma clara e acessível.</p>
-          <p class="tech">Python • API REST • MySQL • JavaScript • Docker</p>
-          <a href="https://github.com/eugeniojonatas/Radar-Cidadao-Froggrammers" target="_blank" class="project-btn">Ver Projeto</a>
-          <a href="https://radar-cidadao-froggrammers.onrender.com" target="_blank" class="project-btn">Acessar Site</a>
+
+          <p class="project-desc">
+            Plataforma web criada para centralizar,
+            processar e exibir dados públicos
+            de deputados de forma clara e acessível.
+          </p>
+
+          <p class="tech">
+            Python • API REST • MySQL • JavaScript • Docker
+          </p>
+
+          <a
+            href="https://github.com/eugeniojonatas/Radar-Cidadao-Froggrammers"
+            target="_blank"
+            class="project-btn"
+          >
+            Ver Projeto
+          </a>
+
+          <a
+            href="https://radar-cidadao-froggrammers.onrender.com"
+            target="_blank"
+            class="project-btn"
+          >
+            Acessar Site
+          </a>
+
         </div>
+
         <div class="card project-card">
-          <img src="./assets/imagens/projeto2.png" class="project-img" alt="Luminelli" />
+
+          <img
+            src="./assets/imagens/projeto2.png"
+            class="project-img"
+            alt="Luminelli"
+          />
+
           <h3>Luminelli Pratas</h3>
-          <p class="project-desc">Aplicação web voltada para visualização de estoque e implementação de funcionalidades E-commerce.</p>
-          <p class="tech">HTML • CSS • JavaScript • MySQL</p>
-          <a href="https://github.com/daviespedro" target="_blank" class="project-btn">Ver Projeto</a>
-          <a href="https://github.com/daviespedro" target="_blank" class="project-btn">Em Desenvolvimento</a>
+
+          <p class="project-desc">
+            Aplicação web voltada para visualização
+            de estoque e implementação
+            de funcionalidades E-commerce.
+          </p>
+
+          <p class="tech">
+            HTML • CSS • JavaScript • MySQL
+          </p>
+
+          <a
+            href="https://github.com/daviespedro"
+            target="_blank"
+            class="project-btn"
+          >
+            Ver Projeto
+          </a>
+
+          <a
+            href="https://github.com/daviespedro"
+            target="_blank"
+            class="project-btn"
+          >
+            Em Desenvolvimento
+          </a>
+
         </div>
+
       </div>
+
     </section>
 
     <section id="eventos" class="container section reveal">
-      <h2 class="section-title">Eventos</h2>
+
+      <h2 class="section-title">
+        Eventos
+      </h2>
+
       <div class="events-grid">
-        
+
         <div class="event-card">
+
           <div class="carousel">
-            <button class="carousel-btn prev">❮</button>
+
+            <button class="carousel-btn prev">
+              ❮
+            </button>
+
             <div class="carousel-track">
-              <img src="./assets/imagens/science.jpg" class="carousel-img active" />
-              <img src="./assets/imagens/evento1.jpg" class="carousel-img" />
-              <img src="./assets/imagens/evento2.jpg" class="carousel-img" />
-              <img src="./assets/imagens/evento3.jpg" class="carousel-img" />
-              <img src="./assets/imagens/evento4.jpg" class="carousel-img" />
-              <img src="./assets/imagens/evento5.jpg" class="carousel-img" />
+
+              <img
+                src="./assets/imagens/science.jpg"
+                class="carousel-img active"
+              />
+              <img
+                src="./assets/imagens/evento1.jpg"
+                class="carousel-img"
+              />
+              <img
+                src="./assets/imagens/evento2.jpg"
+                class="carousel-img"
+              />
+
+              <img
+                src="./assets/imagens/evento3.jpg"
+                class="carousel-img"
+              />
+
+              <img
+                src="./assets/imagens/evento4.jpg"
+                class="carousel-img"
+              />
+
+              <img
+                src="./assets/imagens/evento5.jpg"
+                class="carousel-img"
+              />
+
             </div>
-            <button class="carousel-btn next">❯</button>
+
+            <button class="carousel-btn next">
+              ❯
+            </button>
+
           </div>
+
           <div class="event-content">
+
             <h3>Science Business Meeting 2026</h3>
+
             <p class="event-description collapsed">
-              Participei do Science Business Meeting atuando como voluntário representando o PIT. Durante o evento tive contato com empresas, startups e profissionais da área de tecnologia e inovação. A experiência proporcionou networking, desenvolvimento profissional e fortalecimento de habilidades como comunicação, trabalho em equipe e resolução de problemas.
+
+              Participei do Science Business Meeting
+              atuando como voluntário representando o PIT.
+
+              Durante o evento tive contato com empresas,
+              startups e profissionais da área de tecnologia
+              e inovação.
+
+              A experiência proporcionou networking,
+              desenvolvimento profissional e fortalecimento
+              de habilidades como comunicação,
+              trabalho em equipe e resolução de problemas.
+
             </p>
-            <button class="read-more-btn">Ler mais</button>
+
+            <button class="read-more-btn">
+              Ler mais
+            </button>
+
           </div>
+
         </div>
 
         <div class="event-card">
+
           <div class="carousel">
-            <button class="carousel-btn prev">❮</button>
+
+            <button class="carousel-btn prev">
+              ❮
+            </button>
+
             <div class="carousel-track">
-              <img src="./assets/imagens/maratona3.jpg" class="carousel-img active" />
-              <img src="./assets/imagens/maratona2.jpeg" class="carousel-img" />
-              <img src="./assets/imagens/maratona1.jpeg" class="carousel-img" />
+
+              <img
+                src="./assets/imagens/maratona3.jpg"
+                class="carousel-img active"
+              />
+
+              <img
+                src="./assets/imagens/maratona2.jpeg"
+                class="carousel-img"
+              />
+
+              <img
+                src="./assets/imagens/maratona1.jpeg"
+                class="carousel-img"
+              />
+
             </div>
-            <button class="carousel-btn next">❯</button>
+
+            <button class="carousel-btn next">
+              ❯
+            </button>
+
           </div>
+
           <div class="event-content">
+
             <h3>Maratona de Programação Interna XXV</h3>
+
             <p class="event-description collapsed">
-              Participação na Maratona de Programação colocando em prática lógica, algoritmos e resolução de problemas. O evento fortaleceu minhas habilidades em Python, raciocínio rápido, otimização de código e trabalho colaborativo.
+
+              Participação na Maratona de Programação
+              colocando em prática lógica,
+              algoritmos e resolução de problemas.
+
+              O evento fortaleceu minhas habilidades
+              em Python, raciocínio rápido,
+              otimização de código e trabalho colaborativo.
+
             </p>
-            <button class="read-more-btn">Ler mais</button>
+
+            <button class="read-more-btn">
+              Ler mais
+            </button>
+
           </div>
+
         </div>
 
         <div class="event-card">
+
           <div class="carousel">
-            <button class="carousel-btn prev">❮</button>
+
+            <button class="carousel-btn prev">
+              ❮
+            </button>
+
             <div class="carousel-track">
-              <img src="./assets/imagens/interfatec2.jpeg" class="carousel-img active" />
-              <img src="./assets/imagens/interfatec1.jpeg" class="carousel-img" />
+
+              <img
+                src="./assets/imagens/interfatec2.jpeg"
+                class="carousel-img active"
+              />
+
+              <img
+                src="./assets/imagens/interfatec1.jpeg"
+                class="carousel-img"
+              />
+
             </div>
-            <button class="carousel-btn next">❯</button>
+
+            <button class="carousel-btn next">
+              ❯
+            </button>
+
           </div>
+
           <div class="event-content">
+
             <h3>InterFatecs 26 1º Semestre</h3>
+
             <p class="event-description collapsed">
-              Participação na InterFatecs, competição acadêmica voltada para tecnologia e programação. A experiência trouxe desafios técnicos, lógicos e aprendizado em equipe e resolução de problemas computacionais.
+
+              Participação na InterFatecs,
+              competição acadêmica voltada
+              para tecnologia e programação.
+
+              A experiência trouxe desafios técnicos,
+              Políticos e aprendizado em equipe e resolução
+              de problemas computacionais.
+
             </p>
-            <button class="read-more-btn">Ler mais</button>
+
+            <button class="read-more-btn">
+              Ler mais
+            </button>
+
           </div>
+
         </div>
 
       </div>
+
     </section>
 
-    <section id="certificados" class="container section reveal">
-      <h2 class="section-title">Certificados</h2>
+   <section id="certificados" class="container section reveal">
+
+      <h2 class="section-title">
+        Certificados
+      </h2>
+
       <div class="cert-grid">
-        
+
         <div class="cert-card">
+
           <div class="cert-img-container">
             <img
               src="./assets/certificados/importfe.png"
               alt="Certificado Maratona"
               class="cert-img"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
-            <div class="cert-placeholder" style="display: none;">Preview indisponível</div>
           </div>
+
           <div class="cert-content">
-            <h3>XXV Maratona Interna de Programação</h3>
-            <p class="cert-desc">Certificado de participação na XXV Maratona Interna de Programação da FATEC São José dos Campos.</p>
-            <a href="./assets/certificados/importfe.png" target="_blank" class="cert-btn">Ver Certificado</a>
+
+            <h3>
+              XXV Maratona Interna de Programação
+            </h3>
+
+            <p class="cert-desc">
+              Certificado de participação na
+              XXV Maratona Interna de Programação
+              da FATEC São José dos Campos.
+            </p>
+
+            <a
+              href="./assets/certificados/importfe.png"
+              target="_blank"
+              class="cert-btn"
+            >
+              Ver Certificado
+            </a>
+
           </div>
+
         </div>
 
         <div class="cert-card">
+
           <div class="cert-img-container">
             <img
               src="./assets/certificados/voluntariopit.png"
               alt="Certificado Voluntário PIT"
               class="cert-img"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              onerror="this.style.display='none';"
             />
-            <div class="cert-placeholder" style="display: none;">Preview indisponível</div>
+            <div class="cert-placeholder">
+              Preview indisponível
+            </div>
           </div>
+
           <div class="cert-content">
-            <h3>Voluntariado - PIT Science Business Connection</h3>
-            <p class="cert-desc">Certificado de atuação voluntária representando o Parque de Inovação Tecnológica (PIT) no Science Business Meeting.</p>
-            <a href="./assets/certificados/voluntariopit.pdf" target="_blank" class="cert-btn">Ver Certificado</a>
+
+            <h3>
+              Voluntariado - PIT Science Business Connection
+            </h3>
+
+            <p class="cert-desc">
+              Certificado de atuação voluntária representando o
+              Parque de Inovação Tecnológica (PIT) no Science Business Meeting.
+            </p>
+
+            <a
+              href="./assets/certificados/voluntariopit.pdf"
+              target="_blank"
+              class="cert-btn"
+            >
+              Ver Certificado
+            </a>
+
           </div>
+
         </div>
 
       </div>
+
     </section>
 
     <section id="contato" class="container section reveal">
-      <h2 class="section-title">Contato</h2>
+
+      <h2 class="section-title">
+        Contato
+      </h2>
+
       <div class="card">
-        <p><span class="label">Email:</span> daviespedro@icloud.com</p>
-        <p><span class="label">GitHub:</span> github.com/daviespedro</p>
-        <p><span class="label">LinkedIn:</span> pedro-augusto-davies</p>
+
+        <p>
+          <span class="label">
+            Email:
+          </span>
+
+          daviespedro@icloud.com
+        </p>
+
+        <p>
+          <span class="label">
+            GitHub:
+          </span>
+
+          github.com/daviespedro
+        </p>
+
+        <p>
+          <span class="label">
+            LinkedIn:
+          </span>
+
+          pedro-augusto-davies
+        </p>
+
       </div>
+
     </section>
 
-    <script src="script.js"></script>
+    <script>
+
+      // =========================
+      // EFEITO DO MOUSE (RASTREAMENTO)
+      // =========================
+      window.addEventListener("mousemove", (e) => {
+        document.documentElement.style.setProperty("--x", e.clientX + "px");
+        document.documentElement.style.setProperty("--y", e.clientY + "px");
+      });
+
+      // =========================
+      // NOME DIGITANDO
+      // =========================
+
+      const nome = "Pedro Davies";
+
+      let i = 0;
+
+      function escreverNome() {
+
+        if (i < nome.length) {
+
+          document.getElementById("nome").innerHTML += nome.charAt(i);
+
+          i++;
+
+          setTimeout(escreverNome, 100);
+
+        }
+
+      }
+
+      escreverNome();
+
+      // =========================
+      // REVEAL
+      // =========================
+
+      const reveals =
+        document.querySelectorAll(".reveal");
+
+      window.addEventListener("scroll", () => {
+
+        reveals.forEach((element) => {
+
+          const top =
+            element.getBoundingClientRect().top;
+
+          if (top < window.innerHeight - 100) {
+
+            element.classList.add("active");
+
+          }
+
+        });
+
+      });
+
+      // =========================
+      // LER MAIS
+      // =========================
+
+      document
+        .querySelectorAll(".read-more-btn")
+        .forEach((btn) => {
+
+          btn.addEventListener("click", () => {
+
+            const texto =
+              btn.parentElement.querySelector(
+                ".event-description"
+              );
+
+            texto.classList.toggle("collapsed");
+
+            if (
+              texto.classList.contains("collapsed")
+            ) {
+
+              btn.innerText = "Ler mais";
+
+            } else {
+
+              btn.innerText = "Ler menos";
+
+            }
+
+          });
+
+        });
+
+      // =========================
+      // CARROSSEL INFINITO
+      // =========================
+
+      document
+        .querySelectorAll(".carousel")
+        .forEach((carousel) => {
+
+          const imagens =
+            carousel.querySelectorAll(".carousel-img");
+
+          const prev =
+            carousel.querySelector(".prev");
+
+          const next =
+            carousel.querySelector(".next");
+
+          let index = 0;
+
+          function mostrarImagem(i) {
+
+            imagens.forEach((img) => {
+
+              img.classList.remove("active");
+
+            });
+
+            imagens[i].classList.add("active");
+
+          }
+
+          next.addEventListener("click", () => {
+
+            index++;
+
+            if (index >= imagens.length) {
+
+              index = 0;
+
+            }
+
+            mostrarImagem(index);
+
+          });
+
+          prev.addEventListener("click", () => {
+
+            index--;
+
+            if (index < 0) {
+
+              index = imagens.length - 1;
+
+            }
+
+            mostrarImagem(index);
+
+          });
+
+        });
+
+    </script>
+
   </body>
 </html>
