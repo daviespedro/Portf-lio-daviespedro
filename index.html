@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -7,38 +7,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-
-    <style>
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 100px;
-      }
-
-      section {
-        scroll-margin-top: 100px;
-      }
-
-      /* Garante que os múltiplos certificados fiquem organizados e responsivos */
-      .cert-wrapper {
-        display: flex;
-        gap: 25px;
-        flex-wrap: wrap;
-      }
-
-      /* ANIMAÇÃO DO CURSOR PISCANDO ESTILO TERMINAL */
-      .cursor {
-        display: inline-block;
-        margin-left: 4px;
-        color: #ffffff;
-        animation: blink-animation 1s step-end infinite;
-        font-weight: 400;
-      }
-
-      @keyframes blink-animation {
-        from, to { opacity: 1; }
-        50% { opacity: 0; }
-      }
-    </style>
   </head>
 
   <body>
@@ -48,7 +16,14 @@
     <nav class="navbar">
       <div class="container nav">
         <h2 class="logo">daviespedro.dev</h2>
-        <div class="nav-links">
+        
+        <button class="menu-toggle" id="menu-btn" aria-label="Abrir Menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </button>
+
+        <div class="nav-links" id="nav-menu">
           <a href="#sobre" class="active">Sobre</a>
           <a href="#habilidades">Habilidades</a>
           <a href="#projetos">Projetos</a>
@@ -127,6 +102,7 @@
     <section id="eventos" class="container section reveal">
       <h2 class="section-title">Eventos</h2>
       <div class="events-grid">
+        
         <div class="event-card">
           <div class="carousel">
             <button class="carousel-btn prev">❮</button>
@@ -185,6 +161,7 @@
             <button class="read-more-btn">Ler mais</button>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -200,7 +177,7 @@
               class="cert-img"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
-            <div class="cert-placeholder">Preview indisponível</div>
+            <div class="cert-placeholder" style="display: none;">Preview indisponível</div>
           </div>
           <div class="cert-content">
             <h3>XXV Maratona Interna de Programação</h3>
@@ -217,7 +194,7 @@
               class="cert-img"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             />
-            <div class="cert-placeholder">Preview indisponível</div>
+            <div class="cert-placeholder" style="display: none;">Preview indisponível</div>
           </div>
           <div class="cert-content">
             <h3>Voluntariado - PIT Science Business Connection</h3>
@@ -238,99 +215,6 @@
       </div>
     </section>
 
-    <script>
-      // =========================
-      // EFEITO DO MOUSE (RASTREAMENTO)
-      // =========================
-      window.addEventListener("mousemove", (e) => {
-        document.documentElement.style.setProperty("--x", e.clientX + "px");
-        document.documentElement.style.setProperty("--y", e.clientY + "px");
-      });
-
-      // =========================
-      // NOME DIGITANDO
-      // =========================
-      const nome = "Pedro Davies";
-      let i = 0;
-      function escreverNome() {
-        if (i < nome.length) {
-          document.getElementById("nome").innerHTML += nome.charAt(i);
-          i++;
-          setTimeout(escreverNome, 100);
-        }
-      }
-      escreverNome();
-
-      // =========================
-      // REVEAL & NAV LINK ATIVO NO SCROLL
-      // =========================
-      const reveals = document.querySelectorAll(".reveal");
-      const sections = document.querySelectorAll("section, header");
-      const navLinks = document.querySelectorAll(".nav-links a");
-
-      window.addEventListener("scroll", () => {
-        let current = "";
-        
-        // Ativação do efeito Reveal
-        reveals.forEach((element) => {
-          const top = element.getBoundingClientRect().top;
-          if (top < window.innerHeight - 100) {
-            element.classList.add("active");
-          }
-        });
-
-        // Controle do Link ativo na Navbar
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          if (pageYOffset >= sectionTop - 150) {
-            current = section.getAttribute("id") || "";
-          }
-        });
-
-        navLinks.forEach((a) => {
-          a.classList.remove("active");
-          if (a.getAttribute("href") === `#${current}`) {
-            a.classList.add("active");
-          }
-        });
-      });
-
-      // =========================
-      // LER MAIS
-      // =========================
-      document.querySelectorAll(".read-more-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const texto = btn.parentElement.querySelector(".event-description");
-          texto.classList.toggle("collapsed");
-          btn.innerText = texto.classList.contains("collapsed") ? "Ler mais" : "Ler menos";
-        });
-      });
-
-      // =========================
-      // CARROSSEL INFINITO
-      // =========================
-      document.querySelectorAll(".carousel").forEach((carousel) => {
-        const imagens = carousel.querySelectorAll(".carousel-img");
-        const prev = carousel.querySelector(".prev");
-        const next = carousel.querySelector(".next");
-        let index = 0;
-
-        function mostrarImagem(i) {
-          imagens.forEach((img) => img.classList.remove("active"));
-          imagens[i].classList.add("active");
-        }
-
-        next.addEventListener("click", () => {
-          index = (index + 1) % imagens.length;
-          mostrarImagem(index);
-        });
-
-        prev.addEventListener("click", () => {
-          index = (index - 1 + imagens.length) % imagens.length;
-          mostrarImagem(index);
-        });
-      });
-    </script>
-
+    <script src="script.js"></script>
   </body>
 </html>
