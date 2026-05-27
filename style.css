@@ -275,7 +275,7 @@ html::before {
   padding: 80px 0;
   position: relative;
   z-index: 2;
-  scroll-margin-top: 20px; /* Garante que a seção se posicione perfeitamente */
+  scroll-margin-top: 20px;
 }
 
 .section-title {
@@ -549,7 +549,7 @@ html::before {
 #contato .card p { color: #ffffff; }
 
 /* ==================================================
-   MÍDIA QUERIES (RESPONSIVIDADE AJUSTADA)
+   MÍDIA QUERIES (RESPONSIVIDADE IMPECÁVEL)
 ================================================== */
 
 @media (max-width: 1024px) {
@@ -559,86 +559,101 @@ html::before {
 }
 
 @media (max-width: 768px) {
-  /* Correção do bug de colisão do Menu */
   html {
-    scroll-padding-top: 70px; /* Reduzido cirurgicamente para bater com o header mobile */
+    scroll-padding-top: 70px; /* Alinhado cirurgicamente com a altura mobile */
   }
 
   .container { padding: 0 20px; }
   
   .navbar {
-    height: 70px; /* Trava a altura para não vazar sobre o conteúdo */
+    height: 70px;
   }
 
   .nav {
     display: flex;
-    flex-direction: row; /* Mantém em linha, sem empilhar */
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    gap: 15px;
   }
   
   .logo {
-    font-size: 20px;
+    font-size: 19px; /* Proporção ideal para telas menores */
   }
   
-  /* Os links ganham scroll lateral elegante, sem quebrar layout */
+  /* CONTAINER DOS LINKS: Ajustado para deslizar perfeitamente sem amassar os textos */
   .nav-links {
-    max-width: 60%;
+    max-width: 65%;
+    display: flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
-    white-space: nowrap;
+    gap: 16px; 
+    padding: 6px 0;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 4px;
-    justify-content: flex-end;
+    scrollbar-width: none; /* Oculta barra no Firefox */
+    justify-content: flex-start;
   }
   
   .nav-links::-webkit-scrollbar {
-    display: none; /* Oculta a barra de rolagem do sistema */
+    display: none; /* Oculta barra no Chrome/Safari */
   }
   
   .nav-links a {
-    margin-left: 20px;
+    margin-left: 0 !important; /* Limpa a margem do desktop */
+    flex-shrink: 0; /* IMPEDE TOTALMENTE O TEXTO DE QUEBRAR */
     font-size: 14px;
   }
 
-  /* Ajustes do Hero para evitar qualquer sobreposição */
+  /* Ajustes gerais de layout no Mobile */
   .hero {
     flex-direction: column-reverse;
     text-align: center;
-    padding-top: 130px; /* Espaço perfeito para a navbar compacta */
+    padding-top: 120px;
     padding-bottom: 40px;
-    min-height: auto; /* Deixa a altura fluida para não esmagar seções de baixo */
-    gap: 30px;
+    min-height: auto;
+    gap: 35px;
   }
 
   .buttons {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: 12px;
   }
 
   .btn {
     width: 100%;
-    max-width: 340px;
+    max-width: 320px;
+    padding: 12px 24px;
   }
 
-  /* Garante o empilhamento limpo dos grids */
+  /* Cards mais fluidos e confortáveis no Mobile */
+  .card {
+    padding: 20px; /* Reduzido de 30px para dar mais espaço útil ao conteúdo */
+    border-radius: 16px;
+  }
+
   .grid, .cert-grid {
     grid-template-columns: 1fr !important;
+    gap: 20px;
   }
 
   .section {
-    padding: 60px 0; /* Diminui o espaçamento excessivo */
+    padding: 50px 0;
   }
 
   .carousel-track {
-    height: 240px;
+    height: 230px;
   }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .hero { padding-top: 110px; }
-  .nav-links { max-width: 65%; }
+  .logo { font-size: 17px; }
+  .nav-links { max-width: 58%; gap: 12px; }
+  .nav-links a { font-size: 13px; }
+  .hero { padding-top: 100px; }
   .carousel-track { height: 190px; }
+  .btn { max-width: 100%; }
 }
