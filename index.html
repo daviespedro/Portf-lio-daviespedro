@@ -512,22 +512,23 @@
 
     </section>
 
-    <section id="certificados" class="container section reveal">
+   <section id="certificados" class="container section reveal">
 
       <h2 class="section-title">
         Certificados
       </h2>
 
-      <div class="cert-wrapper">
+      <div class="cert-grid">
 
-        <!-- CERTIFICADO 1: MARATONA -->
-        <div class="card cert-card">
+        <div class="cert-card">
 
-          <img
-            src="./assets/certificados/importfe.png"
-            alt="Certificado"
-            class="cert-img"
-          />
+          <div class="cert-img-container">
+            <img
+              src="./assets/certificados/importfe.png"
+              alt="Certificado Maratona"
+              class="cert-img"
+            />
+          </div>
 
           <div class="cert-content">
 
@@ -544,7 +545,7 @@
             <a
               href="./assets/certificados/importfe.png"
               target="_blank"
-              class="project-btn"
+              class="cert-btn"
             >
               Ver Certificado
             </a>
@@ -553,14 +554,19 @@
 
         </div>
 
-        <!-- CERTIFICADO 2: VOLUNTÁRIO PIT (NOVO) -->
-        <div class="card cert-card">
+        <div class="cert-card">
 
-          <img
-            src="./assets/certificados/voluntariopit.png"
-            alt="Certificado Voluntário PIT Science Business Connection"
-            class="cert-img"
-          />
+          <div class="cert-img-container">
+            <img
+              src="./assets/certificados/voluntariopit.png"
+              alt="Certificado Voluntário PIT"
+              class="cert-img"
+              onerror="this.style.display='none';"
+            />
+            <div class="cert-placeholder">
+              Preview indisponível
+            </div>
+          </div>
 
           <div class="cert-content">
 
@@ -569,14 +575,14 @@
             </h3>
 
             <p class="cert-desc">
-              Certificado de atuação voluntária representando o 
+              Certificado de atuação voluntária representando o
               Parque de Inovação Tecnológica (PIT) no Science Business Meeting.
             </p>
 
             <a
               href="./assets/certificados/voluntariopit.pdf"
               target="_blank"
-              class="project-btn"
+              class="cert-btn"
             >
               Abrir PDF
             </a>
