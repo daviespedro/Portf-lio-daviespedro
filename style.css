@@ -6,7 +6,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Margem de scroll para desktop */
+  scroll-padding-top: 90px; /* Ajustado para dar respiro aos títulos ao scrollar */
 }
 
 :root {
@@ -118,6 +118,7 @@ html::before {
   font-weight: 700;
   letter-spacing: 1px;
   flex-shrink: 0;
+  z-index: 1002; /* Mantém acima do menu lateral se necessário */
 }
 
 .nav-links {
@@ -153,6 +154,40 @@ html::before {
 .nav-links a:hover::after,
 .nav-links a.active::after {
   width: 100%;
+}
+
+/* =======================================
+   BOTÃO HAMBÚRGUER (ESTILO MODERNO)
+======================================= */
+.menu-toggle {
+  display: none; /* Oculto no desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 19px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Transformação das barras em X */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 /* =========================
@@ -549,7 +584,7 @@ html::before {
 #contato .card p { color: #ffffff; }
 
 /* ==================================================
-   MÍDIA QUERIES (RESPONSIVIDADE AJUSTADA)
+   MÍDIA QUERIES (RESPONSIVIDADE PREMIUM ATUALIZADA)
 ================================================== */
 
 @media (max-width: 1024px) {
@@ -559,60 +594,78 @@ html::before {
 }
 
 @media (max-width: 768px) {
-  /* Novo scroll-padding para compensar o header maior */
   html {
-    scroll-padding-top: 130px; /* Ajuste conforme a nova altura da navbar */
+    scroll-padding-top: 90px; /* Mantém o alinhamento com a barra de 80px */
   }
 
   .container { padding: 0 20px; }
   
-  /* Navbar maior para comportar logo e links em duas linhas */
+  /* Restaura a navbar elegante de linha única */
   .navbar {
-    height: auto; /* Deixa fluir a altura */
-    min-height: 120px; /* Altura mínima de segurança */
-    padding: 15px 0; /* Espaçamento interno */
+    height: 80px;
+    min-height: 80px;
+    padding: 0;
   }
 
   .nav {
-    display: flex;
-    flex-direction: column; /* Empilha logo e links */
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    height: auto;
-    gap: 15px; /* Espaço entre logo e links */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    gap: 0;
   }
   
   .logo {
-    font-size: 22px; /* Logo um pouco maior no celular */
+    font-size: 24px;
     margin: 0;
   }
-  
-  /* Container de links: empilhado e centralizado */
-  .nav-links {
-    max-width: 100%;
+
+  /* Ativa o gatilho visual do botão hambúrguer */
+  .menu-toggle {
     display: flex;
-    flex-direction: column; /* Links em coluna */
-    align-items: center;
-    gap: 10px; /* Espaço entre cada link */
-    overflow-x: visible; /* Remove scroll horizontal */
-    white-space: normal; /* Permite quebras de linha se necessário, mas gap deve resolver */
-    padding: 0;
-    justify-content: center;
   }
   
-  /* Reset de margens e gap */
+  /* Transforma o container de links em um painel lateral fluido */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Totalmente oculto fora da tela */
+    width: 75%;
+    max-width: 310px;
+    height: 100vh;
+    background: rgba(5, 8, 20, 0.95);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 1px solid rgba(96, 165, 250, 0.12);
+    padding: 40px;
+    z-index: 1001;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Classe injetada pelo JavaScript para deslizar o menu */
+  .nav-links.open {
+    right: 0;
+  }
+  
+  /* Remove margens horizontais e ajusta fontes para a lista vertical */
   .nav-links a {
-    margin: 0 !important;
-    font-size: 15px;
+    margin-left: 0 !important;
+    font-size: 18px;
+    font-weight: 600;
   }
 
-  /* Ajustes do Hero para o novo header maior */
+  /* Ajustes normais do Hero para mobile */
   .hero {
     flex-direction: column-reverse;
     text-align: center;
-    padding-top: 140px; /* Espaço para o header maior */
+    padding-top: 120px; /* Padding ideal para a barra de 80px */
     padding-bottom: 40px;
-    min-height: auto; /* Deixa a altura fluida */
+    min-height: auto;
     gap: 30px;
   }
 
@@ -627,13 +680,12 @@ html::before {
     max-width: 340px;
   }
 
-  /* Garante o empilhamento limpo dos grids */
   .grid, .cert-grid {
     grid-template-columns: 1fr !important;
   }
 
   .section {
-    padding: 60px 0; /* Diminui o espaçamento excessivo */
+    padding: 60px 0;
   }
 
   .carousel-track {
@@ -643,7 +695,7 @@ html::before {
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .logo { font-size: 20px; }
-  .hero { padding-top: 130px; } /* Ajuste hero para header maior */
+  .logo { font-size: 22px; }
+  .hero { padding-top: 110px; }
   .carousel-track { height: 190px; }
 }
