@@ -229,10 +229,6 @@ body {
 
 .hero-img img:hover {
   transform: translateY(-5px) scale(1.02);
-
-  box-shadow:
-    0 0 0 2px rgba(96, 165, 250, 0.8),
-    0 20px 60px rgba(96, 165, 250, 0.4);
 }
 
 /* =========================
@@ -305,10 +301,6 @@ body {
   font-size: 24px;
 }
 
-.card strong {
-  color: #60a5fa;
-}
-
 .card p {
   line-height: 1.8;
   color: #dbe4f3;
@@ -378,9 +370,6 @@ body {
 
 .project-btn:hover {
   transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 20px rgba(59, 130, 246, 0.3);
 }
 
 /* =========================
@@ -404,14 +393,11 @@ body {
 
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border 0.25s;
+    box-shadow 0.25s ease;
 }
 
 .event-card:hover {
   transform: translateY(-5px);
-
-  border: 1px solid rgba(96, 165, 250, 0.45);
 
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.5),
@@ -432,6 +418,8 @@ body {
   border-radius: 16px;
 
   margin-bottom: 20px;
+
+  background: #0f172a;
 }
 
 .carousel-track {
@@ -446,7 +434,13 @@ body {
   overflow: hidden;
 
   background: #0f172a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* IMAGENS */
 
 .carousel-img {
   position: absolute;
@@ -455,24 +449,27 @@ body {
   width: 100%;
   height: 100%;
 
-  /* MUITO IMPORTANTE */
+  /* REMOVE O ZOOM */
   object-fit: contain;
 
-  object-position: center;
+  /* CENTRALIZA */
+  object-position: center center;
 
   background: #0f172a;
 
   opacity: 0;
 
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
+
+/* IMAGEM VISÍVEL */
 
 .carousel-img.active {
   opacity: 1;
 }
 
 /* =========================
-   BOTÕES
+   BOTÕES CARROSSEL
 ========================= */
 
 .carousel-btn {
@@ -502,13 +499,6 @@ body {
 
 .carousel-btn:hover {
   background: #2563eb;
-
-  transform:
-    translateY(-50%)
-    scale(1.08);
-
-  box-shadow:
-    0 0 20px rgba(96, 165, 250, 0.5);
 }
 
 .prev {
@@ -704,49 +694,12 @@ body {
     padding: 0 20px;
   }
 
-  .navbar {
-    height: auto;
-    padding: 12px 0;
-  }
-
-  .nav {
-    flex-direction: column;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    height: auto;
-
-    padding: 10px 0;
-  }
-
-  .logo {
-    font-size: 26px;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    gap: 18px;
-  }
-
-  .nav-links a {
-    margin-left: 0;
-    font-size: 15px;
-  }
-
   .hero {
     flex-direction: column-reverse;
 
     text-align: center;
 
     padding-top: 190px;
-    padding-bottom: 60px;
-
-    min-height: auto;
 
     gap: 50px;
   }
@@ -780,10 +733,6 @@ body {
     height: 230px;
   }
 
-  .section {
-    padding: 80px 0;
-  }
-
   .section-title {
     font-size: 34px;
     text-align: center;
@@ -797,15 +746,6 @@ body {
     height: 220px;
   }
 
-  .event-content h3 {
-    font-size: 24px;
-  }
-
-  .event-description {
-    font-size: 15px;
-    line-height: 1.8;
-  }
-
   .event-card {
     padding: 15px;
   }
@@ -815,10 +755,6 @@ body {
 
   .container {
     padding: 0 16px;
-  }
-
-  .logo {
-    font-size: 22px;
   }
 
   .hero {
@@ -833,21 +769,9 @@ body {
     font-size: 20px;
   }
 
-  .desc {
-    font-size: 15px;
-  }
-
-  .section-title {
-    font-size: 30px;
-  }
-
   .hero-img img {
     width: 190px;
     height: 190px;
-  }
-
-  .project-img {
-    height: 180px;
   }
 
   .carousel-track {
@@ -865,11 +789,6 @@ body {
   }
 
   .event-description {
-    font-size: 14px;
-  }
-
-  .btn {
-    padding: 13px 20px;
     font-size: 14px;
   }
 }
