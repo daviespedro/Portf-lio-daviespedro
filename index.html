@@ -1,554 +1,890 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Pedro Davies | Full Stack</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+  <title>Pedro Davies | Full Stack</title>
 
-    <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-    <style>
-      html {
-        scroll-padding-top: 100px;
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Josefin Sans', sans-serif;
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:100px;
+    }
+
+    section{
+      scroll-margin-top:100px;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    #bg{
+      position:fixed;
+      inset:0;
+      background:
+      radial-gradient(circle at top left,#12335f 0%,transparent 35%),
+      radial-gradient(circle at bottom right,#07152f 0%,transparent 35%),
+      #050816;
+      z-index:-1;
+    }
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:999;
+
+      backdrop-filter:blur(12px);
+
+      background:rgba(4,8,20,0.75);
+
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav{
+      height:90px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      font-size:42px;
+      font-weight:700;
+      color:white;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:35px;
+    }
+
+    .nav-links a{
+      color:#d6d6d6;
+      font-size:20px;
+      transition:.3s;
+    }
+
+    .nav-links a:hover{
+      color:#5ea4ff;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      min-height:90vh;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:80px;
+    }
+
+    .title{
+      font-size:72px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .subtitle{
+      color:#5ea4ff;
+      font-size:34px;
+      margin-bottom:20px;
+    }
+
+    .desc{
+      color:#bdbdbd;
+      font-size:22px;
+      margin-bottom:40px;
+      line-height:1.6;
+    }
+
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .btn{
+      padding:14px 26px;
+      border-radius:14px;
+
+      border:1px solid #5ea4ff;
+      color:#5ea4ff;
+
+      transition:.3s;
+      font-size:18px;
+    }
+
+    .btn:hover{
+      background:#5ea4ff;
+      color:#050816;
+    }
+
+    .hero-img img{
+      width:340px;
+      border-radius:30px;
+      border:2px solid rgba(255,255,255,.08);
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .section{
+      padding:110px 0;
+    }
+
+    .section-title{
+      font-size:56px;
+      color:#5ea4ff;
+      margin-bottom:50px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      border-radius:25px;
+
+      padding:35px;
+
+      backdrop-filter:blur(10px);
+    }
+
+    .card p{
+      line-height:1.8;
+      color:#d8d8d8;
+      margin-bottom:12px;
+      font-size:18px;
+    }
+
+    .card h3{
+      margin-bottom:20px;
+      font-size:28px;
+    }
+
+    /* =========================
+       PROJETOS
+    ========================= */
+
+    .project-card{
+      overflow:hidden;
+    }
+
+    .project-img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius:18px;
+      margin-bottom:25px;
+    }
+
+    .project-desc{
+      margin-bottom:14px;
+    }
+
+    .tech{
+      color:#5ea4ff !important;
+      margin-top:20px;
+      margin-bottom:25px !important;
+    }
+
+    .project-btn{
+      display:inline-block;
+
+      margin-right:10px;
+      margin-top:10px;
+
+      padding:12px 20px;
+
+      border-radius:12px;
+
+      border:1px solid #5ea4ff;
+
+      color:#5ea4ff;
+
+      transition:.3s;
+    }
+
+    .project-btn:hover{
+      background:#5ea4ff;
+      color:#050816;
+    }
+
+    /* =========================
+       EVENTOS
+    ========================= */
+
+    .event-card{
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      border-radius:25px;
+
+      padding:25px;
+
+      backdrop-filter:blur(10px);
+    }
+
+    .carousel{
+      position:relative;
+      width:100%;
+      overflow:hidden;
+      border-radius:20px;
+      margin-bottom:25px;
+    }
+
+    .carousel-track{
+      position:relative;
+      width:100%;
+      height:320px;
+    }
+
+    .carousel-img{
+      position:absolute;
+
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      border-radius:20px;
+
+      opacity:0;
+
+      transition:opacity .5s ease;
+    }
+
+    .carousel-img.active{
+      opacity:1;
+    }
+
+    .carousel-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+
+      width:50px;
+      height:50px;
+
+      border:none;
+      border-radius:50%;
+
+      cursor:pointer;
+
+      font-size:24px;
+
+      color:white;
+
+      background:rgba(0,0,0,0.5);
+
+      z-index:10;
+
+      transition:.3s;
+    }
+
+    .carousel-btn:hover{
+      background:#5ea4ff;
+      color:#050816;
+    }
+
+    .prev{
+      left:15px;
+    }
+
+    .next{
+      right:15px;
+    }
+
+    .event-content h3{
+      font-size:36px;
+      margin-bottom:20px;
+    }
+
+    .event-description{
+      line-height:1.9;
+      color:#d7d7d7;
+      font-size:20px;
+      transition:.3s;
+    }
+
+    .collapsed{
+      max-height:110px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .collapsed::after{
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      bottom:0;
+
+      width:100%;
+      height:45px;
+
+      background:linear-gradient(
+        transparent,
+        rgba(5,8,22,1)
+      );
+    }
+
+    .read-more-btn{
+      margin-top:20px;
+
+      padding:12px 20px;
+
+      border-radius:12px;
+
+      border:1px solid #5ea4ff;
+
+      background:transparent;
+
+      color:#5ea4ff;
+
+      cursor:pointer;
+
+      transition:.3s;
+
+      font-size:17px;
+    }
+
+    .read-more-btn:hover{
+      background:#5ea4ff;
+      color:#050816;
+    }
+
+    /* =========================
+       CERTIFICADOS
+    ========================= */
+
+    .cert-card{
+      display:flex;
+      gap:30px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .cert-img{
+      width:320px;
+      border-radius:18px;
+    }
+
+    /* =========================
+       CONTATO
+    ========================= */
+
+    .label{
+      color:#5ea4ff;
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media(max-width:900px){
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:60px;
       }
 
-      section {
-        scroll-margin-top: 100px;
+      .nav-links{
+        display:none;
       }
 
-      /* =========================
-         EVENTOS
-      ========================= */
-
-      .event-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
-        padding: 30px;
-        backdrop-filter: blur(10px);
+      .title{
+        font-size:52px;
       }
 
-      .carousel {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        border-radius: 20px;
-        margin-bottom: 25px;
+      .subtitle{
+        font-size:28px;
       }
 
-      .carousel-track {
-        position: relative;
-        width: 100%;
-        height: 450px;
+      .hero-img img{
+        width:260px;
       }
 
-      .carousel-img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 20px;
-
-        opacity: 0;
-        transition: opacity 0.5s ease;
+      .carousel-track{
+        height:230px;
       }
 
-      .carousel-img.active {
-        opacity: 1;
+      .section-title{
+        font-size:44px;
       }
 
-      .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+    }
 
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
+  </style>
+</head>
 
-        border: none;
-        width: 45px;
-        height: 45px;
+<body>
 
-        border-radius: 50%;
-        cursor: pointer;
+  <div id="bg"></div>
 
-        z-index: 10;
+  <!-- NAVBAR -->
+  <nav class="navbar">
 
-        font-size: 20px;
-        transition: 0.3s;
-      }
+    <div class="container nav">
 
-      .carousel-btn:hover {
-        background: #00bfff;
-      }
+      <h2 class="logo">daviespedro.dev</h2>
 
-      .prev {
-        left: 15px;
-      }
-
-      .next {
-        right: 15px;
-      }
-
-      .event-content h3 {
-        font-size: 28px;
-        margin-bottom: 15px;
-      }
-
-      .event-description {
-        line-height: 1.8;
-        color: #d9d9d9;
-        transition: 0.3s;
-      }
-
-      .collapsed {
-        max-height: 90px;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .collapsed::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-
-        width: 100%;
-        height: 40px;
-
-        background: linear-gradient(
-          transparent,
-          rgba(15, 15, 15, 1)
-        );
-      }
-
-      .read-more-btn {
-        margin-top: 15px;
-        background: transparent;
-        border: 1px solid #00bfff;
-
-        color: #00bfff;
-        padding: 10px 18px;
-
-        border-radius: 10px;
-        cursor: pointer;
-
-        transition: 0.3s;
-      }
-
-      .read-more-btn:hover {
-        background: #00bfff;
-        color: #000;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="bg"></div>
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <div class="container nav">
-        <h2 class="logo">daviespedro.dev</h2>
-
-        <div class="nav-links">
-          <a href="#sobre">Sobre</a>
-          <a href="#habilidades">Habilidades</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#eventos">Eventos</a>
-          <a href="#certificados">Certificados</a>
-          <a href="#contato">Contato</a>
-        </div>
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#certificados">Certificados</a>
+        <a href="#contato">Contato</a>
       </div>
-    </nav>
 
-    <!-- HERO -->
-    <header class="hero container">
-      <div class="hero-text reveal">
-        <h1 class="title">
-          <span id="nome"></span><span class="cursor">|</span>
-        </h1>
+    </div>
 
-        <h2 class="subtitle">Full Stack Developer</h2>
+  </nav>
 
-        <p class="desc">
-          Desenvolvimento Web • Backend • APIs REST • Análise de Dados
-        </p>
+  <!-- HERO -->
+  <header class="hero container">
 
-        <div class="buttons">
-          <a
-            href="https://br.linkedin.com/in/pedro-augusto-davies-gonçalves-4554293b0"
-            target="_blank"
-            class="btn"
-          >
-            LinkedIn
-          </a>
+    <div class="hero-text">
 
-          <a
-            href="./assets/Curriculo original Pedro.pdf"
-            download
-            class="btn"
-          >
-            Baixar Currículo
-          </a>
+      <h1 class="title">
+        Pedro Davies
+      </h1>
 
-          <a href="https://github.com/daviespedro" target="_blank" class="btn">
-            GitHub
-          </a>
-        </div>
+      <h2 class="subtitle">
+        Full Stack Developer
+      </h2>
+
+      <p class="desc">
+        Desenvolvimento Web • Backend • APIs REST • Análise de Dados
+      </p>
+
+      <div class="buttons">
+
+        <a
+          href="https://br.linkedin.com"
+          target="_blank"
+          class="btn"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="./assets/Curriculo.pdf"
+          download
+          class="btn"
+        >
+          Currículo
+        </a>
+
+        <a
+          href="https://github.com/daviespedro"
+          target="_blank"
+          class="btn"
+        >
+          GitHub
+        </a>
+
       </div>
 
-      <div class="hero-img reveal">
-        <div class="frame">
-          <img
-            src="./assets/imagens/1B320573-F170-4A49-84FA-D46A5D9AF710.PNG"
-            alt="Pedro Davies"
-          />
-        </div>
-      </div>
-    </header>
+    </div>
 
-    <!-- SOBRE -->
-    <section id="sobre" class="container section reveal">
-      <h2 class="section-title">Sobre</h2>
+    <div class="hero-img">
+
+      <img
+        src="./assets/imagens/foto.png"
+        alt="Pedro Davies"
+      />
+
+    </div>
+
+  </header>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="container section">
+
+    <h2 class="section-title">
+      Sobre
+    </h2>
+
+    <div class="card">
+
+      <p>
+        <strong>Nome:</strong>
+        Pedro Augusto Davies Gonçalves
+      </p>
+
+      <p>
+        <strong>Formação:</strong>
+        Desenvolvimento de Software Multiplataforma – FATEC
+      </p>
+
+      <p>
+        <strong>Objetivo:</strong>
+        Atuar como desenvolvedor Full Stack criando aplicações web modernas,
+        APIs REST e soluções orientadas a dados.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades" class="container section">
+
+    <h2 class="section-title">
+      Habilidades
+    </h2>
+
+    <div class="grid">
 
       <div class="card">
-        <p><strong>Nome:</strong> Pedro Augusto Davies Gonçalves</p>
 
-        <p>
-          <strong>Formação:</strong>
-          Desenvolvimento de Software Multiplataforma – FATEC (2025 - atual)
-        </p>
+        <h3>Hard Skills</h3>
 
-        <p>
-          <strong>Objetivo Profissional:</strong><br />
-          Atuar como desenvolvedor Full Stack, com foco na criação de aplicações
-          web modernas, APIs REST escaláveis e soluções orientadas a dados.
-        </p>
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JavaScript</p>
+        <p>Python</p>
+        <p>MySQL</p>
+        <p>Docker</p>
 
-        <p>
-          <strong>Objetivos Acadêmicos:</strong><br />
-          Consolidar conhecimentos em desenvolvimento web, estruturas de dados,
-          banco de dados e engenharia de software.
-        </p>
-
-        <p>
-          <strong>Áreas de Interesse:</strong><br />
-          Desenvolvimento Web • Backend • APIs REST • Análise de Dados
-        </p>
       </div>
-    </section>
-
-    <!-- HABILIDADES -->
-    <section id="habilidades" class="container section reveal">
-      <h2 class="section-title">Habilidades</h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Hard Skills</h3>
-
-          <p>HTML</p>
-          <p>CSS</p>
-          <p>JavaScript</p>
-          <p>Python</p>
-          <p>MySQL</p>
-          <p>Git e GitHub</p>
-          <p>Docker</p>
-          <p>APIs REST</p>
-        </div>
-
-        <div class="card">
-          <h3>Soft Skills</h3>
-
-          <p>Comunicação clara</p>
-          <p>Trabalho em equipe</p>
-          <p>Resolução de problemas</p>
-          <p>Pensamento analítico</p>
-          <p>Proatividade</p>
-          <p>Organização e gestão de tempo</p>
-          <p>Aprendizado contínuo</p>
-          <p>Adaptabilidade</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJETOS -->
-    <section id="projetos" class="container section reveal">
-      <h2 class="section-title">Projetos</h2>
-
-      <div class="grid">
-
-        <!-- RADAR CIDADAO -->
-        <div class="card project-card">
-          <img
-            src="./assets/imagens/radar.png"
-            class="project-img"
-            alt="Radar Cidadão"
-          />
-
-          <h3>Radar Cidadão</h3>
-
-          <p class="project-desc">
-            <strong>Problema:</strong>
-            Dificuldade de acesso e interpretação de dados públicos sobre
-            atuação de deputados.
-          </p>
-
-          <p class="project-desc">
-            <strong>Solução:</strong>
-            Desenvolvimento de uma aplicação web para centralizar, processar e
-            exibir essas informações de forma clara e acessível.
-          </p>
-
-          <p class="project-desc">
-            <strong>Atuação:</strong>
-            Atuei em Frontend e Backend.
-          </p>
-
-          <p class="tech">
-            Python • API REST • MySQL • JavaScript • Docker
-          </p>
-
-          <a
-            href="https://github.com/eugeniojonatas/Radar-Cidadao-Froggrammers"
-            target="_blank"
-            class="project-btn"
-          >
-            Ver Projeto
-          </a>
-
-          <a
-            href="https://radar-cidadao-froggrammers.onrender.com"
-            target="_blank"
-            class="project-btn"
-          >
-            Acessar Site
-          </a>
-        </div>
-
-        <!-- LUMINELLI -->
-        <div class="card project-card">
-          <img
-            src="./assets/imagens/projeto2.png"
-            class="project-img"
-            alt="Luminelli Pratas"
-          />
-
-          <h3>Luminelli Pratas</h3>
-
-          <p class="project-desc">
-            <strong>Problema:</strong>
-            Visualização dos itens do estoque e falta de atividade de
-            E-commerce.
-          </p>
-
-          <p class="project-desc">
-            <strong>Solução:</strong>
-            Desenvolvimento de uma aplicação web para melhorar a visualização e
-            implementar a atividade de E-commerce.
-          </p>
-
-          <p class="project-desc">
-            <strong>Atuação:</strong>
-            Atuei em Frontend, Backend e Banco de Dados.
-          </p>
-
-          <p class="tech">
-            HTML • MySQL • CSS • JavaScript
-          </p>
-
-          <a
-            href="https://github.com/daviespedro"
-            target="_blank"
-            class="project-btn"
-          >
-            Ver Projeto
-          </a>
-
-          <a
-            href="https://github.com/daviespedro"
-            target="_blank"
-            class="project-btn"
-          >
-            Em Desenvolvimento
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- EVENTOS -->
-    <section id="eventos" class="container section reveal">
-      <h2 class="section-title">Eventos</h2>
-
-      <div class="event-card">
-
-        <!-- CARROSSEL -->
-        <div class="carousel">
-
-          <button class="carousel-btn prev" onclick="mudarSlide(-1)">
-            ❮
-          </button>
-
-          <div class="carousel-track">
-            <img
-              src="./assets/eventos/evento1.jpg"
-              class="carousel-img active"
-            />
-
-            <img
-              src="./assets/eventos/evento2.jpg"
-              class="carousel-img"
-            />
-
-            <img
-              src="./assets/eventos/evento3.jpg"
-              class="carousel-img"
-            />
-          </div>
-
-          <button class="carousel-btn next" onclick="mudarSlide(1)">
-            ❯
-          </button>
-
-        </div>
-
-        <!-- TEXTO -->
-        <div class="event-content">
-
-          <h3>Science Business Meeting</h3>
-
-          <p class="event-description collapsed" id="eventText">
-            Participei do Science Business Meeting atuando como voluntário
-            representando o PIT. Durante o evento tive contato com empresas,
-            startups, profissionais da área de tecnologia e inovação,
-            auxiliando na organização e suporte das atividades.
-
-            A experiência proporcionou networking, desenvolvimento profissional,
-            aprendizado sobre inovação e aproximação com o ecossistema
-            tecnológico e empresarial. Além disso, pude fortalecer habilidades
-            como comunicação, trabalho em equipe e resolução de problemas
-            em ambientes dinâmicos.
-          </p>
-
-          <button class="read-more-btn" onclick="toggleTexto()">
-            Ler mais
-          </button>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICADOS -->
-    <section id="certificados" class="container section reveal">
-      <h2 class="section-title">Certificados</h2>
-
-      <div class="cert-wrapper">
-        <div class="card cert-card">
-          <img
-            src="./assets/certificados/importfe.png"
-            alt="Certificado"
-            class="cert-img"
-          />
-
-          <div class="cert-content">
-            <h3>XXV Maratona Interna de Programação</h3>
-
-            <p class="cert-desc">
-              Certificado de participação na XXV Maratona Interna de Programação
-              da FATEC São José dos Campos.
-            </p>
-
-            <a
-              href="./assets/certificados/importfe.png"
-              target="_blank"
-              class="project-btn"
-            >
-              Ver Certificado
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section id="contato" class="container section reveal">
-      <h2 class="section-title">Contato</h2>
 
       <div class="card">
-        <p>
-          <span class="label">Email:</span>
-          daviespedro@icloud.com
-        </p>
 
-        <p>
-          <span class="label">GitHub:</span>
-          github.com/daviespedro
-        </p>
+        <h3>Soft Skills</h3>
 
-        <p>
-          <span class="label">LinkedIn:</span>
-          pedro-augusto-davies
-        </p>
+        <p>Comunicação</p>
+        <p>Trabalho em equipe</p>
+        <p>Proatividade</p>
+        <p>Resolução de problemas</p>
+
       </div>
-    </section>
 
-    <script>
-      /* =========================
-         CARROSSEL EVENTOS
-      ========================= */
+    </div>
 
-      let slideAtual = 0;
+  </section>
 
-      const slides = document.querySelectorAll(".carousel-img");
+  <!-- PROJETOS -->
+  <section id="projetos" class="container section">
 
-      function mostrarSlide(index) {
+    <h2 class="section-title">
+      Projetos
+    </h2>
 
-        slides.forEach((slide) => {
-          slide.classList.remove("active");
-        });
+    <div class="grid">
 
-        slides[index].classList.add("active");
+      <div class="card project-card">
+
+        <img
+          src="./assets/imagens/radar.png"
+          class="project-img"
+        />
+
+        <h3>Radar Cidadão</h3>
+
+        <p class="project-desc">
+          Plataforma para visualização de dados públicos parlamentares.
+        </p>
+
+        <p class="tech">
+          Python • API REST • MySQL • Docker
+        </p>
+
+        <a
+          href="#"
+          class="project-btn"
+        >
+          Ver Projeto
+        </a>
+
+      </div>
+
+      <div class="card project-card">
+
+        <img
+          src="./assets/imagens/projeto2.png"
+          class="project-img"
+        />
+
+        <h3>Luminelli Pratas</h3>
+
+        <p class="project-desc">
+          Sistema web para gerenciamento e E-commerce.
+        </p>
+
+        <p class="tech">
+          HTML • CSS • JavaScript • MySQL
+        </p>
+
+        <a
+          href="#"
+          class="project-btn"
+        >
+          Ver Projeto
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EVENTOS -->
+  <section id="eventos" class="container section">
+
+    <h2 class="section-title">
+      Eventos
+    </h2>
+
+    <div class="event-card">
+
+      <!-- CARROSSEL -->
+      <div class="carousel">
+
+        <button
+          class="carousel-btn prev"
+          onclick="mudarSlide(-1)"
+        >
+          ❮
+        </button>
+
+        <div class="carousel-track">
+
+          <!-- ADICIONE SUAS FOTOS AQUI -->
+          <img
+            src="./assets/eventos/evento1.jpg"
+            class="carousel-img active"
+          />
+
+          <img
+            src="./assets/eventos/evento2.jpg"
+            class="carousel-img"
+          />
+
+          <img
+            src="./assets/eventos/evento3.jpg"
+            class="carousel-img"
+          />
+
+        </div>
+
+        <button
+          class="carousel-btn next"
+          onclick="mudarSlide(1)"
+        >
+          ❯
+        </button>
+
+      </div>
+
+      <!-- TEXTO -->
+      <div class="event-content">
+
+        <h3>
+          Science Business Meeting
+        </h3>
+
+        <p
+          class="event-description collapsed"
+          id="eventText"
+        >
+          Participei do Science Business Meeting atuando como
+          voluntário representando o PIT.
+
+          Durante o evento tive contato com empresas,
+          startups e profissionais da área de tecnologia
+          e inovação, auxiliando na organização e suporte
+          das atividades.
+
+          A experiência proporcionou networking,
+          desenvolvimento profissional e aprendizado
+          sobre inovação e ecossistema tecnológico.
+        </p>
+
+        <button
+          class="read-more-btn"
+          onclick="toggleTexto()"
+        >
+          Ler mais
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CERTIFICADOS -->
+  <section id="certificados" class="container section">
+
+    <h2 class="section-title">
+      Certificados
+    </h2>
+
+    <div class="card cert-card">
+
+      <img
+        src="./assets/certificados/importfe.png"
+        class="cert-img"
+      />
+
+      <div>
+
+        <h3>
+          XXV Maratona Interna de Programação
+        </h3>
+
+        <p>
+          Certificado de participação na maratona da FATEC.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="container section">
+
+    <h2 class="section-title">
+      Contato
+    </h2>
+
+    <div class="card">
+
+      <p>
+        <span class="label">Email:</span>
+        daviespedro@icloud.com
+      </p>
+
+      <p>
+        <span class="label">GitHub:</span>
+        github.com/daviespedro
+      </p>
+
+      <p>
+        <span class="label">LinkedIn:</span>
+        Pedro Augusto Davies
+      </p>
+
+    </div>
+
+  </section>
+
+  <script>
+
+    /* =========================
+       CARROSSEL
+    ========================= */
+
+    let slideAtual = 0;
+
+    const slides =
+      document.querySelectorAll(".carousel-img");
+
+    function mostrarSlide(index){
+
+      slides.forEach((slide)=>{
+        slide.classList.remove("active");
+      });
+
+      slides[index].classList.add("active");
+    }
+
+    function mudarSlide(direcao){
+
+      slideAtual += direcao;
+
+      if(slideAtual >= slides.length){
+        slideAtual = 0;
       }
 
-      function mudarSlide(direcao) {
-
-        slideAtual += direcao;
-
-        if (slideAtual >= slides.length) {
-          slideAtual = 0;
-        }
-
-        if (slideAtual < 0) {
-          slideAtual = slides.length - 1;
-        }
-
-        mostrarSlide(slideAtual);
+      if(slideAtual < 0){
+        slideAtual = slides.length - 1;
       }
 
-      /* =========================
-         LER MAIS
-      ========================= */
+      mostrarSlide(slideAtual);
+    }
 
-      function toggleTexto() {
+    /* =========================
+       LER MAIS
+    ========================= */
 
-        const texto = document.getElementById("eventText");
+    function toggleTexto(){
 
-        const botao = document.querySelector(".read-more-btn");
+      const texto =
+        document.getElementById("eventText");
 
-        texto.classList.toggle("collapsed");
+      const botao =
+        document.querySelector(".read-more-btn");
 
-        if (texto.classList.contains("collapsed")) {
-          botao.innerText = "Ler mais";
-        } else {
-          botao.innerText = "Ler menos";
-        }
+      texto.classList.toggle("collapsed");
+
+      if(texto.classList.contains("collapsed")){
+        botao.innerText = "Ler mais";
+      }else{
+        botao.innerText = "Ler menos";
       }
-    </script>
 
-    <script src="script.js"></script>
-  </body>
+    }
+
+  </script>
+
+</body>
 </html>
