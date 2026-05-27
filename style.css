@@ -6,7 +6,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 80px; /* Margem de scroll para desktop */
 }
 
 :root {
@@ -56,7 +56,7 @@ body {
 }
 
 /* =========================
-   EFEITO DO MOUSE (OTIMIZADO)
+   EFEITO DO MOUSE
 ========================= */
 
 html::before {
@@ -76,7 +76,6 @@ html::before {
   will-change: background;
 }
 
-/* Desativa o efeito do mouse em telas touch para não gerar manchas estáticas */
 @media (hover: none) {
   html::before {
     display: none;
@@ -89,6 +88,8 @@ html::before {
 
 .navbar {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 80px;
   background: rgba(5, 8, 20, 0.85);
@@ -113,7 +114,7 @@ html::before {
 
 .logo {
   color: white;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   letter-spacing: 1px;
   flex-shrink: 0;
@@ -155,12 +156,12 @@ html::before {
 }
 
 /* =========================
-   HERO (COM TIPOGRAFIA FLUIDA)
+   HERO
 ========================= */
 
 .hero {
   padding-top: 100px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -174,7 +175,6 @@ html::before {
   max-width: 650px;
 }
 
-/* O clamp ajusta o tamanho da fonte dinamicamente de acordo com a tela */
 .title {
   font-size: clamp(38px, 6vw, 72px);
   margin-bottom: 15px;
@@ -261,10 +261,11 @@ html::before {
   padding: 80px 0;
   position: relative;
   z-index: 2;
+  scroll-margin-top: 20px; /* Garante que a seção se posicione perfeitamente */
 }
 
 .section-title {
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   font-size: clamp(28px, 4vw, 42px);
   color: #60a5fa;
 }
@@ -302,7 +303,7 @@ html::before {
 }
 
 .card h3 {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   color: #60a5fa;
   font-size: 22px;
 }
@@ -326,7 +327,6 @@ html::before {
   height: 200px;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .project-card h3 {
@@ -357,13 +357,8 @@ html::before {
   font-weight: 600;
 }
 
-.project-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-}
-
 /* =========================
-   EVENTOS
+   EVENTOS & CARROSSEL
 ========================= */
 
 #eventos .events-grid {
@@ -381,12 +376,7 @@ html::before {
   border-radius: 22px;
   border: 1px solid rgba(96, 165, 250, 0.12);
   width: 100%;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
 }
-
-/* =========================
-   CARROSSEL
-========================= */
 
 .carousel {
   position: relative;
@@ -401,8 +391,6 @@ html::before {
   position: relative;
   width: 100%;
   height: 300px;
-  border-radius: 18px;
-  overflow: hidden;
   background: #0f172a;
   display: flex;
   align-items: center;
@@ -434,18 +422,12 @@ html::before {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 18px;
   color: white;
   background: rgba(5, 8, 20, 0.8);
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s;
-}
-
-.carousel-btn:hover {
-  background: #2563eb;
 }
 
 .prev { left: 14px; }
@@ -466,6 +448,7 @@ html::before {
 .collapsed {
   max-height: 110px;
   overflow: hidden;
+  position: relative;
 }
 
 .collapsed::after {
@@ -520,7 +503,6 @@ html::before {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
   border-bottom: 1px solid rgba(96, 165, 250, 0.08);
 }
 
@@ -529,21 +511,6 @@ html::before {
   height: 100%;
   object-fit: contain;
   padding: 12px;
-}
-
-.cert-placeholder {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: #60a5fa;
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
 }
 
 .cert-content {
@@ -564,63 +531,70 @@ html::before {
   font-weight: 600;
 }
 
-/* =========================
-   CONTATO & REVEAL
-========================= */
-
 #contato .label { color: #60a5fa; font-weight: 600; }
 #contato .card p { color: #ffffff; }
-.reveal { opacity: 1; transform: translateY(0); }
 
 /* ==================================================
-   MÍDIA QUERIES (RESPONSIVIDADE IMPECÁVEL)
+   MÍDIA QUERIES (RESPONSIVIDADE AJUSTADA)
 ================================================== */
 
 @media (max-width: 1024px) {
   .container { padding: 0 24px; }
   .hero { gap: 40px; }
-  #eventos .events-grid { grid-template-columns: 1fr; } /* Quebra eventos para 1 coluna */
+  #eventos .events-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
+  /* Correção do bug de colisão do Menu */
+  html {
+    scroll-padding-top: 70px; /* Reduzido cirurgicamente para bater com o header mobile */
+  }
+
   .container { padding: 0 20px; }
   
-  /* Sistema de navegação horizontal por toque super clean */
+  .navbar {
+    height: 70px; /* Trava a altura para não vazar sobre o conteúdo */
+  }
+
   .nav {
-    flex-direction: column;
-    height: auto;
-    padding: 15px 0;
-    gap: 12px;
+    display: flex;
+    flex-direction: row; /* Mantém em linha, sem empilhar */
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
   }
   
+  .logo {
+    font-size: 20px;
+  }
+  
+  /* Os links ganham scroll lateral elegante, sem quebrar layout */
   .nav-links {
-    width: 100vw;
-    margin-left: -20px; /* Alinha o scroll com a borda da tela */
-    padding: 0 20px 8px 20px;
+    max-width: 60%;
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
+    padding-bottom: 4px;
+    justify-content: flex-end;
   }
   
-  /* Esconde a barra de rolagem feia do sistema no mobile */
   .nav-links::-webkit-scrollbar {
-    display: none;
+    display: none; /* Oculta a barra de rolagem do sistema */
   }
   
   .nav-links a {
-    margin-left: 0;
-    margin-right: 25px;
-    display: inline-block;
+    margin-left: 20px;
     font-size: 14px;
   }
 
+  /* Ajustes do Hero para evitar qualquer sobreposição */
   .hero {
-    flex-direction: column-reverse; /* Foto em cima, texto embaixo */
+    flex-direction: column-reverse;
     text-align: center;
-    padding-top: 150px;
-    gap: 35px;
-    justify-content: center;
+    padding-top: 130px; /* Espaço perfeito para a navbar compacta */
+    padding-bottom: 40px;
+    min-height: auto; /* Deixa a altura fluida para não esmagar seções de baixo */
+    gap: 30px;
   }
 
   .buttons {
@@ -632,27 +606,25 @@ html::before {
   .btn {
     width: 100%;
     max-width: 340px;
-    text-align: center;
   }
 
-  /* Força todas as grades a adotarem 1 coluna real, eliminando estouros */
+  /* Garante o empilhamento limpo dos grids */
   .grid, .cert-grid {
     grid-template-columns: 1fr !important;
   }
 
-  .card {
-    padding: 22px;
+  .section {
+    padding: 60px 0; /* Diminui o espaçamento excessivo */
   }
 
   .carousel-track {
-    height: 250px;
+    height: 240px;
   }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .hero { padding-top: 140px; }
-  .carousel-track { height: 200px; }
-  .carousel-btn { width: 36px; height: 36px; font-size: 14px; }
-  .cert-img-container { height: 180px; }
+  .hero { padding-top: 110px; }
+  .nav-links { max-width: 65%; }
+  .carousel-track { height: 190px; }
 }
