@@ -21,13 +21,18 @@ function digitar() {
     setTimeout(digitar, 70);
   }
 }
-/* =========================
-   EFEITO BRILHO MOUSE
-========================= */
+// =========================
+// EFEITO BRILHO MOUSE
+// =========================
 
 document.addEventListener("mousemove", (e) => {
-  document.body.style.setProperty("--x", e.clientX + "px");
-  document.body.style.setProperty("--y", e.clientY + "px");
+
+  const x = (e.clientX / window.innerWidth) * 100;
+  const y = (e.clientY / window.innerHeight) * 100;
+
+  document.body.style.setProperty("--x", `${x}%`);
+  document.body.style.setProperty("--y", `${y}%`);
+
 });
 /* =========================
    REVEAL SCROLL
