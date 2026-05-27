@@ -16,7 +16,9 @@ body {
   overflow-x: hidden;
 }
 
-/* BACKGROUND */
+/* =========================
+   BACKGROUND
+========================= */
 
 #bg {
   position: fixed;
@@ -37,7 +39,9 @@ body {
   filter: blur(120px);
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
   position: fixed;
@@ -54,7 +58,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: auto;
   padding: 0 30px;
 }
@@ -84,13 +88,9 @@ body {
 
 .nav-links a {
   margin-left: 30px;
-
   color: #94a3b8;
-
   text-decoration: none;
-
   position: relative;
-
   transition: 0.3s;
 }
 
@@ -119,7 +119,9 @@ body {
   width: 100%;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
   padding-top: 120px;
@@ -204,7 +206,9 @@ body {
   height: 340px;
 
   object-fit: cover;
-  object-position: center 20%;
+
+  /* CENTRALIZA MELHOR O ROSTO */
+  object-position: center top;
 
   border-radius: 50%;
 
@@ -225,7 +229,9 @@ body {
     0 20px 60px rgba(96, 165, 250, 0.4);
 }
 
-/* SEÇÕES */
+/* =========================
+   SEÇÕES
+========================= */
 
 .section {
   padding: 100px 0;
@@ -235,24 +241,25 @@ body {
 
 .section-title {
   margin-bottom: 50px;
-
   font-size: 42px;
-
   color: #60a5fa;
 }
 
-/* GRID */
+/* =========================
+   GRID
+========================= */
 
 .grid {
   display: grid;
-
   gap: 25px;
 
   grid-template-columns:
     repeat(auto-fit, minmax(320px, 1fr));
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
 
 .card {
   background: rgba(15, 23, 42, 0.85);
@@ -301,7 +308,9 @@ body {
   color: #dbe4f3;
 }
 
-/* PROJETOS */
+/* =========================
+   PROJETOS
+========================= */
 
 .project-card {
   overflow: hidden;
@@ -310,7 +319,7 @@ body {
 
 .project-img {
   width: 100%;
-  height: 230px;
+  height: 220px;
 
   object-fit: cover;
   object-position: center;
@@ -322,17 +331,13 @@ body {
 
 .project-desc {
   padding: 10px 22px;
-
   color: #cbd5f5;
-
   line-height: 1.8;
 }
 
 .tech {
   padding: 0 22px;
-
   font-size: 13px;
-
   color: #60a5fa;
 }
 
@@ -370,18 +375,24 @@ body {
     0 10px 20px rgba(59, 130, 246, 0.3);
 }
 
-/* EVENTOS */
+/* =========================
+   EVENTOS
+========================= */
 
 .event-card {
   background: rgba(15, 23, 42, 0.85);
 
   backdrop-filter: blur(10px);
 
-  padding: 30px;
+  padding: 22px;
 
   border-radius: 20px;
 
   border: 1px solid rgba(96, 165, 250, 0.15);
+
+  max-width: 920px;
+
+  margin: auto;
 
   transition:
     transform 0.25s ease,
@@ -399,7 +410,9 @@ body {
     0 0 25px rgba(96, 165, 250, 0.2);
 }
 
-/* CARROSSEL */
+/* =========================
+   CARROSSEL
+========================= */
 
 .carousel {
   position: relative;
@@ -410,7 +423,7 @@ body {
 
   border-radius: 18px;
 
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .carousel-track {
@@ -418,17 +431,25 @@ body {
 
   width: 100%;
 
-  height: 520px;
+  height: 420px;
+
+  border-radius: 18px;
+
+  overflow: hidden;
 }
 
 .carousel-img {
   position: absolute;
 
+  inset: 0;
+
   width: 100%;
   height: 100%;
 
   object-fit: cover;
-  object-position: center;
+
+  /* CENTRALIZA MELHOR */
+  object-position: center center;
 
   border-radius: 18px;
 
@@ -443,7 +464,7 @@ body {
   opacity: 1;
 }
 
-/* BOTÕES CARROSSEL */
+/* BOTÕES */
 
 .carousel-btn {
   position: absolute;
@@ -451,8 +472,8 @@ body {
 
   transform: translateY(-50%);
 
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
 
   border: none;
   border-radius: 50%;
@@ -482,23 +503,21 @@ body {
 }
 
 .prev {
-  left: 20px;
+  left: 18px;
 }
 
 .next {
-  right: 20px;
+  right: 18px;
 }
 
-/* EVENTO TEXTO */
-
-.event-content {
-  width: 100%;
-}
+/* =========================
+   TEXTO EVENTO
+========================= */
 
 .event-content h3 {
-  font-size: 34px;
+  font-size: 30px;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   color: #60a5fa;
 }
@@ -506,15 +525,15 @@ body {
 .event-description {
   color: #dbe4f3;
 
-  line-height: 2;
+  line-height: 1.9;
 
-  font-size: 18px;
+  font-size: 17px;
 
   position: relative;
 }
 
 .collapsed {
-  max-height: 140px;
+  max-height: 120px;
   overflow: hidden;
 }
 
@@ -527,7 +546,7 @@ body {
   bottom: 0;
 
   width: 100%;
-  height: 60px;
+  height: 55px;
 
   background:
     linear-gradient(
@@ -563,7 +582,9 @@ body {
   color: white;
 }
 
-/* CERTIFICADOS */
+/* =========================
+   CERTIFICADOS
+========================= */
 
 .cert-wrapper {
   display: flex;
@@ -600,7 +621,9 @@ body {
   line-height: 1.7;
 }
 
-/* CONTATO */
+/* =========================
+   CONTATO
+========================= */
 
 #contato .label {
   color: #60a5fa;
@@ -611,7 +634,9 @@ body {
   color: #ffffff;
 }
 
-/* REVEAL */
+/* =========================
+   REVEAL
+========================= */
 
 .reveal {
   opacity: 0;
@@ -636,7 +661,9 @@ body {
   }
 }
 
-/* RESPONSIVIDADE */
+/* =========================
+   RESPONSIVO
+========================= */
 
 @media (max-width: 1024px) {
 
@@ -654,15 +681,11 @@ body {
   }
 
   .carousel-track {
-    height: 430px;
+    height: 360px;
   }
 }
 
 @media (max-width: 768px) {
-
-  body {
-    overflow-x: hidden;
-  }
 
   .container {
     padding: 0 20px;
@@ -714,14 +737,8 @@ body {
     gap: 50px;
   }
 
-  .hero-text {
-    width: 100%;
-    max-width: 100%;
-  }
-
   .title {
     font-size: 46px;
-    line-height: 1.1;
   }
 
   .subtitle {
@@ -734,9 +751,7 @@ body {
 
   .buttons {
     flex-direction: column;
-
     align-items: center;
-
     width: 100%;
   }
 
@@ -764,21 +779,21 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .card {
-    padding: 24px;
-  }
-
   .carousel-track {
-    height: 320px;
+    height: 260px;
   }
 
   .event-content h3 {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .event-description {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
+  }
+
+  .event-card {
+    padding: 18px;
   }
 }
 
@@ -790,14 +805,6 @@ body {
 
   .logo {
     font-size: 22px;
-  }
-
-  .nav-links {
-    gap: 12px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
   }
 
   .hero {
@@ -825,30 +832,26 @@ body {
     height: 190px;
   }
 
-  .card {
-    padding: 20px;
-  }
-
   .project-img {
     height: 180px;
   }
 
   .carousel-track {
-    height: 230px;
+    height: 210px;
   }
 
   .carousel-btn {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     font-size: 18px;
   }
 
   .event-content h3 {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   .event-description {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .btn {
