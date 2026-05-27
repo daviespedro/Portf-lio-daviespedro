@@ -584,6 +584,21 @@ html::before {
 #contato .card p { color: #ffffff; }
 
 /* ==================================================
+   LINKS DE CONTATO INTERATIVOS
+================================================== */
+.contact-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  color: #25d366;
+  text-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
+}
+
+/* ==================================================
    MÍDIA QUERIES (RESPONSIVIDADE PREMIUM ATUALIZADA)
 ================================================== */
 
