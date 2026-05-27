@@ -16,49 +16,49 @@ html {
 
 body {
   font-family: "Josefin Sans", sans-serif;
-  background: #020408;
+  background: #0a0f1d;
   color: white;
   overflow-x: hidden;
   position: relative;
 }
 
 /* =========================
-   BACKGROUND SUPREMO (MAIS ESCURO E SUTIL)
+   BACKGROUND EQUILIBRADO (SUTIL E COM CONTRASTE)
 ========================= */
 
 #bg {
   position: fixed;
   inset: 0;
   z-index: -3;
-  background: #010307; /* Fundo significativamente mais escuro */
+  background: #0a0f1d; /* Azul profundo equilibrado */
 }
 
-/* Linhas cibernéticas quase invisíveis */
+/* Linhas cibernéticas visíveis na medida certa */
 #bg::before {
   content: "";
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(96, 165, 250, 0.008) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(96, 165, 250, 0.008) 1px, transparent 1px);
-  background-size: 65px 65px;
-  mask-image: radial-gradient(circle at center, black, transparent 80%);
-  -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+    linear-gradient(rgba(96, 165, 250, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at center, black, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
 }
 
-/* Névoas estáticas atenuadas para não brigar com o fundo */
+/* Névoas de luz ambiente para dar profundidade */
 #bg::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.05), transparent 35%),
-    radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.04), transparent 40%),
-    radial-gradient(circle at 70% 75%, rgba(59, 130, 246, 0.03), transparent 45%);
+    radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.08), transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.06), transparent 45%),
+    radial-gradient(circle at 70% 75%, rgba(59, 130, 246, 0.05), transparent 50%);
 }
 
 /* =========================
-   EFEITO DO MOUSE (TOTALMENTE HARMÔNICO)
+   EFEITO DO MOUSE (APARENTE E ELEGANTE)
 ========================= */
 
 html::before {
@@ -68,12 +68,12 @@ html::before {
   pointer-events: none;
   z-index: 9999;
 
-  /* Raio maior (500px) e opacidade ínfima (0.03) para fusão perfeita */
+  /* Opacidade em 0.12 para o efeito aparecer de forma nítida e fluida */
   background:
     radial-gradient(
-      500px circle at var(--x) var(--y),
-      rgba(99, 102, 241, 0.03),
-      transparent 75%
+      400px circle at var(--x) var(--y),
+      rgba(96, 165, 250, 0.12),
+      transparent 80%
     );
 
   mix-blend-mode: screen;
@@ -88,10 +88,10 @@ html::before {
   position: fixed;
   width: 100%;
   height: 80px;
-  background: rgba(1, 3, 7, 0.85);
+  background: rgba(10, 15, 29, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.06);
   z-index: 1000;
 }
 
@@ -130,7 +130,7 @@ html::before {
 
 .nav-links a {
   margin-left: 30px;
-  color: #64748b;
+  color: #94a3b8; /* Cor melhorada para leitura */
   text-decoration: none;
   position: relative;
   transition: 0.3s;
@@ -189,7 +189,7 @@ html::before {
 }
 
 .desc {
-  color: #94a3b8;
+  color: #cbd5e1;
   font-size: 18px;
   line-height: 1.8;
 }
@@ -208,22 +208,22 @@ html::before {
 .btn {
   padding: 14px 26px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(15, 23, 42, 0.4);
-  color: #cbd5e1;
+  border: 1px solid rgba(96, 165, 250, 0.12);
+  background: rgba(15, 23, 42, 0.6);
+  color: #e2e8f0;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background: rgba(30, 41, 59, 0.8);
-  border-color: #3b82f6;
+  background: #1e293b;
+  border-color: #60a5fa;
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 10px 25px rgba(96, 165, 250, 0.2);
 }
 
 /* =========================
-   FOTO PERFIL
+   FOTO PERFIL (MOLDURA AZUL RESTAURADA)
 ========================= */
 
 .hero-img {
@@ -238,17 +238,20 @@ html::before {
   object-fit: cover;
   object-position: center top;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+  
+  /* Moldura azul brilhante de volta */
+  box-shadow:
+    0 0 0 2px rgba(96, 165, 250, 0.4),
+    0 0 40px rgba(96, 165, 250, 0.2);
+    
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-img img:hover {
-  transform: translateY(-5px);
-  border-color: rgba(96, 165, 250, 0.4);
-  box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.6),
-    0 0 40px rgba(96, 165, 250, 0.1);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow:
+    0 0 0 2px rgba(96, 165, 250, 0.6),
+    0 0 60px rgba(96, 165, 250, 0.35);
 }
 
 /* =========================
@@ -278,16 +281,20 @@ html::before {
 }
 
 /* =========================
-   CARDS
+   CARDS (HARMONIA E CONTRASTE)
 ========================= */
 
 .card {
-  background: rgba(10, 15, 30, 0.7);
+  /* Fundo ligeiramente mais claro que o body para separação visual */
+  background: rgba(15, 23, 42, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 30px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  
+  /* Borda sutilmente azulada para harmonizar com o tema */
+  border: 1px solid rgba(96, 165, 250, 0.12);
+  
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -296,10 +303,10 @@ html::before {
 
 .card:hover {
   transform: translateY(-5px);
-  border-color: rgba(96, 165, 250, 0.2);
+  border-color: rgba(96, 165, 250, 0.35);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.6),
-    0 0 30px rgba(96, 165, 250, 0.05);
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(96, 165, 250, 0.1);
 }
 
 .card h3 {
@@ -310,11 +317,11 @@ html::before {
 
 .card p {
   line-height: 1.8;
-  color: #94a3b8;
+  color: #cbd5e1;
 }
 
 .card strong {
-  color: #f1f5f9;
+  color: #ffffff;
 }
 
 /* =========================
@@ -331,13 +338,12 @@ html::before {
   height: 220px;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.9);
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .project-card:hover .project-img {
-  transform: scale(1.02);
-  filter: brightness(1);
+  transform: scale(1.03);
+  filter: brightness(1.05);
 }
 
 .project-card h3 {
@@ -346,14 +352,14 @@ html::before {
 
 .project-desc {
   padding: 10px 22px;
-  color: #94a3b8;
+  color: #cbd5e1;
   line-height: 1.8;
 }
 
 .tech {
   padding: 0 22px;
   font-size: 13px;
-  color: #3b82f6;
+  color: #60a5fa;
 }
 
 /* =========================
@@ -364,10 +370,9 @@ html::before {
   margin: 22px;
   margin-top: auto;
   padding: 13px;
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
   border-radius: 10px;
-  color: #f1f5f9;
+  color: white;
   text-decoration: none;
   display: block;
   text-align: center;
@@ -375,10 +380,8 @@ html::before {
 }
 
 .project-btn:hover {
-  background: #2563eb;
-  border-color: #2563eb;
-  color: white;
-  box-shadow: 0 10px 20px rgba(37, 99, 254, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
 
 /* =========================
@@ -393,12 +396,12 @@ html::before {
 }
 
 .event-card {
-  background: rgba(10, 15, 30, 0.7);
+  background: rgba(15, 23, 42, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 22px;
   border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(96, 165, 250, 0.12);
   width: 100%;
   height: 100%;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
@@ -406,10 +409,10 @@ html::before {
 
 .event-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(96, 165, 250, 0.2);
+  border-color: rgba(96, 165, 250, 0.35);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.6),
-    0 0 30px rgba(96, 165, 250, 0.05);
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 35px rgba(96, 165, 250, 0.15);
 }
 
 /* =========================
@@ -422,7 +425,7 @@ html::before {
   overflow: hidden;
   border-radius: 18px;
   margin-bottom: 22px;
-  background: #010307;
+  background: #0f172a;
 }
 
 .carousel-track {
@@ -431,7 +434,7 @@ html::before {
   height: 320px;
   border-radius: 18px;
   overflow: hidden;
-  background: #010307;
+  background: #0f172a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -444,7 +447,7 @@ html::before {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  background: #010307;
+  background: #0f172a;
   padding: 10px;
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -470,14 +473,14 @@ html::before {
   cursor: pointer;
   font-size: 20px;
   color: white;
-  background: rgba(1, 3, 7, 0.85);
+  background: rgba(10, 15, 29, 0.75);
   z-index: 10;
   transition: 0.3s;
 }
 
 .carousel-btn:hover {
   background: #2563eb;
-  box-shadow: 0 0 18px rgba(96, 165, 250, 0.3);
+  box-shadow: 0 0 18px rgba(96, 165, 250, 0.4);
 }
 
 .prev {
@@ -499,7 +502,7 @@ html::before {
 }
 
 .event-description {
-  color: #94a3b8;
+  color: #cbd5e1;
   line-height: 1.9;
   font-size: 16px;
   position: relative;
@@ -517,7 +520,7 @@ html::before {
   bottom: 0;
   width: 100%;
   height: 50px;
-  background: linear-gradient(transparent, rgba(10, 15, 30, 1));
+  background: linear-gradient(transparent, rgba(15, 23, 42, 1));
 }
 
 /* =========================
@@ -528,7 +531,7 @@ html::before {
   margin-top: 18px;
   padding: 11px 20px;
   border-radius: 10px;
-  border: 1px solid #1e293b;
+  border: 1px solid #2563eb;
   background: transparent;
   color: #60a5fa;
   cursor: pointer;
@@ -537,8 +540,9 @@ html::before {
 }
 
 .read-more-btn:hover {
-  background: #1e293b;
+  background: #2563eb;
   color: white;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
 }
 
 /* =========================
@@ -562,13 +566,11 @@ html::before {
   height: 220px;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.9);
   transition: 0.4s;
 }
 
 .cert-card:hover .cert-img {
-  transform: scale(1.02);
-  filter: brightness(1);
+  transform: scale(1.03);
 }
 
 .cert-content {
@@ -581,7 +583,7 @@ html::before {
 }
 
 .cert-desc {
-  color: #94a3b8;
+  color: #cbd5e1;
   line-height: 1.7;
 }
 
@@ -608,131 +610,48 @@ html::before {
   transition: 0.7s;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
-   CURSOR ANIMADO
-========================= */
-
-.cursor {
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
 /* =========================
    RESPONSIVO
 ========================= */
 
 @media (max-width: 1024px) {
-  .hero {
-    gap: 50px;
-  }
-  .title {
-    font-size: 58px;
-  }
-  .hero-img img {
-    width: 280px;
-    height: 280px;
-  }
-  #eventos .events-grid {
-    grid-template-columns: 1fr;
-  }
-  .carousel-track {
-    height: 300px;
-  }
+  .hero { gap: 50px; }
+  .title { font-size: 58px; }
+  .hero-img img { width: 280px; height: 280px; }
+  #eventos .events-grid { grid-template-columns: 1fr; }
+  .carousel-track { height: 300px; }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 20px;
-  }
+  .container { padding: 0 20px; }
   .hero {
     flex-direction: column-reverse;
     text-align: center;
     padding-top: 190px;
     gap: 50px;
   }
-  .title {
-    font-size: 46px;
-  }
-  .subtitle {
-    font-size: 24px;
-  }
-  .desc {
-    font-size: 16px;
-  }
-  .buttons {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .btn {
-    width: 100%;
-    max-width: 320px;
-    text-align: center;
-  }
-  .hero-img img {
-    width: 230px;
-    height: 230px;
-  }
-  .section-title {
-    font-size: 34px;
-    text-align: center;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  .carousel-track {
-    height: 240px;
-  }
-  .event-card {
-    padding: 15px;
-  }
-  .event-content h3 {
-    font-size: 24px;
-  }
-  .event-description {
-    font-size: 15px;
-  }
+  .title { font-size: 46px; }
+  .subtitle { font-size: 24px; }
+  .desc { font-size: 16px; }
+  .buttons { flex-direction: column; align-items: center; width: 100%; }
+  .btn { width: 100%; max-width: 320px; text-align: center; }
+  .hero-img img { width: 230px; height: 230px; }
+  .section-title { font-size: 34px; text-align: center; }
+  .grid { grid-template-columns: 1fr; }
+  .carousel-track { height: 240px; }
+  .event-card { padding: 15px; }
+  .event-content h3 { font-size: 24px; }
+  .event-description { font-size: 15px; }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
-  .hero {
-    padding-top: 210px;
-  }
-  .title {
-    font-size: 36px;
-  }
-  .subtitle {
-    font-size: 20px;
-  }
-  .hero-img img {
-    width: 190px;
-    height: 190px;
-  }
-  .carousel-track {
-    height: 210px;
-  }
-  .carousel-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 16px;
-  }
-  .event-content h3 {
-    font-size: 20px;
-  }
-  .event-description {
-    font-size: 14px;
-  }
+  .container { padding: 0 16px; }
+  .hero { padding-top: 210px; }
+  .title { font-size: 36px; }
+  .subtitle { font-size: 20px; }
+  .hero-img img { width: 190px; height: 190px; }
+  .carousel-track { height: 210px; }
+  .carousel-btn { width: 38px; height: 38px; font-size: 16px; }
+  .event-content h3 { font-size: 20px; }
+  .event-description { font-size: 14px; }
 }
