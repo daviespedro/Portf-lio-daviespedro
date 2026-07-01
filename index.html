@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -31,7 +31,7 @@
 
       /* Container para empurrar e alinhar os botões no rodapé do card */
       .project-buttons {
-        margin-top: auto; 
+        margin-top: auto;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -62,7 +62,6 @@
   </head>
 
   <body>
-
     <div id="bg"></div>
 
     <nav class="navbar">
@@ -105,10 +104,7 @@
             class="btn"
             >LinkedIn</a
           >
-          <a
-            href="./assets/Curriculo original Pedro.pdf"
-            download
-            class="btn"
+          <a href="./assets/Curriculo original Pedro.pdf" download class="btn"
             >Baixar Currículo</a
           >
           <a href="https://github.com/daviespedro" target="_blank" class="btn"
@@ -130,8 +126,8 @@
       <div class="card">
         <p><strong>Nome:</strong> Pedro Augusto Davies Gonçalves</p>
         <p>
-          <strong>Formação:</strong> Desenvolvimento de Software Multiplataforma –
-          FATEC (2025 - atual)
+          <strong>Formação:</strong> Desenvolvimento de Software Multiplataforma
+          – FATEC (2025 - atual)
         </p>
         <p>
           <strong>Objetivo Profissional:</strong><br />
@@ -245,14 +241,66 @@
             </p>
             <p class="project-desc">
               <strong>Solução:</strong>
-              Desenvolvimento de uma aplicação web para melhorar a visualização e
-              implementar a atividade de E-commerce.
+              Desenvolvimento de uma aplicação web para melhorar a visualização
+              e implementar a atividade de E-commerce.
             </p>
             <p class="project-desc">
               <strong>Atuação:</strong>
               Atuei em Frontend, Backend e Banco de Dados.
             </p>
             <p class="tech">HTML • MySQL • CSS • JavaScript</p>
+          </div>
+          <div class="card project-card">
+            <div>
+              <img
+                src=".//assets/imagens/newlifetela.png"
+                class="project-img"
+                alt="New Life Beauty Salon"
+              />
+
+              <h3>New Life Beauty Salon</h3>
+
+              <p class="project-desc">
+                <strong>Problema:</strong>
+                O salão não possuía presença digital profissional, dificultando
+                a divulgação de serviços, horários e formas de contato com
+                clientes.
+              </p>
+
+              <p class="project-desc">
+                <strong>Solução:</strong>
+                Desenvolvimento de um site moderno, responsivo e intuitivo para
+                apresentar serviços, equipe, galeria de trabalhos e facilitar o
+                agendamento via WhatsApp.
+              </p>
+
+              <p class="project-desc">
+                <strong>Atuação:</strong>
+                Atuei no desenvolvimento completo do Frontend, estruturação
+                visual, experiência do usuário (UI/UX) e integração de contato
+                direto.
+              </p>
+
+              <p class="tech">HTML • CSS • JavaScript • UI/UX</p>
+            </div>
+
+            <div class="project-buttons">
+              <a
+                href="https://github.com/daviespedro"
+                target="_blank"
+                class="project-btn"
+              >
+                Ver Projeto
+              </a>
+
+              <a
+                href="https://newlifesjc.vercel.app"
+                target="_blank"
+                class="project-btn"
+              >
+                Acessar Site
+              </a>
+            </div>
           </div>
 
           <!-- Botões envelopados para garantir alinhamento perfeito embaixo -->
@@ -299,9 +347,9 @@
               Participei do Science Business Meeting atuando como voluntário
               representando o PIT. Durante o evento tive contato com empresas,
               startups e profissionais da área de tecnologia e inovação. A
-              experiência proporcionou networking, desenvolvimento profissional e
-              fortalecimento de habilidades como comunicação, trabalho em equipe
-              e resolução de problemas.
+              experiência proporcionou networking, desenvolvimento profissional
+              e fortalecimento de habilidades como comunicação, trabalho em
+              equipe e resolução de problemas.
             </p>
             <button class="read-more-btn">Ler mais</button>
           </div>
@@ -374,8 +422,8 @@
           <div class="cert-content">
             <h3>XXV Maratona Interna de Programação</h3>
             <p class="cert-desc">
-              Certificado de participação na XXV Maratona Interna de
-              Programação da FATEC São José dos Campos.
+              Certificado de participação na XXV Maratona Interna de Programação
+              da FATEC São José dos Campos.
             </p>
             <a
               href="./assets/certificados/importfe.png"
@@ -393,15 +441,18 @@
               src="./assets/certificados/voluntariopit.png"
               alt="Certificado Voluntário PIT"
               class="cert-img"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
             />
             <div class="cert-placeholder">Preview indisponível</div>
           </div>
           <div class="cert-content">
             <h3>Voluntariado - PIT Science Business Connection</h3>
             <p class="cert-desc">
-              Certificado de atuação voluntária representando o Parque de Inovação
-              Tecnológica (PIT) no Science Business Meeting.
+              Certificado de atuação voluntária representando o Parque de
+              Inovação Tecnológica (PIT) no Science Business Meeting.
             </p>
             <a
               href="./assets/certificados/voluntariopit.pdf"
@@ -409,6 +460,34 @@
               class="cert-btn"
               >Ver Certificado</a
             >
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img-container">
+            <img
+              src="./assets/certificados/interfatecs0261.jpg"
+              alt="Certificado InterFatecs 2026"
+              class="cert-img"
+            />
+          </div>
+
+          <div class="cert-content">
+            <h3>InterFatecs 2026 - 1º Semestre</h3>
+
+            <p class="cert-desc">
+              Certificado de participação na competição acadêmica InterFatecs
+              2026, voltada para lógica de programação, algoritmos e resolução
+              de problemas, fortalecendo habilidades técnicas e trabalho em
+              equipe.
+            </p>
+
+            <a
+              href=".//assets/certificados/interfatecs2026.pdf"
+              target="_blank"
+              class="cert-btn"
+            >
+              Ver Certificado
+            </a>
           </div>
         </div>
       </div>
@@ -439,7 +518,9 @@
           class="btn-whatsapp"
         >
           <svg viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.966 0c3.179.001 6.169 1.24 8.413 3.488 2.245 2.248 3.481 5.239 3.481 8.42 0 6.607-5.337 11.954-11.966 11.954-1.996-.001-3.956-.5-5.688-1.448L0 24zm6.59-4.846c1.656.982 3.511 1.5 5.409 1.512 5.517 0 10.005-4.499 10.007-10.03.002-2.678-1.04-5.197-2.936-7.098C17.228 1.637 14.717 1.002 12 1.002c-5.518 0-10.006 4.499-10.007 10.032-.001 1.908.497 3.771 1.44 5.43L2.43 21.612l5.217-1.37zM17.14 14.47c-.297-.15-1.758-.868-2.031-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.966 0c3.179.001 6.169 1.24 8.413 3.488 2.245 2.248 3.481 5.239 3.481 8.42 0 6.607-5.337 11.954-11.966 11.954-1.996-.001-3.956-.5-5.688-1.448L0 24zm6.59-4.846c1.656.982 3.511 1.5 5.409 1.512 5.517 0 10.005-4.499 10.007-10.03.002-2.678-1.04-5.197-2.936-7.098C17.228 1.637 14.717 1.002 12 1.002c-5.518 0-10.006 4.499-10.007 10.032-.001 1.908.497 3.771 1.44 5.43L2.43 21.612l5.217-1.37zM17.14 14.47c-.297-.15-1.758-.868-2.031-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+            />
           </svg>
           Chamar no WhatsApp
         </a>
@@ -551,6 +632,5 @@
         });
       });
     </script>
-
   </body>
 </html>
