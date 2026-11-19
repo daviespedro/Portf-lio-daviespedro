@@ -394,6 +394,24 @@ html::before {
   object-position: center;
 }
 
+.project-card > div:first-child > h3 {
+  margin: 22px 24px 12px;
+}
+
+.project-card .project-desc,
+.project-card .tech {
+  margin: 0 24px 14px;
+  overflow-wrap: anywhere;
+}
+
+.project-card .tech {
+  color: #93c5fd;
+}
+
+.project-card .project-buttons {
+  padding: 10px 24px 24px;
+}
+
 /* O content-wrapper é crucial para empurrar o botão para baixo */
 .project-card .content-wrapper {
   padding: 22px;
@@ -601,6 +619,22 @@ html::before {
 
 #contato .label { color: #60a5fa; font-weight: 600; }
 #contato .card p { color: #ffffff; }
+
+.contact-link {
+  color: #93c5fd;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+.contact-link:hover {
+  color: #ffffff;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 4px;
+}
 
 /* ==================================================
    BOTÃO DO WHATSAPP PREMIUM CYBERPUNK/GLOW

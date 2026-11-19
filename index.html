@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pedro Davies | Full Stack</title>
+    <title>Pedro Davies | Desenvolvedor Full Stack</title>
+    <meta name="description" content="Portfólio de Pedro Davies, desenvolvedor Full Stack. Projetos com React, TypeScript, Node.js, Python, Flask e Supabase: aplicações web, APIs REST e automações." />
+    <meta property="og:title" content="Pedro Davies | Desenvolvedor Full Stack" />
+    <meta property="og:description" content="Conheça meus projetos de aplicações web, APIs REST, automações e ferramentas educativas de segurança de código." />
+    <meta property="og:type" content="website" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap"
@@ -69,13 +73,13 @@
         <h2 class="logo">daviespedro.dev</h2>
 
         <!-- Botão Hambúrguer Moderno para Mobile -->
-        <button class="menu-toggle" aria-label="Abrir menu lateral">
+        <button class="menu-toggle" aria-label="Abrir menu lateral" aria-expanded="false" aria-controls="menu-principal">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </button>
 
-        <div class="nav-links">
+        <div class="nav-links" id="menu-principal">
           <a href="#sobre">Sobre</a>
           <a href="#habilidades">Habilidades</a>
           <a href="#projetos">Projetos</a>
@@ -94,20 +98,20 @@
         </h1>
         <h2 class="subtitle">Full Stack Developer</h2>
         <p class="desc">
-          Desenvolvimento Web • Backend • APIs REST • Análise de Dados
+          React • TypeScript • Node.js • Python • Aplicações Web
         </p>
 
         <div class="buttons">
           <a
             href="https://br.linkedin.com/in/pedro-augusto-davies-gonçalves-4554293b0"
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             class="btn"
             >LinkedIn</a
           >
           <a href="./assets/Curriculo original Pedro.pdf" download class="btn"
             >Baixar Currículo</a
           >
-          <a href="https://github.com/daviespedro" target="_blank" class="btn"
+          <a href="https://github.com/daviespedro" target="_blank" rel="noopener noreferrer" class="btn"
             >GitHub</a
           >
         </div>
@@ -130,9 +134,17 @@
           – FATEC (2025 - atual)
         </p>
         <p>
+          <strong>Experiência em projetos:</strong><br />
+          Desenvolvo sites profissionais, sistemas de gestão, plataformas com
+          autenticação e ferramentas educativas. Meus projetos incluem React e
+          TypeScript, Node.js e Express, Python e Flask, Supabase e integrações
+          com Google Sheets e WhatsApp.
+        </p>
+        <p>
           <strong>Objetivo Profissional:</strong><br />
-          Atuar como desenvolvedor Full Stack, com foco na criação de aplicações
-          web modernas, APIs REST escaláveis e soluções orientadas a dados.
+          Desenvolver aplicações web completas, do Frontend ao Backend, com
+          interfaces responsivas, APIs REST, bancos de dados e integrações que
+          resolvem necessidades de negócios e usuários.
         </p>
         <p>
           <strong>Objetivos Acadêmicos:</strong><br />
@@ -141,7 +153,7 @@
         </p>
         <p>
           <strong>Áreas de Interesse:</strong><br />
-          Desenvolvimento Web • Backend • APIs REST • Análise de Dados
+          Desenvolvimento Full Stack • APIs REST • Automação • Segurança de Código
         </p>
       </div>
     </section>
@@ -151,14 +163,15 @@
       <div class="grid">
         <div class="card">
           <h3>Hard Skills</h3>
-          <p>HTML</p>
-          <p>CSS</p>
-          <p>JavaScript</p>
-          <p>Python</p>
-          <p>MySQL</p>
-          <p>Git e GitHub</p>
-          <p>Docker</p>
-          <p>APIs REST</p>
+          <p><strong>Frontend:</strong> HTML, CSS, JavaScript, TypeScript, React e Tailwind CSS</p>
+          <p><strong>Backend:</strong> Node.js, Express, Python, Flask e APIs REST</p>
+          <p><strong>Dados e autenticação:</strong> MySQL, PostgreSQL e Supabase (Auth, banco de dados e Storage)</p>
+          <p><strong>Ferramentas:</strong> Git, GitHub, Docker e Vite</p>
+          <p><strong>Integrações:</strong> Google Sheets, Google Apps Script e WhatsApp</p>
+          <p><strong>Qualidade:</strong> Vitest, Playwright e testes automatizados</p>
+          <p><strong>Experiência web:</strong> UI/UX, responsividade, acessibilidade e SEO</p>
+          <p><strong>Segurança de código:</strong> análise estática e ferramentas educativas em português</p>
+          <p><strong>Aplicações offline:</strong> PWA, Service Workers e Local Storage</p>
         </div>
 
         <div class="card">
@@ -180,6 +193,79 @@
       <h2 class="section-title">Projetos</h2>
 
       <div class="grid">
+
+        <div class="card project-card">
+          <div>
+            <img src="./assets/imagens/pedro-neto.jpg" class="project-img" alt="Pedro Neto — Personal Trainer" loading="lazy" />
+            <h3>Pedro Neto — Personal Trainer</h3>
+            <p class="project-desc"><strong>Problema:</strong> Apresentar a consultoria online e organizar o contato e os agendamentos de novos alunos.</p>
+            <p class="project-desc"><strong>Solução:</strong> Site responsivo com planos de acompanhamento, metodologia, resultados, formulário de agendamento e área administrativa.</p>
+            <p class="project-desc"><strong>Atuação:</strong> Desenvolvimento Full Stack, interface responsiva, integração de agendamentos e contato pelo WhatsApp.</p>
+            <p class="tech">HTML • CSS • JavaScript • Node.js • Express • Supabase</p>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/daviespedro/pedronetotreinador" target="_blank" rel="noopener noreferrer" class="project-btn">Ver Projeto</a>
+            <a href="https://pedronetotreinador.com.br" target="_blank" rel="noopener noreferrer" class="project-btn">Acessar Site</a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div>
+            <img src="./assets/imagens/secmentor.png" class="project-img" alt="SecMentor" loading="lazy" />
+            <h3>SecMentor</h3>
+            <p class="project-desc"><strong>Problema:</strong> Tornar o aprendizado de segurança de código mais acessível, com explicações práticas em português.</p>
+            <p class="project-desc"><strong>Solução:</strong> Mentor educativo com análise estática, lições, quizzes e relatórios, disponível no navegador, na CLI e em extensão para VS Code. O núcleo funciona offline.</p>
+            <p class="project-desc"><strong>Atuação:</strong> Desenvolvimento do monorepo, analisador, playground e recursos educativos, com validação por testes automatizados.</p>
+            <p class="tech">TypeScript • React • Node.js • Vite • Tailwind CSS • PWA • Vitest • Playwright</p>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/pedroprdgs/SecMentor" target="_blank" rel="noopener noreferrer" class="project-btn">Ver Projeto</a>
+            <a href="https://pedroprdgs.github.io/SecMentor/" target="_blank" rel="noopener noreferrer" class="project-btn">Acessar Site</a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div>
+            <img src="./assets/imagens/wr-lava-rapido.jpg" class="project-img" alt="WR Lava Rápido" loading="lazy" />
+            <h3>WR Lava Rápido</h3>
+            <p class="project-desc"><strong>Problema:</strong> Centralizar a operação do lava-rápido, acompanhando os veículos no pátio, os clientes e as movimentações do caixa.</p>
+            <p class="project-desc"><strong>Solução:</strong> Sistema com recepção, controle de atendimentos, cadastro de clientes e veículos, histórico de serviços, pagamentos, despesas e indicadores de CRM.</p>
+            <p class="project-desc"><strong>Atuação:</strong> Desenvolvimento da aplicação React, regras de negócio, edição sincronizada de cadastros e persistência local dos dados.</p>
+            <p class="tech">React • TypeScript • Vite • Tailwind CSS • Local Storage</p>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/daviespedro/wr-lavarapido" target="_blank" rel="noopener noreferrer" class="project-btn">Ver Projeto</a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div>
+            <img src="./assets/imagens/nutri-priscila.jpg" class="project-img" alt="Priscila Schunck — Nutricionista" loading="lazy" />
+            <h3>Priscila Schunck — Nutricionista</h3>
+            <p class="project-desc"><strong>Problema:</strong> Reunir informações sobre especialidades, locais de atendimento e formas de agendar uma consulta nutricional.</p>
+            <p class="project-desc"><strong>Solução:</strong> Site profissional com nutrição clínica e oncológica, cirurgia bariátrica, saúde intestinal, locais de atendimento e solicitação de consulta pelo WhatsApp.</p>
+            <p class="project-desc"><strong>Atuação:</strong> Desenvolvimento Frontend, layout responsivo, formulário de agendamento e otimização do conteúdo para buscadores.</p>
+            <p class="tech">HTML • CSS • JavaScript • SEO • UI/UX</p>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/daviespedro/nutripriscila" target="_blank" rel="noopener noreferrer" class="project-btn">Ver Projeto</a>
+            <a href="https://nutripriscilasl.com.br" target="_blank" rel="noopener noreferrer" class="project-btn">Acessar Site</a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div>
+            <img src="./assets/imagens/mundo-pet.png" class="project-img" alt="O Mundo Pet — Agenda de Natal" loading="lazy" />
+            <h3>O Mundo Pet — Agenda de Natal</h3>
+            <p class="project-desc"><strong>Problema:</strong> Facilitar a consulta de horários de banho e tosa durante a demanda de dezembro.</p>
+            <p class="project-desc"><strong>Solução:</strong> Agenda interativa com disponibilidade de horários, seleção de serviços e solicitação pelo WhatsApp. A proprietária confirma os atendimentos e controla os horários pelo Google Sheets.</p>
+            <p class="project-desc"><strong>Atuação:</strong> Desenvolvimento do site, formulário de atendimento e integração com Google Sheets e Apps Script.</p>
+            <p class="tech">HTML • CSS • JavaScript • Google Sheets • Google Apps Script</p>
+          </div>
+          <div class="project-buttons">
+            <a href="https://caroldezembro.vercel.app" target="_blank" rel="noopener noreferrer" class="project-btn">Acessar Site</a>
+          </div>
+        </div>
         
         <div class="card project-card">
           <div>
@@ -204,18 +290,18 @@
               <strong>Atuação:</strong>
               Atuei em Frontend e Backend.
             </p>
-            <p class="tech">Python • API REST • MySQL • JavaScript • Docker</p>
+            <p class="tech">Python • Flask • MySQL • HTML • CSS • JavaScript • APIs REST • Docker</p>
           </div>
 
           <div class="project-buttons">
             <a
               href="https://github.com/eugeniojonatas/Radar-Cidadao-Froggrammers"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Ver Projeto</a>
             <a
               href="https://radar-cidadao-froggrammers-86oq.onrender.com/"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Acessar Site</a>
           </div>
@@ -236,25 +322,24 @@
             </p>
             <p class="project-desc">
               <strong>Solução:</strong>
-              Desenvolvimento de uma plataforma automatizada que monta treinos, calcula o IMC/ICM e gera dietas sob medida para os objetivos do usuário.
+              Plataforma com autenticação, perfil do usuário, planos de treino e diário alimentar com cálculo de metas calóricas e acompanhamento dos registros.
             </p>
             <p class="project-desc">
               <strong>Atuação:</strong>
-              Desenvolvimento Full Stack, implementando a lógica de cálculos corporais, estruturação do banco de dados e interface do usuário.
+              Desenvolvimento da interface e da lógica de treinos e metas calóricas, com integração ao Supabase para autenticação e persistência dos dados.
             </p>
-            <!-- Ajuste as tecnologias abaixo de acordo com o que você realmente usou -->
-            <p class="tech">Python • MySQL • JavaScript • HTML • CSS</p>
+            <p class="tech">HTML • CSS • JavaScript • Supabase Auth • PostgreSQL</p>
           </div>
 
           <div class="project-buttons">
             <a
-              href="https://github.com/daviespedro"
-              target="_blank"
+              href="https://github.com/eloagaldino/Forja-WebHealthy"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Ver Projeto</a>
             <a
               href="https://forja-web-healthy.vercel.app/login.html"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Acessar Site</a>
           </div>
@@ -267,9 +352,9 @@
             <img
               src="./assets/imagens/image_48f84c.jpg"
               class="project-img"
-              alt="Geo Nails"
+              alt="Geo Gomez Nails"
             />
-            <h3>Geo Nails</h3>
+            <h3>Geo Gomez Nails</h3>
 
             <p class="project-desc">
               <strong>Problema:</strong>
@@ -277,11 +362,11 @@
             </p>
             <p class="project-desc">
               <strong>Solução:</strong>
-              Criação de um site moderno e intuitivo de agendamento, facilitando a reserva de horários para os clientes e otimizando a organização do salão.
+              Site responsivo com apresentação de serviços, portfólio e formulário de pré-agendamento que prepara a solicitação de atendimento pelo WhatsApp.
             </p>
             <p class="project-desc">
               <strong>Atuação:</strong>
-              Desenvolvimento Frontend focado em UI/UX, estruturando o design visual e a experiência de agendamento online.
+              Desenvolvimento Frontend, identidade visual, navegação responsiva e integração do formulário de pré-agendamento com o WhatsApp.
             </p>
             <p class="tech">HTML • CSS • JavaScript • UI/UX</p>
           </div>
@@ -289,12 +374,12 @@
           <div class="project-buttons">
             <a
               href="https://github.com/daviespedro/geonails-lp"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Ver Projeto</a>
             <a
-              href="https://geonails-lp.vercel.app"
-              target="_blank"
+              href="https://geogomeznails.com.br"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Acessar Site</a>
           </div>
@@ -323,18 +408,18 @@
               <strong>Atuação:</strong>
               Atuei em Frontend, Backend e Banco de Dados.
             </p>
-            <p class="tech">HTML • MySQL • CSS • JavaScript</p>
+            <p class="tech">HTML • CSS • JavaScript • Supabase • PostgreSQL</p>
           </div>
 
           <div class="project-buttons">
             <a
               href="https://github.com/daviespedro"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Ver Projeto</a>
             <a
               href="https://github.com/daviespedro"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Em Desenvolvimento</a>
           </div>
@@ -343,7 +428,7 @@
         <div class="card project-card">
           <div>
             <img
-              src=".//assets/imagens/newlifetela.png"
+              src="./assets/imagens/newlifetela.png"
               class="project-img"
               alt="New Life Beauty Salon"
             />
@@ -372,13 +457,13 @@
 
           <div class="project-buttons">
             <a
-              href="https://github.com/daviespedro"
-              target="_blank"
+              href="https://github.com/daviespedro/newlifesjc"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Ver Projeto</a>
             <a
               href="https://newlifesjc.vercel.app"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Acessar Site</a>
           </div>
@@ -410,13 +495,13 @@
           <div class="project-buttons">
             <a
               href="https://github.com/daviespedro/Igreja-GC"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Ver Projeto</a>
             
             <a
               href="https://igrejagc.vercel.app"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="project-btn"
             >Acessar Site</a>
           </div>
@@ -558,7 +643,7 @@
             </p>
             <a
               href="./assets/certificados/importfe.png"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="cert-btn"
               >Ver Certificado</a
             >
@@ -587,7 +672,7 @@
             </p>
             <a
               href="./assets/certificados/voluntariopit.pdf"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="cert-btn"
               >Ver Certificado</a
             >
@@ -613,8 +698,8 @@
             </p>
 
             <a
-              href=".//assets/certificados/interfatecs2026.pdf"
-              target="_blank"
+              href="./assets/certificados/interfatecs2026.pdf"
+              target="_blank" rel="noopener noreferrer"
               class="cert-btn"
             >
               Ver Certificado
@@ -627,7 +712,7 @@
     <section id="contato" class="container section reveal">
       <h2 class="section-title">Contato</h2>
       <div class="card">
-        <p><span class="label">Email:</span> daviespedro@icloud.com</p>
+        <p><span class="label">Email:</span> <a class="contact-link" href="mailto:daviespedro@icloud.com">daviespedro@icloud.com</a></p>
         <p>
           <span class="label">WhatsApp:</span>
           <a
@@ -638,8 +723,8 @@
             >(12) 99649-2800</a
           >
         </p>
-        <p><span class="label">GitHub:</span> github.com/daviespedro</p>
-        <p><span class="label">LinkedIn:</span> pedro-augusto-davies</p>
+        <p><span class="label">GitHub:</span> <a class="contact-link" href="https://github.com/daviespedro" target="_blank" rel="noopener noreferrer">github.com/daviespedro</a></p>
+        <p><span class="label">LinkedIn:</span> <a class="contact-link" href="https://br.linkedin.com/in/pedro-augusto-davies-gonçalves-4554293b0" target="_blank" rel="noopener noreferrer">Pedro Augusto Davies Gonçalves</a></p>
 
         <!-- Botão Moderno de Ação do WhatsApp com Ícone SVG -->
         <a
@@ -668,12 +753,17 @@
       menuToggle.addEventListener("click", () => {
         menuToggle.classList.toggle("open");
         navLinks.classList.toggle("open");
+        const aberto = navLinks.classList.contains("open");
+        menuToggle.setAttribute("aria-expanded", String(aberto));
+        menuToggle.setAttribute("aria-label", aberto ? "Fechar menu lateral" : "Abrir menu lateral");
       });
 
       document.querySelectorAll(".nav-links a").forEach((link) => {
         link.addEventListener("click", () => {
           menuToggle.classList.remove("open");
           navLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Abrir menu lateral");
         });
       });
 
