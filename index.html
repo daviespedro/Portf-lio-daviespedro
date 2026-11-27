@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedro Davies | Desenvolvedor Full Stack</title>
+    <meta name="description" content="Portfólio de Pedro Davies, desenvolvedor Full Stack. Projetos com React, TypeScript, Node.js, Python, Flask e Supabase: aplicações web, APIs REST e automações." />
+    <meta property="og:title" content="Pedro Davies | Desenvolvedor Full Stack" />
+    <meta property="og:description" content="Conheça meus projetos de aplicações web, APIs REST, automações e ferramentas educativas de segurança de código." />
+    <meta property="og:type" content="website" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
+
+      section {
+        scroll-margin-top: 100px;
+      }
+
+      /* Garante que os múltiplos certificados fiquem organizados e responsivos */
+      .cert-wrapper {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+
+      /* Estilo básico para o placeholder dinâmico oculto por padrão */
+      .cert-placeholder {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: #111827;
+        color: #9ca3af;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="bg"></div>
+
+    <nav class="navbar">
+      <div class="container nav">
+        <h2 class="logo">daviespedro.dev</h2>
+
+        <div class="nav-right">
+          <div class="nav-links" id="menu-principal">
+          <a href="#sobre" data-i18n="nav.sobre">Sobre</a>
+          <a href="#habilidades" data-i18n="nav.habilidades">Habilidades</a>
+          <a href="#projetos" data-i18n="nav.projetos">Projetos</a>
+          <a href="#eventos" data-i18n="nav.eventos">Eventos</a>
+          <a href="#certificados" data-i18n="nav.certificados">Certificados</a>
+          <a href="#contato" data-i18n="nav.contato">Contato</a>
+          </div>
+
+          <!-- Botão de idioma PT / EN (lógica em i18n.js) -->
+          <button class="lang-toggle" type="button" aria-label="Switch to English" lang="en" hidden>
+            <span class="lang-opt chosen" lang="pt-BR">PT</span>
+            <span class="lang-sep" aria-hidden="true">/</span>
+            <span class="lang-opt" lang="en">EN</span>
+          </button>
+
+          <!-- Botão Hambúrguer Moderno para Mobile -->
+          <button class="menu-toggle" aria-label="Abrir menu lateral" aria-expanded="false" aria-controls="menu-principal">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero container">
+      <div class="hero-text reveal">
+        <h1 class="title">
+          <span id="nome"></span>
+          <span class="cursor">|</span>
+        </h1>
+        <h2 class="subtitle">Full Stack Developer</h2>
+        <p class="desc" data-i18n="hero.desc">React • TypeScript • Node.js • Python • Aplicações Web</p>
+
+        <div class="buttons">
+          <a href="https://br.linkedin.com/in/pedro-augusto-davies-gonçalves-4554293b0" target="_blank" rel="noopener noreferrer" class="btn">LinkedIn</a>
+          <a href="./assets/Curriculo original Pedro.pdf" download class="btn" data-i18n="hero.cv">Baixar Currículo</a>
+          <a href="https://github.com/daviespedro" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
+        </div>
+      </div>
+
+      <div class="hero-img reveal">
+        <img src="./assets/imagens/1B320573-F170-4A49-84FA-D46A5D9AF710.PNG" alt="Pedro Davies" />
+      </div>
+    </header>
+
+    <section id="sobre" class="container section reveal">
+      <h2 class="section-title" data-i18n="nav.sobre">Sobre</h2>
+      <div class="card">
+        <p><strong data-i18n="about.name">Nome:</strong> Pedro Augusto Davies Gonçalves</p>
+        <p>
+          <strong data-i18n="about.edu">Formação:</strong>
+          <span data-i18n="about.edu.v">Desenvolvimento de Software Multiplataforma – FATEC (2025 - atual)</span>
+        </p>
+        <p>
+          <strong data-i18n="about.exp">Experiência em projetos:</strong><br />
+          <span data-i18n="about.exp.v">Desenvolvo sites profissionais, sistemas de gestão, plataformas com autenticação e ferramentas educativas. Meus projetos incluem React e TypeScript, Node.js e Express, Python e Flask, Supabase e integrações com Google Sheets e WhatsApp.</span>
+        </p>
+        <p>
+          <strong data-i18n="about.goal">Objetivo Profissional:</strong><br />
+          <span data-i18n="about.goal.v">Desenvolver aplicações web completas, do Frontend ao Backend, com interfaces responsivas, APIs REST, bancos de dados e integrações que resolvem necessidades de negócios e usuários.</span>
+        </p>
+        <p>
+          <strong data-i18n="about.acad">Objetivos Acadêmicos:</strong><br />
+          <span data-i18n="about.acad.v">Consolidar conhecimentos em desenvolvimento web, estruturas de dados, banco de dados e engenharia de software.</span>
+        </p>
+        <p>
+          <strong data-i18n="about.int">Áreas de Interesse:</strong><br />
+          <span data-i18n="about.int.v">Desenvolvimento Full Stack • APIs REST • Automação • Segurança de Código</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="habilidades" class="container section reveal">
+      <h2 class="section-title" data-i18n="nav.habilidades">Habilidades</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Hard Skills</h3>
+          <p><strong data-i18n="hard.frontend">Frontend:</strong> <span data-i18n="hard.frontend.v">HTML, CSS, JavaScript, TypeScript, React e Tailwind CSS</span></p>
+          <p><strong data-i18n="hard.backend">Backend:</strong> <span data-i18n="hard.backend.v">Node.js, Express, Python, Flask e APIs REST</span></p>
+          <p><strong data-i18n="hard.data">Dados e autenticação:</strong> <span data-i18n="hard.data.v">MySQL, PostgreSQL e Supabase (Auth, banco de dados e Storage)</span></p>
+          <p><strong data-i18n="hard.tools">Ferramentas:</strong> <span data-i18n="hard.tools.v">Git, GitHub, Docker e Vite</span></p>
+          <p><strong data-i18n="hard.integ">Integrações:</strong> <span data-i18n="hard.integ.v">Google Sheets, Google Apps Script e WhatsApp</span></p>
+          <p><strong data-i18n="hard.quality">Qualidade:</strong> <span data-i18n="hard.quality.v">Vitest, Playwright e testes automatizados</span></p>
+          <p><strong data-i18n="hard.web">Experiência web:</strong> <span data-i18n="hard.web.v">UI/UX, responsividade, acessibilidade e SEO</span></p>
+          <p><strong data-i18n="hard.security">Segurança de código:</strong> <span data-i18n="hard.security.v">análise estática e ferramentas educativas em português</span></p>
+          <p><strong data-i18n="hard.offline">Aplicações offline:</strong> <span data-i18n="hard.offline.v">PWA, Service Workers e Local Storage</span></p>
+        </div>
+
+        <div class="card">
+          <h3>Soft Skills</h3>
+          <p data-i18n="soft.comm">Comunicação clara</p>
+          <p data-i18n="soft.team">Trabalho em equipe</p>
+          <p data-i18n="soft.solve">Resolução de problemas</p>
+          <p data-i18n="soft.analysis">Pensamento analítico</p>
+          <p data-i18n="soft.active">Proatividade</p>
+          <p data-i18n="soft.time">Organização e gestão de tempo</p>
+          <p data-i18n="soft.learn">Aprendizado contínuo</p>
+          <p data-i18n="soft.adapt">Adaptabilidade</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="container section reveal">
+      <div class="work-heading">
+        <h2 class="section-title" data-i18n="nav.projetos">Projetos</h2>
+        <div class="project-toolbar" hidden>
+          <div class="filters" role="group" aria-label="Filtrar projetos" data-i18n-aria="filters.label">
+            <button type="button" data-filter="todos" aria-pressed="true"><span data-i18n="filter.todos">Todos</span></button>
+            <button type="button" data-filter="sistemas" aria-pressed="false"><span data-i18n="filter.sistemas">Sistemas</span></button>
+            <button type="button" data-filter="sites" aria-pressed="false"><span data-i18n="filter.sites">Sites</span></button>
+            <button type="button" data-filter="ferramentas" aria-pressed="false"><span data-i18n="filter.ferramentas">Ferramentas</span></button>
+          </div>
+          <output class="sr-only" id="project-count" aria-live="polite"></output>
+        </div>
+      </div>
+      <div class="project-grid">
+        <article class="project-card" data-category="sites" aria-labelledby="title-pedro-neto">
+          <div class="project-visual">
+            <img src="./assets/previas/pedro-neto.webp" width="1100" height="688" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-pedro-neto">Pedro Neto — Personal Trainer</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="pedro-neto.summary">Site responsivo com planos de acompanhamento, metodologia, resultados, formulário de agendamento e área administrativa.</span></p>
+            <ul class="stack"><li>JavaScript</li><li>Express</li><li>Supabase</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="pedro-neto.problem">Apresentar a consultoria online e organizar o contato e os agendamentos de novos alunos.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="pedro-neto.role">Desenvolvimento Full Stack, interface responsiva, integração de agendamentos e contato pelo WhatsApp.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p>HTML • CSS • JavaScript • Node.js • Express • Supabase</p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <a class="text-link" href="https://pedronetotreinador.com.br" target="_blank" rel="noopener noreferrer"><span data-i18n="action.site">Acessar Site</span> <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/daviespedro/pedronetotreinador" target="_blank" rel="noopener noreferrer"><span data-i18n="action.code">Ver Projeto</span> <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="ferramentas" aria-labelledby="title-secmentor">
+          <div class="project-visual">
+            <img src="./assets/previas/secmentor.webp" width="1100" height="682" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-secmentor">SecMentor</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="secmentor.summary">Mentor educativo com análise estática, lições, quizzes e relatórios, disponível no navegador, na CLI e em extensão para VS Code. O núcleo funciona offline.</span></p>
+            <ul class="stack"><li>TypeScript</li><li>React</li><li>Vitest</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="secmentor.problem">Tornar o aprendizado de segurança de código mais acessível, com explicações práticas em português.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="secmentor.role">Desenvolvimento do monorepo, analisador, playground e recursos educativos, com validação por testes automatizados.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p>TypeScript • React • Node.js • Vite • Tailwind CSS • PWA • Vitest • Playwright</p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <a class="text-link" href="https://pedroprdgs.github.io/SecMentor/" target="_blank" rel="noopener noreferrer"><span data-i18n="action.site">Acessar Site</span> <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/pedroprdgs/SecMentor" target="_blank" rel="noopener noreferrer"><span data-i18n="action.code">Ver Projeto</span> <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="sistemas" aria-labelledby="title-wr">
+          <div class="project-visual">
+            <img src="./assets/previas/wr-lava-rapido.webp" width="1100" height="688" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-wr">WR Lava Rápido</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="wr.summary">Sistema com recepção, controle de atendimentos, cadastro de clientes e veículos, histórico de serviços, pagamentos, despesas e indicadores de CRM.</span></p>
+            <ul class="stack"><li>React</li><li>TypeScript</li><li>Vite</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="wr.problem">Centralizar a operação do lava-rápido, acompanhando os veículos no pátio, os clientes e as movimentações do caixa.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="wr.role">Desenvolvimento da aplicação React, regras de negócio, edição sincronizada de cadastros e persistência local dos dados.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p>React • TypeScript • Vite • Tailwind CSS • Local Storage</p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <a class="text-link" href="https://github.com/daviespedro/wr-lavarapido" target="_blank" rel="noopener noreferrer"><span data-i18n="action.code">Ver Projeto</span> <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="sites" aria-labelledby="title-priscila">
+          <div class="project-visual">
+            <img src="./assets/previas/nutri-priscila.webp" width="1100" height="688" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-priscila" data-i18n="priscila.title">Priscila Schunck — Nutricionista</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="priscila.summary">Site profissional com nutrição clínica e oncológica, cirurgia bariátrica, saúde intestinal, locais de atendimento e solicitação de consulta pelo WhatsApp.</span></p>
+            <ul class="stack"><li>JavaScript</li><li>CSS</li><li>SEO</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="priscila.problem">Reunir informações sobre especialidades, locais de atendimento e formas de agendar uma consulta nutricional.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="priscila.role">Desenvolvimento Frontend, layout responsivo, formulário de agendamento e otimização do conteúdo para buscadores.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p>HTML • CSS • JavaScript • SEO • UI/UX</p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <a class="text-link" href="https://nutripriscilasl.com.br" target="_blank" rel="noopener noreferrer"><span data-i18n="action.site">Acessar Site</span> <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/daviespedro/nutripriscila" target="_blank" rel="noopener noreferrer"><span data-i18n="action.code">Ver Projeto</span> <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="sites" aria-labelledby="title-mundo-pet">
+          <div class="project-visual phone-visual">
+            <img src="./assets/previas/mundo-pet.webp" width="390" height="485" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-mundo-pet" data-i18n="mundo-pet.title">O Mundo Pet — Agenda de Natal</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="mundo-pet.summary">Agenda interativa com disponibilidade de horários, seleção de serviços e solicitação pelo WhatsApp. A proprietária confirma os atendimentos e controla os horários pelo Google Sheets.</span></p>
+            <ul class="stack"><li>JavaScript</li><li>Google Sheets</li><li>Apps Script</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="mundo-pet.problem">Facilitar a consulta de horários de banho e tosa durante a demanda de dezembro.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="mundo-pet.role">Desenvolvimento do site, formulário de atendimento e integração com Google Sheets e Apps Script.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p>HTML • CSS • JavaScript • Google Sheets • Google Apps Script</p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <a class="text-link" href="https://caroldezembro.vercel.app" target="_blank" rel="noopener noreferrer"><span data-i18n="action.site">Acessar Site</span> <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="sistemas" aria-labelledby="title-radar">
+          <div class="project-visual">
+            <img src="./assets/previas/radar.webp" width="1100" height="654" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-radar">Radar Cidadão</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="radar.summary">Desenvolvimento de uma aplicação web para centralizar, processar e exibir essas informações de forma clara e acessível.</span></p>
+            <ul class="stack"><li>Python</li><li>Flask</li><li>MySQL</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="radar.problem">Dificuldade de acesso e interpretação de dados públicos sobre atuação de deputados.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="radar.role">Atuei em Frontend e Backend.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p><span data-i18n="radar.stack">Python • Flask • MySQL • HTML • CSS • JavaScript • APIs REST • Docker</span></p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <a class="text-link" href="https://radar-cidadao-froggrammers-86oq.onrender.com/" target="_blank" rel="noopener noreferrer"><span data-i18n="action.site">Acessar Site</span> <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/eugeniojonatas/Radar-Cidadao-Froggrammers" target="_blank" rel="noopener noreferrer"><span data-i18n="action.code">Ver Projeto</span> <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="sistemas" aria-labelledby="title-forja">
+          <div class="project-visual">
+            <img src="./assets/previas/forja.webp" width="1100" height="603" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-forja">Forja</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="forja.summary">Plataforma com autenticação, perfil do usuário, planos de treino e diário alimentar com cálculo de metas calóricas e acompanhamento dos registros.</span></p>
+            <ul class="stack"><li>JavaScript</li><li>Supabase Auth</li><li>PostgreSQL</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="forja.problem">Dificuldade na criação e gestão centralizada de rotinas de exercícios e planos alimentares personalizados baseados em métricas corporais.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="forja.role">Desenvolvimento da interface e da lógica de treinos e metas calóricas, com integração ao Supabase para autenticação e persistência dos dados.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p>HTML • CSS • JavaScript • Supabase Auth • PostgreSQL</p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <a class="text-link" href="https://forja-web-healthy.vercel.app/login.html" target="_blank" rel="noopener noreferrer"><span data-i18n="action.site">Acessar Site</span> <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/eloagaldino/Forja-WebHealthy" target="_blank" rel="noopener noreferrer"><span data-i18n="action.code">Ver Projeto</span> <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="sites" aria-labelledby="title-geo">
+          <div class="project-visual">
+            <img src="./assets/previas/image_48f84c.webp" width="1024" height="561" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-geo">Geo Gomez Nails</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="geo.summary">Site responsivo com apresentação de serviços, portfólio e formulário de pré-agendamento que prepara a solicitação de atendimento pelo WhatsApp.</span></p>
+            <ul class="stack"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="geo.problem">Falta de uma plataforma online elegante e eficiente para gestão de horários e apresentação do portfólio de serviços de unhas.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="geo.role">Desenvolvimento Frontend, identidade visual, navegação responsiva e integração do formulário de pré-agendamento com o WhatsApp.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p>HTML • CSS • JavaScript • UI/UX</p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <a class="text-link" href="https://geogomeznails.com.br" target="_blank" rel="noopener noreferrer"><span data-i18n="action.site">Acessar Site</span> <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/daviespedro/geonails-lp" target="_blank" rel="noopener noreferrer"><span data-i18n="action.code">Ver Projeto</span> <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="sites" aria-labelledby="title-luminelli">
+          <div class="project-visual">
+            <img src="./assets/previas/projeto2.webp" width="1100" height="590" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-luminelli">Luminelli pratas</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="luminelli.summary">Desenvolvimento de uma aplicação web para melhorar a visualização e implementar a atividade de E-commerce.</span></p>
+            <ul class="stack"><li>JavaScript</li><li>Supabase</li><li>PostgreSQL</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="luminelli.problem">Visualização dos itens do estoque e falta de atividade de E-commerce.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="luminelli.role">Atuei em Frontend, Backend e Banco de Dados.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p>HTML • CSS • JavaScript • Supabase • PostgreSQL</p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <span data-i18n="status.dev" class="project-status">Em Desenvolvimento</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="sites" aria-labelledby="title-new-life">
+          <div class="project-visual">
+            <img src="./assets/previas/newlifetela.webp" width="1100" height="588" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-new-life">New Life Beauty Salon</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="new-life.summary">Desenvolvimento de um site moderno, responsivo e intuitivo para apresentar serviços, equipe, galeria de trabalhos e facilitar o agendamento via WhatsApp.</span></p>
+            <ul class="stack"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="new-life.problem">O salão não possuía presença digital profissional, dificultando a divulgação de serviços, horários e formas de contato com clientes.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="new-life.role">Atuei no desenvolvimento completo do Frontend, estruturação visual, experiência do usuário (UI/UX) e integração de contato direto.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p>HTML • CSS • JavaScript • UI/UX</p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <a class="text-link" href="https://newlifesjc.vercel.app" target="_blank" rel="noopener noreferrer"><span data-i18n="action.site">Acessar Site</span> <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/daviespedro/newlifesjc" target="_blank" rel="noopener noreferrer"><span data-i18n="action.code">Ver Projeto</span> <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="sites" aria-labelledby="title-igreja">
+          <div class="project-visual">
+            <img src="./assets/previas/igreja1.webp" width="1100" height="588" loading="lazy" decoding="async" alt="" />
+          </div>
+          <div class="project-body">
+            <h3 id="title-igreja">Igreja Guerreiros de Cristo</h3>
+            <p class="project-summary"><strong><span data-i18n="solution">Solução:</span></strong> <span data-i18n="igreja.summary">Desenvolvimento de uma landing page elegante com um formulário interativo focado na experiência do usuário para captação dessas informações.</span></p>
+            <ul class="stack"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <details class="project-details">
+              <summary><span data-i18n="details">Detalhes do projeto</span></summary>
+              <div>
+                <h4><span data-i18n="context">Problema:</span></h4>
+                <p><span data-i18n="igreja.problem">Necessidade de um sistema de cadastro online para acolher novos visitantes e centralizar a coleta de dados de forma eficiente.</span></p>
+                <h4><span data-i18n="role">Atuação:</span></h4>
+                <p><span data-i18n="igreja.role">Atuei no desenvolvimento completo do Frontend.</span></p>
+                <h4><span data-i18n="stack">Tecnologias</span></h4>
+                <p>HTML • CSS • JavaScript</p>
+              </div>
+            </details>
+            <div class="project-actions">
+              <a class="text-link" href="https://igrejagc.vercel.app" target="_blank" rel="noopener noreferrer"><span data-i18n="action.site">Acessar Site</span> <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/daviespedro/Igreja-GC" target="_blank" rel="noopener noreferrer"><span data-i18n="action.code">Ver Projeto</span> <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="eventos" class="container section reveal">
+      <h2 class="section-title" data-i18n="nav.eventos">Eventos</h2>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="carousel">
+            <button class="carousel-btn prev" aria-label="Foto anterior" data-i18n-aria="carousel.prev">❮</button>
+            <div class="carousel-track">
+              <img src="./assets/imagens/science.jpg" class="carousel-img active" />
+              <img src="./assets/imagens/evento1.jpg" class="carousel-img" />
+              <img src="./assets/imagens/evento2.jpg" class="carousel-img" />
+              <img src="./assets/imagens/evento3.jpg" class="carousel-img" />
+              <img src="./assets/imagens/evento4.jpg" class="carousel-img" />
+              <img src="./assets/imagens/evento5.jpg" class="carousel-img" />
+            </div>
+            <button class="carousel-btn next" aria-label="Próxima foto" data-i18n-aria="carousel.next">❯</button>
+          </div>
+          <div class="event-content">
+            <h3>Science Business Meeting 2026</h3>
+            <p class="event-description collapsed" data-i18n="ev.science.desc">Participei do Science Business Meeting atuando como voluntário representando o PIT. Durante o evento tive contato com empresas, startups e profissionais da área de tecnologia e inovação. A experiência proporcionou networking, desenvolvimento profissional e fortalecimento de habilidades como comunicação, trabalho em equipe e resolução de problemas.</p>
+            <button class="read-more-btn">Ler mais</button>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="carousel">
+            <button class="carousel-btn prev" aria-label="Foto anterior" data-i18n-aria="carousel.prev">❮</button>
+            <div class="carousel-track">
+              <img src="./assets/imagens/maratona3.jpg" class="carousel-img active" />
+              <img src="./assets/imagens/maratona2.jpeg" class="carousel-img" />
+              <img src="./assets/imagens/maratona1.jpeg" class="carousel-img" />
+            </div>
+            <button class="carousel-btn next" aria-label="Próxima foto" data-i18n-aria="carousel.next">❯</button>
+          </div>
+          <div class="event-content">
+            <h3 data-i18n="ev.maratona.title">Maratona de Programação Interna XXV</h3>
+            <p class="event-description collapsed" data-i18n="ev.maratona.desc">Participação na Maratona de Programação colocando em prática lógica, algoritmos e resolução de problemas. O evento fortaleceu minhas habilidades em Python, raciocínio rápido, otimização de código e trabalho colaborativo.</p>
+            <button class="read-more-btn">Ler mais</button>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="carousel">
+            <button class="carousel-btn prev" aria-label="Foto anterior" data-i18n-aria="carousel.prev">❮</button>
+            <div class="carousel-track">
+              <img src="./assets/imagens/interfatec2.jpeg" class="carousel-img active" />
+              <img src="./assets/imagens/interfatec1.jpeg" class="carousel-img" />
+            </div>
+            <button class="carousel-btn next" aria-label="Próxima foto" data-i18n-aria="carousel.next">❯</button>
+          </div>
+          <div class="event-content">
+            <h3 data-i18n="ev.interfatec.title">InterFatecs 26 1º Semestre</h3>
+            <p class="event-description collapsed" data-i18n="ev.interfatec.desc">Participação na InterFatecs, competição acadêmica voltada para tecnologia e programação. A experiência trouxe desafios técnicos, aprendizado em equipe e resolução de problemas computacionais.</p>
+            <button class="read-more-btn">Ler mais</button>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="carousel">
+            <button class="carousel-btn prev" aria-label="Foto anterior" data-i18n-aria="carousel.prev">❮</button>
+            <div class="carousel-track">
+              <img src="./assets/imagens/innovationweek1.png" class="carousel-img active" alt="Innovation Week 2026" />
+              <img src="./assets/imagens/inw1.jpg" class="carousel-img" alt="Innovation Week 2026" />
+              <img src="./assets/imagens/inw2.jpg" class="carousel-img" alt="Innovation Week 2026" />
+              <img src="./assets/imagens/inw3.jpg" class="carousel-img" alt="Innovation Week 2026" />
+              <img src="./assets/imagens/inw4.jpg" class="carousel-img" alt="Innovation Week 2026" />
+              <img src="./assets/imagens/inw5.jpg" class="carousel-img" alt="Innovation Week 2026" />
+            </div>
+            <button class="carousel-btn next" aria-label="Próxima foto" data-i18n-aria="carousel.next">❯</button>
+          </div>
+          <div class="event-content">
+            <h3>Innovation Week 2026</h3>
+            <p class="event-description collapsed" data-i18n="ev.innovation.desc">Participação na Innovation Week 2026, um evento focado nas tendências mais recentes de tecnologia, inovação e desenvolvimento sustentável. A experiência proporcionou uma grande imersão em novas ferramentas do mercado, palestras inspiradoras, e uma excelente oportunidade de networking com profissionais e empresas da área de tecnologia.</p>
+            <button class="read-more-btn">Ler mais</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificados" class="container section reveal">
+      <h2 class="section-title" data-i18n="nav.certificados">Certificados</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-img-container">
+            <img src="./assets/certificados/importfe.png" alt="Certificado Maratona" data-i18n-alt="cert.marathon.alt" class="cert-img" />
+          </div>
+          <div class="cert-content">
+            <h3 data-i18n="cert.marathon.title">XXV Maratona Interna de Programação</h3>
+            <p class="cert-desc" data-i18n="cert.marathon.desc">Certificado de participação na XXV Maratona Interna de Programação da FATEC São José dos Campos.</p>
+            <a href="./assets/certificados/importfe.png" target="_blank" rel="noopener noreferrer" class="cert-btn" data-i18n="cert.view">Ver Certificado</a>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img-container">
+            <img src="./assets/certificados/voluntariopit.png" alt="Certificado Voluntário PIT" data-i18n-alt="cert.pit.alt" class="cert-img" onerror="this.style.display = 'none'; this.nextElementSibling.style.display = 'flex';" />
+            <div class="cert-placeholder" data-i18n="cert.unavailable">Preview indisponível</div>
+          </div>
+          <div class="cert-content">
+            <h3 data-i18n="cert.pit.title">Voluntariado - PIT Science Business Connection</h3>
+            <p class="cert-desc" data-i18n="cert.pit.desc">Certificado de atuação voluntária representando o Parque de Inovação Tecnológica (PIT) no Science Business Meeting.</p>
+            <a href="./assets/certificados/voluntariopit.pdf" target="_blank" rel="noopener noreferrer" class="cert-btn" data-i18n="cert.view">Ver Certificado</a>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img-container">
+            <img src="./assets/certificados/interfatecs20261.jpg" alt="Certificado InterFatecs 2026" data-i18n-alt="cert.interfatecs.alt" class="cert-img" />
+          </div>
+          <div class="cert-content">
+            <h3 data-i18n="cert.interfatecs.title">InterFatecs 2026 - 1º Semestre</h3>
+            <p class="cert-desc" data-i18n="cert.interfatecs.desc">Certificado de participação na competição acadêmica InterFatecs 2026, voltada para lógica de programação, algoritmos e resolução de problemas, fortalecendo habilidades técnicas e trabalho em equipe.</p>
+            <a href="./assets/certificados/interfatecs2026.pdf" target="_blank" rel="noopener noreferrer" class="cert-btn" data-i18n="cert.view">Ver Certificado</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="container section reveal">
+      <h2 class="section-title" data-i18n="nav.contato">Contato</h2>
+      <div class="card">
+        <p><span class="label">Email:</span> <a class="contact-link" href="mailto:daviespedro@icloud.com">daviespedro@icloud.com</a></p>
+        <p>
+          <span class="label">WhatsApp:</span>
+          <a href="https://wa.me/5512996492800?text=Olá!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20bater%20um%20papo." target="_blank" rel="noopener noreferrer" class="contact-link whatsapp-link">(12) 99649-2800</a>
+        </p>
+        <p><span class="label">GitHub:</span> <a class="contact-link" href="https://github.com/daviespedro" target="_blank" rel="noopener noreferrer">github.com/daviespedro</a></p>
+        <p><span class="label">LinkedIn:</span> <a class="contact-link" href="https://br.linkedin.com/in/pedro-augusto-davies-gonçalves-4554293b0" target="_blank" rel="noopener noreferrer">Pedro Augusto Davies Gonçalves</a></p>
+
+        <a href="https://wa.me/5512996492800?text=Olá!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20bater%20um%20papo." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.966 0c3.179.001 6.169 1.24 8.413 3.488 2.245 2.248 3.481 5.239 3.481 8.42 0 6.607-5.337 11.954-11.966 11.954-1.996-.001-3.956-.5-5.688-1.448L0 24zm6.59-4.846c1.656.982 3.511 1.5 5.409 1.512 5.517 0 10.005-4.499 10.007-10.03.002-2.678-1.04-5.197-2.936-7.098C17.228 1.637 14.717 1.002 12 1.002c-5.518 0-10.006 4.499-10.007 10.032-.001 1.908.497 3.771 1.44 5.43L2.43 21.612l5.217-1.37zM17.14 14.47c-.297-.15-1.758-.868-2.031-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+            />
+          </svg>
+          <span data-i18n="contact.wa">Chamar no WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
+    <script src="./i18n.js"></script>
+    <script>
+      const I = () => window.portfolioI18n;
+
+      // =======================================
+      // MENU HAMBÚRGUER (CONTROLE DO TOGGLE MOBILE)
+      // =======================================
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      function rotularMenu() {
+        const aberto = navLinks.classList.contains("open");
+        menuToggle.setAttribute("aria-expanded", String(aberto));
+        menuToggle.setAttribute("aria-label", I().t(aberto ? "menu.close" : "menu.open"));
+      }
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("open");
+        navLinks.classList.toggle("open");
+        rotularMenu();
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("open");
+          navLinks.classList.remove("open");
+          rotularMenu();
+        });
+      });
+
+      // =======================================
+      // EFEITO DO MOUSE (RASTREAMENTO DE COORDENADAS)
+      // =======================================
+      window.addEventListener("mousemove", (e) => {
+        document.documentElement.style.setProperty("--x", e.clientX + "px");
+        document.documentElement.style.setProperty("--y", e.clientY + "px");
+      });
+
+      // =========================
+      // NOME DIGITANDO STYLE TERMINAL
+      // =========================
+      const nome = "Pedro Davies";
+      let i = 0;
+
+      function escreverNome() {
+        if (i < nome.length) {
+          document.getElementById("nome").innerHTML += nome.charAt(i);
+          i++;
+          setTimeout(escreverNome, 100);
+        }
+      }
+      escreverNome();
+
+      // =========================
+      // REVEAL ANIMATION ON SCROLL
+      // =========================
+      const reveals = document.querySelectorAll(".reveal");
+
+      window.addEventListener("scroll", () => {
+        reveals.forEach((element) => {
+          const top = element.getBoundingClientRect().top;
+          if (top < window.innerHeight - 100) {
+            element.classList.add("active");
+          }
+        });
+      });
+
+      // =========================
+      // FILTROS DA ABA PROJETOS
+      // =========================
+      const toolbar = document.querySelector(".project-toolbar");
+      const filtros = [...toolbar.querySelectorAll("[data-filter]")];
+      const projetos = [...document.querySelectorAll(".project-card")];
+      const contador = document.getElementById("project-count");
+
+      function anunciarTotal() {
+        const total = projetos.filter((card) => !card.hidden).length;
+        contador.textContent = I().t(total === 1 ? "count.one" : "count.many").replace("{n}", total);
+      }
+
+      filtros.forEach((botao) => {
+        botao.addEventListener("click", () => {
+          filtros.forEach((opcao) => opcao.setAttribute("aria-pressed", String(opcao === botao)));
+          projetos.forEach((card) => {
+            card.hidden = botao.dataset.filter !== "todos" && card.dataset.category !== botao.dataset.filter;
+          });
+          anunciarTotal();
+        });
+      });
+      toolbar.hidden = false;
+
+      // Nome acessível dos links e dos "Detalhes" (ex.: "Ver Projeto — SecMentor")
+      function rotularProjetos() {
+        projetos.forEach((card) => {
+          const nomeProjeto = card.querySelector("h3").textContent;
+          card.querySelectorAll(".text-link, summary").forEach((controle) => {
+            const rotulo = controle.querySelector("[data-i18n]").textContent;
+            controle.setAttribute("aria-label", rotulo + " — " + nomeProjeto);
+          });
+        });
+      }
+
+      // =========================
+      // LER MAIS / COMPACTAR TEXTO
+      // =========================
+      function rotularLerMais(btn) {
+        const texto = btn.parentElement.querySelector(".event-description");
+        btn.textContent = I().t(texto.classList.contains("collapsed") ? "events.more" : "events.less");
+      }
+
+      document.querySelectorAll(".read-more-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.parentElement.querySelector(".event-description").classList.toggle("collapsed");
+          rotularLerMais(btn);
+        });
+      });
+
+      // =========================
+      // CARROSSEL INFINITO
+      // =========================
+      document.querySelectorAll(".carousel").forEach((carousel) => {
+        const imagens = carousel.querySelectorAll(".carousel-img");
+        const prev = carousel.querySelector(".prev");
+        const next = carousel.querySelector(".next");
+        let index = 0;
+
+        function mostrarImagem(i) {
+          imagens.forEach((img) => {
+            img.classList.remove("active");
+          });
+          imagens[i].classList.add("active");
+        }
+
+        next.addEventListener("click", () => {
+          index++;
+          if (index >= imagens.length) {
+            index = 0;
+          }
+          mostrarImagem(index);
+        });
+
+        prev.addEventListener("click", () => {
+          index--;
+          if (index < 0) {
+            index = imagens.length - 1;
+          }
+          mostrarImagem(index);
+        });
+      });
+
+      // =========================
+      // IDIOMA: atualiza o que o JavaScript escreve
+      // =========================
+      function atualizarIdioma() {
+        rotularMenu();
+        rotularProjetos();
+        anunciarTotal();
+        document.querySelectorAll(".read-more-btn").forEach(rotularLerMais);
+        toolbar.querySelector(".filters").setAttribute("aria-label", I().t("filters.label"));
+      }
+      document.addEventListener("portfolio:language", atualizarIdioma);
+      atualizarIdioma();
+    </script>
+  </body>
+</html>
